@@ -1,0 +1,35 @@
+--- yarn.lock.ORIG	2021-01-26 12:51:39.298605636 +0100
++++ yarn.lock	2021-01-26 12:51:16.568271324 +0100
+@@ -4785,8 +4785,6 @@
+     path-is-absolute "^1.0.0"
+     readdirp "^2.0.0"
+     upath "^1.0.5"
+-  optionalDependencies:
+-    fsevents "^1.2.2"
+ 
+ chokidar@^2.0.4, chokidar@^2.1.2, chokidar@^2.1.6:
+   version "2.1.6"
+@@ -4804,8 +4802,6 @@
+     path-is-absolute "^1.0.0"
+     readdirp "^2.2.1"
+     upath "^1.1.1"
+-  optionalDependencies:
+-    fsevents "^1.2.7"
+ 
+ chownr@^1.0.1:
+   version "1.1.1"
+@@ -7857,14 +7853,6 @@
+   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
+   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+ 
+-fsevents@^1.2.2, fsevents@^1.2.7:
+-  version "1.2.9"
+-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.9.tgz#3f5ed66583ccd6f400b5a00db6f7e861363e388f"
+-  integrity sha512-oeyj2H3EjjonWcFjD5NvZNE9Rqe4UW+nQBU2HNeKw0koVLEFIhtyETyAakeAM3de7Z/SW5kcA+fZUait9EApnw==
+-  dependencies:
+-    nan "^2.12.1"
+-    node-pre-gyp "^0.12.0"
+-
+ fstream@^1.0.0, fstream@^1.0.2:
+   version "1.0.12"
+   resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.12.tgz#4e8ba8ee2d48be4f7d0de505455548eae5932045"
