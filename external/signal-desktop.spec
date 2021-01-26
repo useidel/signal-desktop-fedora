@@ -8,6 +8,7 @@ URL:		https://github.com/signalapp/Signal-Desktop/
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 Patch0:		patch.package.json
 Patch1:		patch.fsevents
+Patch2:		patch.dynamic.linking
 Patch3:		patch.Gruntfile.js
 
 #ExclusiveArch:	x86_64
@@ -76,31 +77,10 @@ pwd
 cd %{_builddir}/Signal-Desktop-%{version} 
 
 # use dynamic linking
-patch --no-backup-if-mismatch -Np1 << 'EOF'
---- a/node_modules/@journeyapps/sqlcipher/deps/sqlite3.gyp	2019-10-27 01:53:29.860275405 -0400
-+++ b/node_modules/@journeyapps/sqlcipher/deps/sqlite3.gyp	2019-10-27 01:51:32.001730882 -0400
-@@ -73,7 +73,7 @@
-         'link_settings': {
-           'libraries': [
-             # This statically links libcrypto, whereas -lcrypto would dynamically link it
--            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/OpenSSL-Linux/libcrypto.a'
-+            '-lcrypto'
-           ]
-         }
-       }]
-@@ -141,7 +141,6 @@
-         { # linux
-           'include_dirs': [
-             '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/',
--            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/openssl-include/'
-           ]
-         }]
-       ],
-EOF
-
+patch --no-backup-if-mismatch -Np0 < %{P:2} 
 
 # We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
-%patch3 -p0
+patch --no-backup-if-mismatch -Np0 < %{P:3} 
 
 # Gruntfile expects Git commit information which we don't have in a tarball download
 # See https://github.com/signalapp/Signal-Desktop/issues/2376
