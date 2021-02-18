@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	1.39.6
+Version:	1.40.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -8,7 +8,7 @@ URL:		https://github.com/signalapp/Signal-Desktop/
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 
 #ExclusiveArch:	x86_64
-BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz nodejs, ca-certificates
+BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz nodejs, ca-certificates, git-lfs
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
 %endif
@@ -49,77 +49,6 @@ node --version
 
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
-
-# avoid building deb/appimage packages, since we're repacking the unpacked sources
-# this also solves build failure on epel 7 due to a too outdated 'tar' command when building the .deb file
-patch --no-backup-if-mismatch -Np1 << 'EOF'
---- a/package.json
-+++ b/package.json
-273,320d272
-<     "mac": {
-<       "asarUnpack": [
-<         "**/*.node",
-<         "node_modules/zkgroup/libzkgroup.*"
-<       ],
-<       "artifactName": "${name}-mac-${version}.${ext}",
-<       "category": "public.app-category.social-networking",
-<       "darkModeSupport": true,
-<       "hardenedRuntime": true,
-<       "entitlements": "./build/entitlements.mac.plist",
-<       "icon": "build/icons/mac/icon.icns",
-<       "publish": [
-<         {
-<           "provider": "generic",
-<           "url": "https://updates.signal.org/desktop"
-<         }
-<       ],
-<       "target": [
-<         "zip",
-<         "dmg"
-<       ],
-<       "bundleVersion": "1"
-<     },
-<     "win": {
-<       "asarUnpack": [
-<         "**/*.node",
-<         "node_modules/spellchecker/vendor/hunspell_dictionaries",
-<         "node_modules/sharp",
-<         "node_modules/zkgroup/libzkgroup.*"
-<       ],
-<       "artifactName": "${name}-win-${version}.${ext}",
-<       "certificateSubjectName": "Signal (Quiet Riddle Ventures, LLC)",
-<       "certificateSha1": "77B2AA4421E5F377454B8B91E573746592D1543D",
-<       "publisherName": "Signal (Quiet Riddle Ventures, LLC)",
-<       "icon": "build/icons/win/icon.ico",
-<       "publish": [
-<         {
-<           "provider": "generic",
-<           "url": "https://updates.signal.org/desktop"
-<         }
-<       ],
-<       "target": [
-<         "nsis"
-<       ]
-<     },
-<     "nsis": {
-<       "deleteAppDataOnUninstall": true
-<     },
-332,334d283
-<       "target": [
-<         "deb"
-<       ],
-336,345d284
-<     },
-<     "deb": {
-<       "depends": [
-<         "libnotify4",
-<         "libappindicator1",
-<         "libxtst6",
-<         "libnss3",
-<         "libasound2",
-<         "libxss1"
-<       ]
-EOF
 
 # fsevents for Apple MacOS also breaks linux build
 patch --no-backup-if-mismatch -Np1 << 'EOF'
@@ -256,6 +185,9 @@ done
  
 
 %changelog
+* Thu Feb 18 2021 Udo Seidel <udoseidel@gmx.de> 1.40.0-1
+- update to new release
+
 * Mon Jan 25 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-2
 - cleanup of spec file
 - covering renaming of yarn package on fedora

@@ -1,18 +1,17 @@
 Name:		signal-desktop
-Version:	1.39.6
-Release:	3%{?dist}
+Version:	1.40.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
-Patch0:		patch.package.json
 Patch1:		patch.fsevents
 Patch2:		patch.dynamic.linking
 Patch3:		patch.Gruntfile.js
 
 #ExclusiveArch:	x86_64
-BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz nodejs, ca-certificates
+BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz nodejs, ca-certificates, git-lfs
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
 %endif
@@ -53,10 +52,6 @@ node --version
 
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
-
-# avoid building deb/appimage packages, since we're repacking the unpacked sources
-# this also solves build failure on epel 7 due to a too outdated 'tar' command when building the .deb file
-%patch0 -p0 
 
 # fsevents for Apple MacOS also breaks linux build
 %patch1 -p0 
@@ -139,6 +134,9 @@ done
  
 
 %changelog
+* Thu Feb 18 2021 Udo Seidel <udoseidel@gmx.de> 1.40.0-1
+- update to new release
+
 * Tue Jan 26 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-3
 - patching outsourced from SPEC to patch files
 
