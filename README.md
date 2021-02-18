@@ -1,6 +1,6 @@
 # signal-desktop-fedora
 
-Some experiments with the SPEC file to create an RPM for fedora
+Some experiments with the SPEC file to create an RPM for fedora - basically about the patching of the source.
 
 The source of signal-desktop are here: https://github.com/signalapp/Signal-Desktop
 
