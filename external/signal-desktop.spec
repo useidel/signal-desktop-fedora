@@ -6,7 +6,6 @@ License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
-Source1:        https://github.com/atom/node-spellchecker/archive/613ff91dd2d9a5ee0e86be8a3682beecc4e94887.tar.gz
 Patch1:		patch.fsevents
 Patch2:		patch.dynamic.linking
 Patch3:		patch.Gruntfile.js
