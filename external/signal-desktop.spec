@@ -1,17 +1,18 @@
 Name:		signal-desktop
-Version:	1.40.0
+Version:	5.0.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
+Source1:        https://github.com/atom/node-spellchecker/archive/613ff91dd2d9a5ee0e86be8a3682beecc4e94887.tar.gz
 Patch1:		patch.fsevents
 Patch2:		patch.dynamic.linking
 Patch3:		patch.Gruntfile.js
 
 #ExclusiveArch:	x86_64
-BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz nodejs, ca-certificates, git-lfs
+BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
 %endif
@@ -134,8 +135,12 @@ done
  
 
 %changelog
+* Sat May 01 2021 Udo Seidel <udoseidel@gmx.de> 5.0.0-1
+- Update to new major version
+
 * Thu Feb 18 2021 Udo Seidel <udoseidel@gmx.de> 1.40.0-1
 - update to new release
+- BuildRequires git-lfs due to node-sqlcipher
 
 * Tue Jan 26 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-3
 - patching outsourced from SPEC to patch files

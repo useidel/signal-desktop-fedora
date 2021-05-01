@@ -1,14 +1,15 @@
 Name:		signal-desktop
-Version:	1.40.0
+Version:	5.0.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
+Source1:	https://github.com/atom/node-spellchecker/archive/613ff91dd2d9a5ee0e86be8a3682beecc4e94887.tar.gz
 
 #ExclusiveArch:	x86_64
-BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz nodejs, ca-certificates, git-lfs
+BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
 %endif
@@ -28,11 +29,15 @@ BuildRequires: yarnpkg
 BuildRequires: yarn
 %endif
 
+
 AutoReqProv: no
 #AutoProv: no
 Provides: signal-desktop
 Requires: GConf2, libnotify, libappindicator-gtk3, libXtst, nss, libXScrnSaver
+
 %global __requires_exclude_from ^/%{_libdir}/%{name}/release/.*$
+%define _build_id_links none
+
 
 %description
 Private messaging from your desktop
@@ -50,17 +55,83 @@ node --version
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
 
+# avoid building deb/appimage packages, since we're repacking the unpacked sources
+# this also solves build failure on epel 7 due to a too outdated 'tar' command when building the .deb file
+patch --no-backup-if-mismatch -Np1 << 'EOF'
+--- a/package.json
++++ b/package.json
+284,330d283
+<     "mac": {
+<       "asarUnpack": [
+<         "**/*.node",
+<         "node_modules/zkgroup/libzkgroup.*",
+<         "node_modules/libsignal-client/build/*.node"
+<       ],
+<       "artifactName": "${name}-mac-${version}.${ext}",
+<       "category": "public.app-category.social-networking",
+<       "darkModeSupport": true,
+<       "hardenedRuntime": true,
+<       "entitlements": "./build/entitlements.mac.plist",
+<       "icon": "build/icons/mac/icon.icns",
+<       "publish": [
+<         {
+<           "provider": "generic",
+<           "url": "https://updates.signal.org/desktop"
+<         }
+<       ],
+<       "target": [
+<         "zip",
+<         "dmg"
+<       ],
+<       "bundleVersion": "1"
+<     },
+<     "win": {
+<       "asarUnpack": [
+<         "**/*.node",
+<         "node_modules/spellchecker/vendor/hunspell_dictionaries",
+<         "node_modules/sharp",
+<         "node_modules/zkgroup/libzkgroup.*",
+<         "node_modules/libsignal-client/build/*.node"
+<       ],
+<       "artifactName": "${name}-win-${version}.${ext}",
+<       "certificateSubjectName": "Signal (Quiet Riddle Ventures, LLC)",
+<       "certificateSha1": "77B2AA4421E5F377454B8B91E573746592D1543D",
+<       "publisherName": "Signal (Quiet Riddle Ventures, LLC)",
+<       "icon": "build/icons/win/icon.ico",
+<       "publish": [
+<         {
+<           "provider": "generic",
+<           "url": "https://updates.signal.org/desktop"
+<         }
+<       ],
+<       "target": [
+<         "nsis"
+<       ]
+<     },
+346,348d298
+<       "target": [
+<         "deb"
+<       ],
+350,358d299
+<     },
+<     "deb": {
+<       "depends": [
+<         "libnotify4",
+<         "libxtst6",
+<         "libnss3",
+<         "libasound2",
+<         "libxss1"
+<       ]
+EOF
+
 # fsevents for Apple MacOS also breaks linux build
 patch --no-backup-if-mismatch -Np1 << 'EOF'
 --- a/yarn.lock
 +++ b/yarn.lock
-4670,4671d4669
-<   optionalDependencies:
-<     fsevents "^1.2.2"
-4689,4690d4686
+4901,4902d4900
 <   optionalDependencies:
 <     fsevents "^1.2.7"
-7703,7710d7698
+8005,8012d8002
 < 
 < fsevents@^1.2.2, fsevents@^1.2.7:
 <   version "1.2.9"
@@ -69,11 +140,12 @@ patch --no-backup-if-mismatch -Np1 << 'EOF'
 <   dependencies:
 <     nan "^2.12.1"
 <     node-pre-gyp "^0.12.0"
-
 EOF
 
 # fix sqlcipher generic python invocation, incompatible with el8 
 %if 0%{?el8}
+#yarn install || true
+#sed -i 's/python/python3/g' node_modules/@journeyapps/sqlcipher/deps/sqlite3.gyp
 mkdir -p ${HOME}/.bin
 ln -s %{__python3} ${HOME}/.bin/python
 export PATH="${HOME}/.bin:${PATH}"
@@ -149,7 +221,6 @@ yarn build-release
 install -dm755 %{buildroot}/%{_libdir}/%{name}
 cp -a %{_builddir}/Signal-Desktop-%{version}/release/linux-unpacked/* %{buildroot}/%{_libdir}/%{name}
 
-
 install -dm755 %{buildroot}%{_bindir}
 ln -s %{_libdir}/%{name}/signal-desktop %{buildroot}%{_bindir}/signal-desktop
 
@@ -185,8 +256,12 @@ done
  
 
 %changelog
+* Fri Apr 30 2021 Udo Seidel <udoseidel@gmx.de> 5.0.0-1
+- Update to new major version
+
 * Thu Feb 18 2021 Udo Seidel <udoseidel@gmx.de> 1.40.0-1
 - update to new release
+- BuildRequires git-lfs due to node-sqlcipher
 
 * Mon Jan 25 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-2
 - cleanup of spec file
