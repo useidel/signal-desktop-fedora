@@ -125,10 +125,16 @@ EOF
 patch --no-backup-if-mismatch -Np1 << 'EOF'
 --- a/yarn.lock
 +++ b/yarn.lock
-4901,4902d4900
+5155,5156d5154
+<   optionalDependencies:
+<     fsevents "^1.2.2"
+5174,5175d5171
 <   optionalDependencies:
 <     fsevents "^1.2.7"
-8005,8012d8002
+5193,5194d5188
+<   optionalDependencies:
+<     fsevents "^1.2.7"
+8459,8466d8452
 < 
 < fsevents@^1.2.2, fsevents@^1.2.7:
 <   version "1.2.9"
