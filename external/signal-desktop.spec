@@ -6,8 +6,8 @@ License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
-Patch1:		patch.fsevents
-Patch2:		patch.dynamic.linking
+Patch1:		patch.package.json
+Patch2:		patch.fsevents
 Patch3:		patch.Gruntfile.js
 
 #ExclusiveArch:	x86_64
@@ -55,8 +55,12 @@ node --version
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
 
+# avoid building deb/appimage packages, since we're repacking the unpacked sources
+# this also solves build failure on epel 7 due to a too outdated 'tar' command when building the .deb file
+%patch1 -p0
+
 # fsevents for Apple MacOS also breaks linux build
-%patch1 -p0 
+%patch2 -p0 
 
 # fix sqlcipher generic python invocation, incompatible with el8 
 %if 0%{?el8}
@@ -72,9 +76,6 @@ yarn install
 pwd
 
 cd %{_builddir}/Signal-Desktop-%{version} 
-
-# use dynamic linking
-patch --no-backup-if-mismatch -Np0 < %{P:2} 
 
 # We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
 patch --no-backup-if-mismatch -Np0 < %{P:3} 
