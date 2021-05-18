@@ -28,7 +28,6 @@ BuildRequires: yarnpkg
 BuildRequires: yarn
 %endif
 
-
 AutoReqProv: no
 #AutoProv: no
 Provides: signal-desktop
@@ -36,7 +35,6 @@ Requires: GConf2, libnotify, libappindicator-gtk3, libXtst, nss, libXScrnSaver
 
 %global __requires_exclude_from ^/%{_libdir}/%{name}/release/.*$
 %define _build_id_links none
-
 
 %description
 Private messaging from your desktop
@@ -59,7 +57,7 @@ sed 's#"node": "#&>=#' -i package.json
 patch --no-backup-if-mismatch -Np1 << 'EOF'
 --- a/package.json
 +++ b/package.json
-284,330d283
+291,337d290
 <     "mac": {
 <       "asarUnpack": [
 <         "**/*.node",
@@ -107,11 +105,11 @@ patch --no-backup-if-mismatch -Np1 << 'EOF'
 <         "nsis"
 <       ]
 <     },
-346,348d298
+353,355d305
 <       "target": [
 <         "deb"
 <       ],
-350,358d299
+357,365d306
 <     },
 <     "deb": {
 <       "depends": [
@@ -143,8 +141,6 @@ EOF
 
 # fix sqlcipher generic python invocation, incompatible with el8 
 %if 0%{?el8}
-#yarn install || true
-#sed -i 's/python/python3/g' node_modules/@journeyapps/sqlcipher/deps/sqlite3.gyp
 mkdir -p ${HOME}/.bin
 ln -s %{__python3} ${HOME}/.bin/python
 export PATH="${HOME}/.bin:${PATH}"
@@ -157,30 +153,6 @@ yarn install
 pwd
 
 cd %{_builddir}/Signal-Desktop-%{version} 
-
-# use dynamic linking
-patch --no-backup-if-mismatch -Np1 << 'EOF'
---- a/node_modules/@journeyapps/sqlcipher/deps/sqlite3.gyp	2019-10-27 01:53:29.860275405 -0400
-+++ b/node_modules/@journeyapps/sqlcipher/deps/sqlite3.gyp	2019-10-27 01:51:32.001730882 -0400
-@@ -73,7 +73,7 @@
-         'link_settings': {
-           'libraries': [
-             # This statically links libcrypto, whereas -lcrypto would dynamically link it
--            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/OpenSSL-Linux/libcrypto.a'
-+            '-lcrypto'
-           ]
-         }
-       }]
-@@ -141,7 +141,6 @@
-         { # linux
-           'include_dirs': [
-             '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/',
--            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/openssl-include/'
-           ]
-         }]
-       ],
-EOF
-
 
 # We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
 patch --no-backup-if-mismatch -Np1 << 'EOF'
@@ -199,12 +171,8 @@ patch --no-backup-if-mismatch -Np1 << 'EOF'
        'config/local-production.json',
 EOF
 
-# Gruntfile expects Git commit information which we don't have in a tarball download
-# See https://github.com/signalapp/Signal-Desktop/issues/2376
-yarn generate exec:build-protobuf exec:transpile concat copy:deps sass
-
-#env SIGNAL_ENV=production yarn --no-default-rc --verbose build-release --linux rpm
-yarn build-release
+yarn generate 
+yarn build
 
 %install
 
@@ -246,6 +214,11 @@ for i in 16 24 32 48 64 128 256 512 1024; do
     install -Dm 644 %{_builddir}/Signal-Desktop-%{version}/build/icons/png/${i}x${i}.png %{buildroot}%{_datadir}/icons/hicolor/${i}x${i}/apps/%{name}.png
 done
 
+# delete prebuilt binaries for other platforms
+for i in "darwin-x64" "linux-arm64" "win32-ia32" "win32-x64"; do
+ find %{buildroot} -type d -iname "$i" -exec rm -rfv {} \; | grep -q "."
+done
+
 
 %files
 %defattr(-,root,root)
@@ -257,8 +230,10 @@ done
 %changelog
 * Sun May 16 2021 Udo Seidel <udoseidel@gmx.de> 5.1.0-1
 - Update to new minor release
+- Remove openssl dynamic link patches
+- Remove bundled binaries for other platforms
 
-* Fri Apr 30 2021 Udo Seidel <udoseidel@gmx.de> 5.0.0-1
+* Sat May 01 2021 Udo Seidel <udoseidel@gmx.de> 5.0.0-1
 - Update to new major version
 
 * Thu Feb 18 2021 Udo Seidel <udoseidel@gmx.de> 1.40.0-1

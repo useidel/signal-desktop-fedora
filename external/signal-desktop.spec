@@ -35,7 +35,9 @@ AutoReqProv: no
 #AutoProv: no
 Provides: signal-desktop
 Requires: GConf2, libnotify, libappindicator-gtk3, libXtst, nss, libXScrnSaver
+
 %global __requires_exclude_from ^/%{_libdir}/%{name}/release/.*$
+%define _build_id_links none
 
 %description
 Private messaging from your desktop
@@ -77,12 +79,8 @@ patch --no-backup-if-mismatch -Np0 < %{P:2}
 # We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
 patch --no-backup-if-mismatch -Np0 < %{P:3} 
 
-# Gruntfile expects Git commit information which we don't have in a tarball download
-# See https://github.com/signalapp/Signal-Desktop/issues/2376
-yarn generate exec:build-protobuf exec:transpile concat copy:deps sass
-
-#env SIGNAL_ENV=production yarn --no-default-rc --verbose build-release --linux rpm
-yarn build-release
+yarn generate 
+yarn build
 
 %install
 
@@ -97,7 +95,6 @@ yarn build-release
 # copy base files
 install -dm755 %{buildroot}/%{_libdir}/%{name}
 cp -a %{_builddir}/Signal-Desktop-%{version}/release/linux-unpacked/* %{buildroot}/%{_libdir}/%{name}
-
 
 install -dm755 %{buildroot}%{_bindir}
 ln -s %{_libdir}/%{name}/signal-desktop %{buildroot}%{_bindir}/signal-desktop
@@ -125,6 +122,11 @@ for i in 16 24 32 48 64 128 256 512 1024; do
     install -Dm 644 %{_builddir}/Signal-Desktop-%{version}/build/icons/png/${i}x${i}.png %{buildroot}%{_datadir}/icons/hicolor/${i}x${i}/apps/%{name}.png
 done
 
+# delete prebuilt binaries for other platforms
+for i in "darwin-x64" "linux-arm64" "win32-ia32" "win32-x64"; do
+ find %{buildroot} -type d -iname "$i" -exec rm -rfv {} \; | grep -q "."
+done
+
 
 %files
 %defattr(-,root,root)
@@ -136,6 +138,8 @@ done
 %changelog
 * Sun May 16 2021 Udo Seidel <udoseidel@gmx.de> 5.1.0-1
 - Update to new minor release
+- Remove openssl dynamic link patches
+- Remove bundled binaries for other platforms
 
 * Sat May 01 2021 Udo Seidel <udoseidel@gmx.de> 5.0.0-1
 - Update to new major version
