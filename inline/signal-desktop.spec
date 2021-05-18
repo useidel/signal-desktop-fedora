@@ -158,7 +158,7 @@ cd %{_builddir}/Signal-Desktop-%{version}
 patch --no-backup-if-mismatch -Np1 << 'EOF'
 --- a/Gruntfile.js
 +++ b/Gruntfile.js
-@@ -203,9 +203,7 @@ module.exports = grunt => {
+@@ -186,9 +186,7 @@ module.exports = grunt => {
    });
  
    grunt.registerTask('getExpireTime', () => {
