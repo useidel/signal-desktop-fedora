@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.1.0
+Version:	5.4.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -52,89 +52,20 @@ node --version
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
 
-# avoid building deb/appimage packages, since we're repacking the unpacked sources
-# this also solves build failure on epel 7 due to a too outdated 'tar' command when building the .deb file
-patch --no-backup-if-mismatch -Np1 << 'EOF'
---- a/package.json
-+++ b/package.json
-291,337d290
-<     "mac": {
-<       "asarUnpack": [
-<         "**/*.node",
-<         "node_modules/zkgroup/libzkgroup.*",
-<         "node_modules/libsignal-client/build/*.node"
-<       ],
-<       "artifactName": "${name}-mac-${version}.${ext}",
-<       "category": "public.app-category.social-networking",
-<       "darkModeSupport": true,
-<       "hardenedRuntime": true,
-<       "entitlements": "./build/entitlements.mac.plist",
-<       "icon": "build/icons/mac/icon.icns",
-<       "publish": [
-<         {
-<           "provider": "generic",
-<           "url": "https://updates.signal.org/desktop"
-<         }
-<       ],
-<       "target": [
-<         "zip",
-<         "dmg"
-<       ],
-<       "bundleVersion": "1"
-<     },
-<     "win": {
-<       "asarUnpack": [
-<         "**/*.node",
-<         "node_modules/spellchecker/vendor/hunspell_dictionaries",
-<         "node_modules/sharp",
-<         "node_modules/zkgroup/libzkgroup.*",
-<         "node_modules/libsignal-client/build/*.node"
-<       ],
-<       "artifactName": "${name}-win-${version}.${ext}",
-<       "certificateSubjectName": "Signal (Quiet Riddle Ventures, LLC)",
-<       "certificateSha1": "77B2AA4421E5F377454B8B91E573746592D1543D",
-<       "publisherName": "Signal (Quiet Riddle Ventures, LLC)",
-<       "icon": "build/icons/win/icon.ico",
-<       "publish": [
-<         {
-<           "provider": "generic",
-<           "url": "https://updates.signal.org/desktop"
-<         }
-<       ],
-<       "target": [
-<         "nsis"
-<       ]
-<     },
-353,355d305
-<       "target": [
-<         "deb"
-<       ],
-357,365d306
-<     },
-<     "deb": {
-<       "depends": [
-<         "libnotify4",
-<         "libxtst6",
-<         "libnss3",
-<         "libasound2",
-<         "libxss1"
-<       ]
-EOF
-
 # fsevents for Apple MacOS also breaks linux build
 patch --no-backup-if-mismatch -Np1 << 'EOF'
 --- a/yarn.lock
 +++ b/yarn.lock
-5155,5156d5154
+5375,5376d5374
 <   optionalDependencies:
 <     fsevents "^1.2.2"
-5174,5175d5171
+5394,5395d5391
 <   optionalDependencies:
 <     fsevents "^1.2.7"
-5193,5194d5188
+5413,5414d5408
 <   optionalDependencies:
 <     fsevents "^1.2.7"
-8459,8466d8452
+8777,8784d8770
 < 
 < fsevents@^1.2.2, fsevents@^1.2.7:
 <   version "1.2.9"
@@ -234,6 +165,10 @@ done
  
 
 %changelog
+* Sun Jun 06 2021 Udo Seidel <udoseidel@gmx.de> 5.4.0-1
+- Jump to latest minor release
+- remove of package.json patch
+
 * Sun May 16 2021 Udo Seidel <udoseidel@gmx.de> 5.1.0-1
 - Update to new minor release
 - Remove openssl dynamic link patches

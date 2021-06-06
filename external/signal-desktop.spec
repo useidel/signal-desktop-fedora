@@ -1,14 +1,13 @@
 Name:		signal-desktop
-Version:	5.1.0
+Version:	5.4.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
-Patch1:		patch.package.json
-Patch2:		patch.fsevents
-Patch3:		patch.Gruntfile.js
+Patch1:		patch.fsevents
+Patch2:		patch.Gruntfile.js
 
 #ExclusiveArch:	x86_64
 BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
@@ -55,12 +54,8 @@ node --version
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
 
-# avoid building deb/appimage packages, since we're repacking the unpacked sources
-# this also solves build failure on epel 7 due to a too outdated 'tar' command when building the .deb file
-%patch1 -p0
-
 # fsevents for Apple MacOS also breaks linux build
-%patch2 -p0 
+%patch1 -p0 
 
 # fix sqlcipher generic python invocation, incompatible with el8 
 %if 0%{?el8}
@@ -78,7 +73,7 @@ pwd
 cd %{_builddir}/Signal-Desktop-%{version} 
 
 # We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
-patch --no-backup-if-mismatch -Np0 < %{P:3} 
+patch --no-backup-if-mismatch -Np0 < %{P:2} 
 
 yarn generate 
 yarn build
@@ -137,6 +132,10 @@ done
  
 
 %changelog
+* Sun Jun 06 2021 Udo Seidel <udoseidel@gmx.de> 5.4.0-1
+- Jump to latest minor release
+- remove of package.json patch
+
 * Sun May 16 2021 Udo Seidel <udoseidel@gmx.de> 5.1.0-1
 - Update to new minor release
 - Remove openssl dynamic link patches
