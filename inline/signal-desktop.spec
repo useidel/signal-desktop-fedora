@@ -1,11 +1,13 @@
 Name:		signal-desktop
-Version:	5.8.0
+Version:	5.11.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
+Patch1:		patch.fsevents
+Patch2:		patch.Gruntfile.js
 
 #ExclusiveArch:	x86_64
 BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
@@ -53,28 +55,7 @@ node --version
 sed 's#"node": "#&>=#' -i package.json
 
 # fsevents for Apple MacOS also breaks linux build
-patch --no-backup-if-mismatch -Np1 << 'EOF'
---- a/yarn.lock
-+++ b/yarn.lock
-5375,5376d5374
-<   optionalDependencies:
-<     fsevents "^1.2.2"
-5394,5395d5391
-<   optionalDependencies:
-<     fsevents "^1.2.7"
-5413,5414d5408
-<   optionalDependencies:
-<     fsevents "^1.2.7"
-8777,8784d8770
-< 
-< fsevents@^1.2.2, fsevents@^1.2.7:
-<   version "1.2.9"
-<   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.9.tgz#3f5ed66583ccd6f400b5a00db6f7e861363e388f"
-<   integrity sha512-oeyj2H3EjjonWcFjD5NvZNE9Rqe4UW+nQBU2HNeKw0koVLEFIhtyETyAakeAM3de7Z/SW5kcA+fZUait9EApnw==
-<   dependencies:
-<     nan "^2.12.1"
-<     node-pre-gyp "^0.12.0"
-EOF
+%patch1 -p0 
 
 # fix sqlcipher generic python invocation, incompatible with el8 
 %if 0%{?el8}
@@ -92,21 +73,7 @@ pwd
 cd %{_builddir}/Signal-Desktop-%{version} 
 
 # We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
-patch --no-backup-if-mismatch -Np1 << 'EOF'
---- a/Gruntfile.js
-+++ b/Gruntfile.js
-@@ -186,9 +186,7 @@ module.exports = grunt => {
-   });
- 
-   grunt.registerTask('getExpireTime', () => {
--    grunt.task.requires('gitinfo');
--    const gitinfo = grunt.config.get('gitinfo');
--    const committed = gitinfo.local.branch.current.lastCommitTime;
-+    const committed = parseInt(process.env.SOURCE_DATE_EPOCH, 10) * 1000;
-     const time = Date.parse(committed) + 1000 * 60 * 60 * 24 * 90;
-     grunt.file.write(
-       'config/local-production.json',
-EOF
+patch --no-backup-if-mismatch -Np0 < %{P:2} 
 
 yarn generate 
 yarn build
@@ -165,6 +132,9 @@ done
  
 
 %changelog
+* Thu Jul 29 2021 Udo Seidel <udoseidel@gmx.de> 5.11.0-1
+- Again jump to latest minor release
+
 * Fri Jul 09 2021 Udo Seidel <udoseidel@gmx.de> 5.8.0-1
 - Again jump to latest minor release
 
@@ -182,7 +152,9 @@ done
 
 * Thu Feb 18 2021 Udo Seidel <udoseidel@gmx.de> 1.40.0-1
 - update to new release
-- BuildRequires git-lfs due to node-sqlcipher
+
+* Tue Jan 26 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-3
+- patching outsourced from SPEC to patch files
 
 * Mon Jan 25 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-2
 - cleanup of spec file
