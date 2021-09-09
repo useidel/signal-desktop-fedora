@@ -10,5 +10,3 @@ The current build requires internet access and the additional repo https://rpm.n
 
 It is worth matching the version from nodesource with the one shipped by the fedora distribution.
 
-Mainly the discussion between inline patches in the SPEC file or having them outsourced to patch files.
-
