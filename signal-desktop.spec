@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.17.1
+Version:	5.17.2
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -132,6 +132,9 @@ done
  
 
 %changelog
+* Wed Sep 29 2021 Udo Seidel <udoseidel@gmx.de> 5.17.2-1
+- next minor release
+
 * Mon Sep 13 2021 Udo Seidel <udoseidel@gmx.de> 5.17.1-1
 - next minor release
 
