@@ -1,6 +1,6 @@
---- yarn.lock.ORIG	2021-09-09 09:44:46.215587262 +0200
-+++ yarn.lock	2021-09-09 09:53:11.769888934 +0200
-@@ -5411,8 +5411,6 @@
+--- yarn.lock.ORIG	2021-10-09 10:24:59.009509814 +0200
++++ yarn.lock	2021-10-09 10:28:21.079742443 +0200
+@@ -5521,8 +5521,6 @@
      path-is-absolute "^1.0.0"
      readdirp "^2.0.0"
      upath "^1.0.5"
@@ -9,7 +9,7 @@
  
  chokidar@^2.0.4, chokidar@^2.1.2:
    version "2.1.6"
-@@ -5430,8 +5428,6 @@
+@@ -5540,8 +5538,6 @@
      path-is-absolute "^1.0.0"
      readdirp "^2.2.1"
      upath "^1.1.1"
@@ -18,7 +18,7 @@
  
  chokidar@^2.1.8:
    version "2.1.8"
-@@ -5449,8 +5445,6 @@
+@@ -5559,8 +5555,6 @@
      path-is-absolute "^1.0.0"
      readdirp "^2.2.1"
      upath "^1.1.1"
@@ -27,7 +27,7 @@
  
  chownr@^1.1.1:
    version "1.1.4"
-@@ -8775,14 +8769,6 @@
+@@ -8898,14 +8892,6 @@
    resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
    integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
  
@@ -39,6 +39,6 @@
 -    nan "^2.12.1"
 -    node-pre-gyp "^0.12.0"
 -
- fstream@^1.0.0, fstream@^1.0.2:
-   version "1.0.12"
-   resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.12.tgz#4e8ba8ee2d48be4f7d0de505455548eae5932045"
+ fsevents@~2.3.1:
+   version "2.3.2"
+   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
