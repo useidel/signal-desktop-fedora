@@ -6,7 +6,7 @@ The source of signal-desktop are here: https://github.com/signalapp/Signal-Deskt
 
 SPEC file inspired by: https://copr.fedorainfracloud.org/coprs/luminoso/Signal-Desktop/
 
-The current build requires internet access and the additional repo https://rpm.nodesource.com/pub_14.x/fc/$releasever/$basearch
+The current build requires internet access and the additional repo https://rpm.nodesource.com/pub_16.x/fc/$releasever/$basearch
 
 It is worth matching the version from nodesource with the one shipped by the fedora distribution.
 

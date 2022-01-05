@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.22.0
+Version:	5.26.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -118,12 +118,6 @@ for i in 16 24 32 48 64 128 256 512 1024; do
     install -Dm 644 %{_builddir}/Signal-Desktop-%{version}/build/icons/png/${i}x${i}.png %{buildroot}%{_datadir}/icons/hicolor/${i}x${i}/apps/%{name}.png
 done
 
-# delete prebuilt binaries for other platforms
-for i in "darwin-x64" "linux-arm64" "win32-ia32" "win32-x64"; do
- find %{buildroot} -type d -iname "$i" -exec rm -rfv {} \; | grep -q "."
-done
-
-
 %files
 %defattr(-,root,root)
 %{_bindir}/*
@@ -132,6 +126,9 @@ done
  
 
 %changelog
+* Wed Jan 05 2022 Udo Seidel <udoseidel@gmx.de> 5.26.0-1
+- catch-up with actual minor release
+
 * Mon Nov 01 2021 Udo Seidel <udoseidel@gmx.de> 5.22.0-1
 - boost to actual minor release
 
