@@ -1,13 +1,12 @@
 Name:		signal-desktop
-Version:	5.26.1
+Version:	5.30.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
-Patch1:		patch.fsevents
-Patch2:		patch.Gruntfile.js
+Patch0:		signal-desktop-expire-from-source-date-epoch.patch
 
 #ExclusiveArch:	x86_64
 BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
@@ -54,28 +53,21 @@ node --version
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
 
-# fsevents for Apple MacOS also breaks linux build
-%patch1 -p0 
+# We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
+%patch0 -p0
 
-# fix sqlcipher generic python invocation, incompatible with el8 
-%if 0%{?el8}
-mkdir -p ${HOME}/.bin
-ln -s %{__python3} ${HOME}/.bin/python
-export PATH="${HOME}/.bin:${PATH}"
-%endif
-
-yarn install
+npm config set python /usr/bin/python2
+yarn install --ignore-engines
 
 %build
+# https://bugzilla.redhat.com/show_bug.cgi?id=1793722
+export SOURCE_DATE_EPOCH="$(date +"%s")"
+echo $SOURCE_DATE_EPOCH
 
-pwd
 
 cd %{_builddir}/Signal-Desktop-%{version} 
 
-# We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
-patch --no-backup-if-mismatch -Np0 < %{P:2} 
-
-yarn generate 
+yarn generate
 yarn build
 
 %install
@@ -126,6 +118,9 @@ done
  
 
 %changelog
+* Thu Feb 10 2022 Udo Seidel <udoseidel@gmx.de> 5.30.0-1
+- catch-up with actual minor release
+
 * Wed Jan 05 2022 Udo Seidel <udoseidel@gmx.de> 5.26.0-1
 - catch-up with actual minor release
 
