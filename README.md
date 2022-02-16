@@ -8,5 +8,7 @@ SPEC file inspired by: https://copr.fedorainfracloud.org/coprs/luminoso/Signal-D
 
 The current build requires internet access and the additional repo https://rpm.nodesource.com/pub_16.x/fc/$releasever/$basearch
 
+It looks like Fedora versions below 35 do not work with signal-desktop of version above 30.
+
 It is worth matching the version from nodesource with the one shipped by the fedora distribution.
 
