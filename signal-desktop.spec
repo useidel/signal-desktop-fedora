@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.32.0
+Version:	5.34.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -32,7 +32,7 @@ BuildRequires: yarn
 AutoReqProv: no
 #AutoProv: no
 Provides: signal-desktop
-Requires: GConf2, libnotify, libappindicator-gtk3, libXtst, nss, libXScrnSaver
+Requires: libnotify, libXtst, nss
 
 %global __requires_exclude_from ^/%{_libdir}/%{name}/release/.*$
 %define _build_id_links none
@@ -41,14 +41,19 @@ Requires: GConf2, libnotify, libappindicator-gtk3, libXtst, nss, libXScrnSaver
 Private messaging from your desktop
 
 %prep
+# https://bugzilla.redhat.com/show_bug.cgi?id=1793722
+export SOURCE_DATE_EPOCH="$(date +"%s")"
+
+# git-lfs hook needs to be installed for one of the dependencies
+git lfs install
+
+node --version
 rm -rf Signal-Desktop-%{version}
 tar xfz %{S:0}
 
 pwd
 
 cd Signal-Desktop-%{version}
-
-node --version
 
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
@@ -118,6 +123,10 @@ done
  
 
 %changelog
+* Sat Mar 05 2022 Udo Seidel <udoseidel@gmx.de> 5.34.0-1
+- This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
+- Ever used Signal while on an unstable connection? You can worry no more - disappearing message timer changes and more will now be synced back once your Wi-Fi feels better again.
+
 * Wed Feb 16 2022 Udo Seidel <udoseidel@gmx.de> 5.32.0-1
 - and again trying to stay on top of the actual released version
 
