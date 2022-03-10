@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.34.0
+Version:	5.35.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,11 @@ done
  
 
 %changelog
+* Thu Mar 10 2022 Udo Seidel <udoseidel@gmx.de> 5.35.0-1
+- A new update system has been introduced and folks should start seeing smaller updates with the next update.
+- Applications that use media keys rejoice! Signal no longer has a hold on them.
+- Better font support for our Japanese friends.
+
 * Sat Mar 05 2022 Udo Seidel <udoseidel@gmx.de> 5.34.0-1
 - This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
 - Ever used Signal while on an unstable connection? You can worry no more - disappearing message timer changes and more will now be synced back once your Wi-Fi feels better again.
