@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.35.0
+Version:	5.36.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,10 @@ done
  
 
 %changelog
+* Fri Mar 25 2022 Udo Seidel <udoseidel@gmx.de> 5.36.0-1
+- Quickly scanning that group chat? There's more room for more messages on the screen at once. We now group sender's messages together if they're close together in time.
+- When you perform a Delete for Everyone you'll now see a progress spinner letting you know whether it's been successfully sent or not. If it fails for some reason, you'll be able to retry too!
+
 * Thu Mar 10 2022 Udo Seidel <udoseidel@gmx.de> 5.35.0-1
 - A new update system has been introduced and folks should start seeing smaller updates with the next update.
 - Applications that use media keys rejoice! Signal no longer has a hold on them.
