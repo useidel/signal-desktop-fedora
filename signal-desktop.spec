@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.44.1
+Version:	5.45.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,11 @@ done
  
 
 %changelog
+* Thu Jun 02 2022 Udo Seidel <udoseidel@gmx.de> 5.45.0-1
+- Dynamic audio indicators in group calls help you see if you're whispering, yelling, or just right.
+- Groups you’ve requested to join from your phone (via an invite link) will now show up on Desktop.
+- Got a spotty Wi-Fi connection? Not a problem, you can now retry downloading attachments.
+
 * Thu May 26 2022 Udo Seidel <udoseidel@gmx.de> 5.44.1-1
 - This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
 
