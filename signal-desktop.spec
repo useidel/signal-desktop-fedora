@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.52.0
+Version:	5.53.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,10 @@ done
  
 
 %changelog
+* Thu Aug 04 2022 Udo Seidel <udoseidel@gmx.de> 5.53.0-1
+- If you’re using the JAWS screen reading program, you can now successfully play voice memos and access longer messages that get shortened behind a “read more” button.
+- Additional small tweaks, bug fixes, and performance enhancements. 
+
 * Thu Jul 28 2022 Udo Seidel <udoseidel@gmx.de> 5.52.0-1
 - This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
 
