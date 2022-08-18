@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.54.0
+Version:	5.55.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,9 @@ done
  
 
 %changelog
+* Thu Aug 18 2022 Udo Seidel <udoseidel@gmx.de> 5.55.0-1
+- Additional small tweaks, bug fixes, and assorted plans for the future.
+
 * Wed Aug 10 2022 Udo Seidel <udoseidel@gmx.de> 5.54.0-1
 - Additional small tweaks, bug fixes, and assorted plans for the future.
 
