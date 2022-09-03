@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.56.0
+Version:	5.57.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,10 @@ done
  
 
 %changelog
+* Sat Sep 03 2022 Udo Seidel <udoseidel@gmx.de> 5.57.0-1
+- Change the speed of audio messages to either get to the point or catch the details.
+- Streamline your emoji searching. Once you’ve pulled up the emoji picker, skip the magnifying glass and just start typing keywords.
+
 * Thu Aug 25 2022 Udo Seidel <udoseidel@gmx.de> 5.56.0-1
 - Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
 
