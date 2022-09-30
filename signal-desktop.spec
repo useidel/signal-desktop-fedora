@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.60.0
+Version:	5.61.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,10 @@ done
  
 
 %changelog
+* Thu Sep 29 2022 Udo Seidel <udoseidel@gmx.de> 5.61.0-1
+- Facing a conversation with a long list of Voice Notes to listen to? Click play, sit back, and relax - they'll continue playing automatically!
+- You can now attach some video flavor to a message along with your vacation photos!
+
 * Wed Sep 21 2022 Udo Seidel <udoseidel@gmx.de> 5.60.0-1
 - Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
 
