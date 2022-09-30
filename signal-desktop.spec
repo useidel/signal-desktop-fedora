@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.61.0
+Version:	5.61.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,10 @@ done
  
 
 %changelog
+* Fri Sep 30 2022 Udo Seidel <udoseidel@gmx.de> 5.61.1-1
+- Fix positioning of submenus in custom titlebar on Windows in RTL mode
+- Fix dismissing of forward and other modals
+
 * Thu Sep 29 2022 Udo Seidel <udoseidel@gmx.de> 5.61.0-1
 - Facing a conversation with a long list of Voice Notes to listen to? Click play, sit back, and relax - they'll continue playing automatically!
 - You can now attach some video flavor to a message along with your vacation photos!
