@@ -1,0 +1,57 @@
+# This is workflow to build rpms using the SPEC file
+# The Copr build service is used
+
+name: rpmbuild_copr
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    # Looks there are no or not many native fedora-runners, hence we use a container
+    container: fedora:latest
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # That workspace (the directory) is different from the RPMBUILD space
+      - uses: actions/checkout@v3
+
+      # Install rpm and copr tools
+      - name: Install tooling for source RPM build
+        run: dnf -y install @development-tools @rpm-development-tools copr-cli make
+
+      # Get/download the source files to the right place
+      - name: Get the sources for RPM package
+        run: ./getsources.sh
+
+      # Build the SRPM package
+      - name: Build the source RPM
+        run: rpmbuild -bs *.spec
+
+      # setup COPR Authentication
+      # You need to store your Copr authenication data under
+      # Settings -> Actions -> Repository secrets
+      - name: Install API token for copr-cli
+        env:
+          API_TOKEN_CONTENT: ${{ secrets.COPR_API_TOKEN }}
+        run: |
+           mkdir -p "$HOME/.config"
+           echo "$API_TOKEN_CONTENT" > "$HOME/.config/copr"
+
+      # Submit COPR build
+      # The path is not the $GITHUB_WORKSPACE it is the RPMBUILD space
+      - name: Submit the copr build
+        run: copr-cli build signal-desktop /github/home/rpmbuild/SRPMS/*.src.rpm
