@@ -54,4 +54,4 @@ jobs:
       # Submit COPR build
       # The path is not the $GITHUB_WORKSPACE it is the RPMBUILD space
       - name: Submit the copr build
-        run: copr-cli build signal-desktop /github/home/rpmbuild/SRPMS/*.src.rpm
+        run: copr-cli build --nowait signal-desktop /github/home/rpmbuild/SRPMS/*.src.rpm
