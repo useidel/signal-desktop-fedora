@@ -14,5 +14,7 @@ It is worth matching the version from nodesource with the one shipped by the fed
 
 The files *getsources.sh* and *.github/workflows/rpmbuild_copr.yml* are used for automated RPM package builds using [Github Actions](https://github.com/useidel/signal-desktop-fedora/actions) and [Copr](https://copr.fedorainfracloud.org/coprs/useidel/signal-desktop/).
 
+More generic information about the [Github Actions](https://github.com/features/actions) to [Copr](https://copr.fedorainfracloud.org/) connection can be found [here](https://github.com/useidel/copr-build-test).
+
 
 
