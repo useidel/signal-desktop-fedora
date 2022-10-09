@@ -10,6 +10,8 @@ The current build requires internet access and the additional repo https://rpm.n
 
 It is worth matching the version from nodesource with the one shipped by the fedora distribution.
 
+---
+
 #### Might be worth checking out too ...
 
 The files *getsources.sh* and *.github/workflows/rpmbuild_copr.yml* are used for automated RPM package builds using [Github Actions](https://github.com/useidel/signal-desktop-fedora/actions) and [Copr](https://copr.fedorainfracloud.org/coprs/useidel/signal-desktop/).
