@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.62.0
+Version:	5.63.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,9 @@ done
  
 
 %changelog
+* Thu Nov 04 2022 Udo Seidel <udoseidel@gmx.de> 5.63.0-1
+- Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
+
 * Thu Oct 06 2022 Udo Seidel <udoseidel@gmx.de> 5.62.0-1
 - Can’t remember which of your friends named Lou is on your basketball team? Check contact details to see shared groups between you and a friend.
 - Easily add a friend to a group from their contact details screen to keep the conversation exciting.
