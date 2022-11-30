@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	5.63.1
+Version:	6.0.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,9 @@ done
  
 
 %changelog
+* Wed Nov 30 2022 Udo Seidel <udoseidel@gmx.de> 6.0.0-1
+- Stories are now in Signal! Share disappearing text, images, and video updates with select friends or groups that automatically disappear after 24 hours. For everyone who loves sharing stories, here’s a way to do it privately and without seeing any ads. If you don’t want to see or share stories, you can opt out of it all in your Preferences > Privacy.
+
 * Thu Nov 10 2022 Udo Seidel <udoseidel@gmx.de> 5.63.1-1
 - Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
 
