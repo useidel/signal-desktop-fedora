@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.0.1
+Version:	6.1.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,10 @@ done
  
 
 %changelog
+* Thu Dec 15 2022 Udo Seidel <udoseidel@gmx.de> 6.1.0-1
+- When you start a group call for small groups (up to 16 people), you can choose to send a ringing notification. Group members will hear a ring if they are on the iOS beta or using Desktop or Android.
+- Small tweaks, bug fixes, and performance enhancements.
+
 * Tue Dec 06 2022 Udo Seidel <udoseidel@gmx.de> 6.0.1-1
 - Stories are now in Signal! Share disappearing text, images, and video updates with select friends or groups that automatically disappear after 24 hours. For everyone who loves sharing stories, here’s a way to do it privately and without seeing any ads. If you don’t want to see or share stories, you can opt out of it all in your Preferences > Privacy.
 
