@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.1.0
+Version:	6.2.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -123,6 +123,9 @@ done
  
 
 %changelog
+* Thu Jan 12 2022 Udo Seidel <udoseidel@gmx.de> 6.2.0-1
+- Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual
+
 * Thu Dec 15 2022 Udo Seidel <udoseidel@gmx.de> 6.1.0-1
 - When you start a group call for small groups (up to 16 people), you can choose to send a ringing notification. Group members will hear a ring if they are on the iOS beta or using Desktop or Android.
 - Small tweaks, bug fixes, and performance enhancements.
