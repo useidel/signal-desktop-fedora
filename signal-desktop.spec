@@ -123,7 +123,7 @@ done
  
 
 %changelog
-* Thu Jan 12 2022 Udo Seidel <udoseidel@gmx.de> 6.2.0-1
+* Thu Jan 12 2023 Udo Seidel <udoseidel@gmx.de> 6.2.0-1
 - Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual
 
 * Thu Dec 15 2022 Udo Seidel <udoseidel@gmx.de> 6.1.0-1
