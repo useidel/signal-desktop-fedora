@@ -6,7 +6,6 @@ License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
-Patch0:		signal-desktop-expire-from-source-date-epoch.patch
 
 #ExclusiveArch:	x86_64
 BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
@@ -57,9 +56,6 @@ cd Signal-Desktop-%{version}
 
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
-
-# We can't read the release date from git so we use SOURCE_DATE_EPOCH instead
-%patch0 -p0
 
 npm config set python /usr/bin/python2
 yarn install --ignore-engines
@@ -125,6 +121,7 @@ done
 %changelog
 * Thu Jan 12 2023 Udo Seidel <udoseidel@gmx.de> 6.2.0-1
 - Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual
+- Removed patch covering not being able to read release date from git
 
 * Thu Dec 15 2022 Udo Seidel <udoseidel@gmx.de> 6.1.0-1
 - When you start a group call for small groups (up to 16 people), you can choose to send a ringing notification. Group members will hear a ring if they are on the iOS beta or using Desktop or Android.
