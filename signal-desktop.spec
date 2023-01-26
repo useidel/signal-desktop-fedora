@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.2.0
+Version:	6.3.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,11 @@ done
  
 
 %changelog
+* Thu Jan 27 2023 Udo Seidel <udoseidel@gmx.de> 6.3.0-1
+- Double-click on any message row in a chat to start a quoted reply. It's like a shortcut for new thoughts about old ideas. Thanks to @WhyNotHugo and the Signal community for implementing this feature and providing feedback.
+- Now it's easier to click outside of an image to dismiss the gallery view without zooming in. Sometimes you just wanted to close, and instead things got too close. Thanks to @jojomatik for the fix!
+- Tweaks, bug fixes, and performance enhancements.
+
 * Thu Jan 12 2023 Udo Seidel <udoseidel@gmx.de> 6.2.0-1
 - Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual
 - Removed patch covering not being able to read release date from git
