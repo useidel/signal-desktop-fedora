@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.4.0
+Version:	6.4.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,9 @@ done
  
 
 %changelog
+* Thu Feb 02 2023 Udo Seidel <udoseidel@gmx.de> 6.4.1-1
+- Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
+
 * Thu Feb 02 2023 Udo Seidel <udoseidel@gmx.de> 6.4.0-1
 - Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
 
