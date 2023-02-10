@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.4.1
+Version:	6.5.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,10 @@ done
  
 
 %changelog
+* Fri Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.0-1
+- Speed up your response time. Now you can react quicker by clicking on any emoji when replying to a story.
+- It's now possible to search your message history for individual characters in Chinese and Japanese. 
+
 * Thu Feb 02 2023 Udo Seidel <udoseidel@gmx.de> 6.4.1-1
 - Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
 
