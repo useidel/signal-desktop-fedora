@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.5.0
+Version:	6.5.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,9 @@ done
  
 
 %changelog
+* Fri Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.1-1
+- We fixed a rare bug that could prevent the app from launching correctly. If Signal started immediately crashing after the last update, you can reinstall this version without losing any of your message history. We sincerely apologize for the inconvenience.
+
 * Fri Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.0-1
 - Speed up your response time. Now you can react quicker by clicking on any emoji when replying to a story.
 - It's now possible to search your message history for individual characters in Chinese and Japanese. 
