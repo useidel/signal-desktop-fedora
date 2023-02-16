@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.5.1
+Version:	6.6.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,9 @@ done
  
 
 %changelog
+* Thu Feb 16 2023 Udo Seidel <udoseidel@gmx.de> 6.6.0-1
+- Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
+
 * Fri Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.1-1
 - We fixed a rare bug that could prevent the app from launching correctly. If Signal started immediately crashing after the last update, you can reinstall this version without losing any of your message history. We sincerely apologize for the inconvenience.
 
