@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.7.0
+Version:	6.8.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,12 @@ done
  
 
 %changelog
+* Thu Mar 02 2023 Udo Seidel <udoseidel@gmx.de> 6.8.0-1
+- ou wouldn't download a car, but now when you download an MP3 voice note it will be saved with the proper file extension.
+- Quickly begin typing a message after attaching a file, or just hit Enter/Return to send the file without any extra clicks. Thanks, @zyphlar!
+- The send button in the large composition view has been brought into alignment. Thanks, @hackerbirds!
+- If you are the only person in a group (so far) and you attempt to begin a group call, now you can join the call and start talking to yourself right away instead of waiting for the call to ring. Thanks, @lamemakes!
+
 * Wed Feb 22 2023 Udo Seidel <udoseidel@gmx.de> 6.7.0-1
 - Additional small tweaks, bug fixes, and assorted plans for the future.
 
