@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.8.0
+Version:	6.9.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,11 @@ done
  
 
 %changelog
+* Fri Mar 10 2023 Udo Seidel <udoseidel@gmx.de> 6.9.0-1
+- Quickly see who is speaking during group calls with a new highlight feature that shows you where to look. If it's your turn to speak, you'll need to look within.
+- Have the time of your life with several stickers in the media editor that let you add stylized time decorations on outgoing images.
+- Use the voice notes mini player to continue listening to long messages even after you switch to a different chat.
+
 * Thu Mar 02 2023 Udo Seidel <udoseidel@gmx.de> 6.8.0-1
 - ou wouldn't download a car, but now when you download an MP3 voice note it will be saved with the proper file extension.
 - Quickly begin typing a message after attaching a file, or just hit Enter/Return to send the file without any extra clicks. Thanks, @zyphlar!
