@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.9.0
+Version:	6.10.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,12 @@ done
  
 
 %changelog
+* Thu Mar 16 2023 Udo Seidel <udoseidel@gmx.de> 6.10.0-1
+-  Click on any picture or video and use the new Forward and Backward buttons in the media viewer to take a visual walk down memory lane.
+-  Voice messages are now saved as drafts if you switch to another chat while a recording is in progress.
+-  Sending a sticker no longer causes draft text to get cleared. Thanks, @lamemakes [github.com]!
+-  We'd also like to thank @norstbox [github.com] for bringing the conversation search bar icons back into alignment.
+
 * Fri Mar 10 2023 Udo Seidel <udoseidel@gmx.de> 6.9.0-1
 - Quickly see who is speaking during group calls with a new highlight feature that shows you where to look. If it's your turn to speak, you'll need to look within.
 - Have the time of your life with several stickers in the media editor that let you add stylized time decorations on outgoing images.
