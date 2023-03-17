@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.10.0
+Version:	6.10.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,9 @@ done
  
 
 %changelog
+* Fri Mar 17 2023 Udo Seidel <udoseidel@gmx.de> 6.11.0-1
+- same as 6.10.0-1
+
 * Thu Mar 16 2023 Udo Seidel <udoseidel@gmx.de> 6.10.0-1
 -  Click on any picture or video and use the new Forward and Backward buttons in the media viewer to take a visual walk down memory lane.
 -  Voice messages are now saved as drafts if you switch to another chat while a recording is in progress.
