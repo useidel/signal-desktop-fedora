@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.10.1
+Version:	6.11.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,7 +119,10 @@ done
  
 
 %changelog
-* Fri Mar 17 2023 Udo Seidel <udoseidel@gmx.de> 6.11.0-1
+* Thu Mar 23 2023 Udo Seidel <udoseidel@gmx.de> 6.11.0-1
+- Start talking to yourself even faster with a new icon that makes the “Note to Self” chat easier to find. Thanks to @hackerbirds on GitHub for their contribution.
+
+* Fri Mar 17 2023 Udo Seidel <udoseidel@gmx.de> 6.10.1-1
 - same as 6.10.0-1
 
 * Thu Mar 16 2023 Udo Seidel <udoseidel@gmx.de> 6.10.0-1
