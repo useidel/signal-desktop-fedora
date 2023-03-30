@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.11.0
+Version:	6.12.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -119,6 +119,10 @@ done
  
 
 %changelog
+* Thu Mar 30 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-1
+- Now you can select multiple messages and forward or delete them all at once.
+- We updated the Sticker Creator with a few design tweaks and added some helpful tips for aspiring sticker artists. The Sticker Creator now opens in your web browser, which makes Signal Desktop a little smaller and leaves a bit more room on your hard drive for all of your favorite sticker packs.
+
 * Thu Mar 23 2023 Udo Seidel <udoseidel@gmx.de> 6.11.0-1
 - Start talking to yourself even faster with a new icon that makes the “Note to Self” chat easier to find. Thanks to @hackerbirds on GitHub for their contribution.
 
