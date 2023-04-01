@@ -1,13 +1,12 @@
 Name:		signal-desktop
 Version:	6.12.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 
-#ExclusiveArch:	x86_64
 BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
@@ -26,6 +25,11 @@ BuildRequires: platform-python-devel, python3
 BuildRequires: yarnpkg
 %else
 BuildRequires: yarn
+%endif
+
+# new for AARCH64 builds
+%ifarch aarch64
+BuildRequires: rubygems, ruby, rubygem-json
 %endif
 
 AutoReqProv: no
@@ -58,18 +62,29 @@ cd Signal-Desktop-%{version}
 sed 's#"node": "#&>=#' -i package.json
 
 npm config set python /usr/bin/python2
-yarn install --ignore-engines
+
+# new for AARCH64 builds
+%ifarch aarch64
+    gem install fpm
+    export USE_SYSTEM_FPM=true
+%endif
+
+yarn install --frozen-lockfileyarn
 
 %build
 # https://bugzilla.redhat.com/show_bug.cgi?id=1793722
 export SOURCE_DATE_EPOCH="$(date +"%s")"
 echo $SOURCE_DATE_EPOCH
 
+# https://github.com/electron-userland/electron-builder-binaries/issues/49#issuecomment-1100804486
+%ifarch aarch64
+    export USE_SYSTEM_FPM=true
+%endif
 
 cd %{_builddir}/Signal-Desktop-%{version} 
 
 yarn generate
-yarn build
+yarn build-release
 
 %install
 
@@ -80,10 +95,14 @@ yarn build
     %global PACKDIR linux-unpacked
 %endif
 
+# new for AARCH64 builds
+%ifarch aarch64
+    %global PACKDIR linux-arm64-unpacked
+%endif
 
 # copy base files
 install -dm755 %{buildroot}/%{_libdir}/%{name}
-cp -a %{_builddir}/Signal-Desktop-%{version}/release/linux-unpacked/* %{buildroot}/%{_libdir}/%{name}
+cp -a %{_builddir}/Signal-Desktop-%{version}/release/%{PACKDIR}/* %{buildroot}/%{_libdir}/%{name}
 
 install -dm755 %{buildroot}%{_bindir}
 ln -s %{_libdir}/%{name}/signal-desktop %{buildroot}%{_bindir}/signal-desktop
@@ -119,6 +138,9 @@ done
  
 
 %changelog
+* Sat Apr 01 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-2
+- enabled build for AARCH64 (https://github.com/signalapp/Signal-Desktop/issues/4530)
+
 * Thu Mar 30 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-1
 - Now you can select multiple messages and forward or delete them all at once.
 - We updated the Sticker Creator with a few design tweaks and added some helpful tips for aspiring sticker artists. The Sticker Creator now opens in your web browser, which makes Signal Desktop a little smaller and leaves a bit more room on your hard drive for all of your favorite sticker packs.
@@ -152,10 +174,10 @@ done
 * Thu Feb 16 2023 Udo Seidel <udoseidel@gmx.de> 6.6.0-1
 - Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
 
-* Fri Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.1-1
+* Sat Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.1-1
 - We fixed a rare bug that could prevent the app from launching correctly. If Signal started immediately crashing after the last update, you can reinstall this version without losing any of your message history. We sincerely apologize for the inconvenience.
 
-* Fri Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.0-1
+* Sat Feb 11 2023 Udo Seidel <udoseidel@gmx.de> 6.5.0-1
 - Speed up your response time. Now you can react quicker by clicking on any emoji when replying to a story.
 - It's now possible to search your message history for individual characters in Chinese and Japanese. 
 
@@ -165,7 +187,7 @@ done
 * Thu Feb 02 2023 Udo Seidel <udoseidel@gmx.de> 6.4.0-1
 - Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
 
-* Thu Jan 27 2023 Udo Seidel <udoseidel@gmx.de> 6.3.0-1
+* Fri Jan 27 2023 Udo Seidel <udoseidel@gmx.de> 6.3.0-1
 - Double-click on any message row in a chat to start a quoted reply. It's like a shortcut for new thoughts about old ideas. Thanks to @WhyNotHugo and the Signal community for implementing this feature and providing feedback.
 - Now it's easier to click outside of an image to dismiss the gallery view without zooming in. Sometimes you just wanted to close, and instead things got too close. Thanks to @jojomatik for the fix!
 - Tweaks, bug fixes, and performance enhancements.
