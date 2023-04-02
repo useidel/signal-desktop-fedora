@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	6.12.0
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -29,11 +29,10 @@ BuildRequires: yarn
 
 # new for AARCH64 builds
 %ifarch aarch64
-BuildRequires: rubygems, ruby, rubygem-json
+BuildRequires: rubygems, rubygem-json
 %endif
 
 AutoReqProv: no
-#AutoProv: no
 Provides: signal-desktop
 Requires: libnotify, libXtst, nss
 
@@ -61,12 +60,10 @@ cd Signal-Desktop-%{version}
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
 
-npm config set python /usr/bin/python2
-
 # new for AARCH64 builds
+# https://github.com/electron-userland/electron-builder-binaries/issues/49#issuecomment-1100804486
 %ifarch aarch64
     gem install fpm
-    export USE_SYSTEM_FPM=true
 %endif
 
 yarn install --frozen-lockfileyarn
@@ -138,6 +135,9 @@ done
  
 
 %changelog
+* Sun Apr 02 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-3
+- small clean-up
+
 * Sat Apr 01 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-2
 - enabled build for AARCH64 (https://github.com/signalapp/Signal-Desktop/issues/4530)
 
