@@ -139,7 +139,7 @@ done
  
 
 %changelog
-* Sun Apr 04 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-4
+* Tue Apr 04 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-4
 - switched to use the fedora shipped npm and not the one from https://rpm.nodesource.com/pub_16.x/fc/$releasever/$basearch
 
 * Sun Apr 02 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-3
