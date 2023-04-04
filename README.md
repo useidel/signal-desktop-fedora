@@ -8,10 +8,6 @@ SPEC file inspired by [luminoso](https://copr.fedorainfracloud.org/coprs/luminos
 
 It basically follows the instructions from [How to compile Signal-Desktop for Fedora](https://github.com/michelamarie/fedora-signal/wiki/How-to-compile-Signal-Desktop-for-Fedora) but skips the installation of nvm (node Version Manager) and some follow-up steps because installs the needed npm version an external repo (see below). Also, it does not replace "deb" by "rpm" in the package.json file since this is not needed either.
 
-The current build requires internet access and the additional repo https://rpm.nodesource.com/pub_16.x/fc/$releasever/$basearch
-
-It is worth matching the version from nodesource with the one shipped by the fedora distribution.
-
 ---
 
 #### Might be worth checking out too ...
