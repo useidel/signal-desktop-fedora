@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	6.12.0
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -24,7 +24,11 @@ BuildRequires: platform-python-devel, python3
 %if 0%{?fedora} > 31
 BuildRequires: yarnpkg
 %else
-BuildRequires: yarn
+BuildRequires: yarn 
+%endif
+
+%if 0%{?fedora} > 35
+BuildRequires: npm 
 %endif
 
 # new for AARCH64 builds
@@ -135,6 +139,9 @@ done
  
 
 %changelog
+* Sun Apr 04 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-4
+- switched to use the fedora shipped npm and not the one from https://rpm.nodesource.com/pub_16.x/fc/$releasever/$basearch
+
 * Sun Apr 02 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-3
 - small clean-up
 
