@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	6.12.0
-Release:	4%{?dist}
+Version:	6.13.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -139,6 +139,10 @@ done
  
 
 %changelog
+* Thu Apr 06 2023 Udo Seidel <udoseidel@gmx.de> 6.13.0-1
+- Progress report: The new progress bar is ready. Quickly see more information about the loading process whenever you launch Signal Desktop.
+- Theme preferences now also apply to the checkboxes in Signal Settings. Thanks to @rakleed on GitHub for helping us check "More fully embrace darkness in the dark theme" off of our TODO list.
+
 * Tue Apr 04 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-4
 - switched to use the fedora shipped npm and not the one from https://rpm.nodesource.com/pub_16.x/fc/$releasever/$basearch
 
