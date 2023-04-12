@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.13.0
+Version:	6.14.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Wed Apr 12 2023 Udo Seidel <udoseidel@gmx.de> 6.14.0-1
+- Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual.
+
 * Thu Apr 06 2023 Udo Seidel <udoseidel@gmx.de> 6.13.0-1
 - Progress report: The new progress bar is ready. Quickly see more information about the loading process whenever you launch Signal Desktop.
 - Theme preferences now also apply to the checkboxes in Signal Settings. Thanks to @rakleed on GitHub for helping us check "More fully embrace darkness in the dark theme" off of our TODO list.
