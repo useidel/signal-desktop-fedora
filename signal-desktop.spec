@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.14.0
+Version:	6.15.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Thu Apr 20 2023 Udo Seidel <udoseidel@gmx.de> 6.15.0-1
+- The “Delete for everyone” option is now also available when multiple messages have been selected. Sometimes the road to a successful message is paved with “This message was deleted.”
+
 * Wed Apr 12 2023 Udo Seidel <udoseidel@gmx.de> 6.14.0-1
 - Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual.
 
