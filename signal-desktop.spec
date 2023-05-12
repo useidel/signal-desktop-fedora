@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.17.0
+Version:	6.17.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Fri May 12 2023 Udo Seidel <udoseidel@gmx.de> 6.17.1-1
+- see previous release
+
 * Tue May 09 2023 Udo Seidel <udoseidel@gmx.de> 6.17.0-1
 - Improved support for right-to-left (RTL) languages.
 - Locales are now matched based on your system preferences. This should result in better default behavior when multiple languages are configured.
