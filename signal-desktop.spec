@@ -139,6 +139,12 @@ done
  
 
 %changelog
+* Thu May 18 2023 Udo Seidel <udoseidel@gmx.de> 6.18.0-1
+-  Use the "Navigate by section" keyboard shortcuts (⌘/Ctrl+T & ⌘/Ctrl+F6) to quickly move between different areas of the app. It's like a - superhero version of the Tab key that can fly further and faster than its mild-mannered alter ego.  
+- We added support for optional message sounds so that you can also hear notifications for sent and received messages while a chat is - open (Settings > Notifications).
+- Jump to the latest unread message in a chat (⌘/Ctrl+J) without touching the mouse or helping the touchpad live up to its name.
+- Updated icons give the app a fresh look and help improve legibility. There's a new "Copy text" option in the triple-dot menu too. Thanks, @yusufsahinhamza!
+
 * Fri May 12 2023 Udo Seidel <udoseidel@gmx.de> 6.17.1-1
 - see previous release
 
