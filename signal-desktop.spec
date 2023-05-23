@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.18.0
+Version:	6.18.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Tue May 23 2023 Udo Seidel <udoseidel@gmx.de> 6.18.1-1
+- We've added additional translations for certain UI strings 
+
 * Thu May 18 2023 Udo Seidel <udoseidel@gmx.de> 6.18.0-1
 -  Use the "Navigate by section" keyboard shortcuts (⌘/Ctrl+T & ⌘/Ctrl+F6) to quickly move between different areas of the app. It's like a - superhero version of the Tab key that can fly further and faster than its mild-mannered alter ego.  
 - We added support for optional message sounds so that you can also hear notifications for sent and received messages while a chat is - open (Settings > Notifications).
