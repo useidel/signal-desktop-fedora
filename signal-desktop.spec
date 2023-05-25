@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.18.1
+Version:	6.19.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,11 @@ done
  
 
 %changelog
+* Thu May 25 2023 Udo Seidel <udoseidel@gmx.de> 6.19.0-1
+- Silence isn’t always golden, but it does have a new icon. We updated the Camera and Mute buttons in voice and video calls so it’s even easier to see when they are enabled or disabled.
+- Localization improvements, and better handling of right-to-left languages in the message composition field. Thanks, @sha-265!
+- If you are on a version of Windows before Windows 10, or a version of Ubuntu before 20.04 LTS, you will need to update your operating system to continue using Signal: https://support.signal.org/hc/articles/5109141421850-Supporting-Older-Operating-Systems 
+
 * Tue May 23 2023 Udo Seidel <udoseidel@gmx.de> 6.18.1-1
 - We've added additional translations for certain UI strings 
 
