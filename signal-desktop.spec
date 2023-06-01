@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.19.0
+Version:	6.20.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Thu June 01 2023 Udo Seidel <udoseidel@gmx.de> 6.20.0-1
+- If someone mentions you in a chat (like @ Your Name Goes Here), now you can quickly scroll to that mention and read all of the wonderful things that they said about you. You’re simply the best.
+
 * Thu May 25 2023 Udo Seidel <udoseidel@gmx.de> 6.19.0-1
 - Silence isn’t always golden, but it does have a new icon. We updated the Camera and Mute buttons in voice and video calls so it’s even easier to see when they are enabled or disabled.
 - Localization improvements, and better handling of right-to-left languages in the message composition field. Thanks, @sha-265!
