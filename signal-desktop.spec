@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.20.1
+Version:	6.20.2
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,8 @@ done
  
 
 %changelog
+* Fri June 09 2023 Udo Seidel <udoseidel@gmx.de> 6.20.2-1
+
 * Wed June 07 2023 Udo Seidel <udoseidel@gmx.de> 6.20.1-1
 - If someone mentions you in a chat (like @ Your Name Goes Here), now you can quickly scroll to that mention and read all of the wonderful things that they said about you. You’re simply the best.
 
