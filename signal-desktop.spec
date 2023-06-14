@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.20.2
+Version:	6.21.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,10 @@ done
  
 
 %changelog
+* Thu June 15 2023 Udo Seidel <udoseidel@gmx.de> 6.21.0-1
+- Get a better look at yourself while a 1-on-1 call is ringing. Individual video calls now use the same full-screen view that previously only appeared at the beginning of a new group call. When it comes to being consistent, we try to be persistent (not resistant) and now the discrepancy is nonexistent because these things are no longer different.
+-  We'd also like to express our appreciation to @complexspaces for their help and feedback while working on this release.
+
 * Fri June 09 2023 Udo Seidel <udoseidel@gmx.de> 6.20.2-1
 
 * Wed June 07 2023 Udo Seidel <udoseidel@gmx.de> 6.20.1-1
