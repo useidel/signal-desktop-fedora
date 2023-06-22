@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.21.0
+Version:	6.22.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,11 @@ done
  
 
 %changelog
+* Thu June 22 2023 Udo Seidel <udoseidel@gmx.de> 6.22.0-1
+- Format text in your messages by selecting any text in the message composition field. Make a bold statement that's actually bold, send M. Night Shyamalan a twist ending with a spoiler effect, emphasize a name by writing "Alex" in italics, put a line through a rejected dinner idea with strikethrough, or share code in monospace.
+- We added support for the latest emoji characters, so now you can express your excitement with "Shaking Face" (🫨) or react with a "Pea Pod" (🫛) when someone asks you how close you are to your friends.
+
+
 * Thu June 15 2023 Udo Seidel <udoseidel@gmx.de> 6.21.0-1
 - Get a better look at yourself while a 1-on-1 call is ringing. Individual video calls now use the same full-screen view that previously only appeared at the beginning of a new group call. When it comes to being consistent, we try to be persistent (not resistant) and now the discrepancy is nonexistent because these things are no longer different.
 -  We'd also like to express our appreciation to @complexspaces for their help and feedback while working on this release.
