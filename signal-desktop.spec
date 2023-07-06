@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.23.0
+Version:	6.24.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Thu July 06 2023 Udo Seidel <udoseidel@gmx.de> 6.24.0-1
+- Now you can search your @ mentions too. "Thanks for adding this feature," you might say. "Don't mention it," we'll reply.
+
 * Thu June 29 2023 Udo Seidel <udoseidel@gmx.de> 6.23.0-1
 - In addition to a small assortment of bug fixes, this release also incorporates developer documentation updates (thanks, @d108!) and some design improvements to the message forwarding interface (thanks, @hackerbirds!).
 
