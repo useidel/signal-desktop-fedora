@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.24.0
+Version:	6.25.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Fri July 14 2023 Udo Seidel <udoseidel@gmx.de> 6.25.0-1
+- Now that the calling and conversation headers are draggable, repositioning your Signal window won't be such a drag.
+
 * Thu July 06 2023 Udo Seidel <udoseidel@gmx.de> 6.24.0-1
 - Now you can search your @ mentions too. "Thanks for adding this feature," you might say. "Don't mention it," we'll reply.
 
