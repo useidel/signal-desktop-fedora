@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.25.0
+Version:	6.26.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,10 @@ done
  
 
 %changelog
+* Thu July 20 2023 Udo Seidel <udoseidel@gmx.de> 6.26.0-1
+- Diacritics (such as accent marks) are now supported in @ mentions, so you can remind Aristotélēs to answer your philosophy question in the "Ancient Greek Time Travellers" group chat.
+- Three cheers for triple-click text selection improvements. Thanks, @nrayburn-tech [github.com]!
+
 * Fri July 14 2023 Udo Seidel <udoseidel@gmx.de> 6.25.0-1
 - Now that the calling and conversation headers are draggable, repositioning your Signal window won't be such a drag.
 
