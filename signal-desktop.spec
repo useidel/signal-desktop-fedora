@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	6.26.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -139,34 +139,37 @@ done
  
 
 %changelog
-* Thu July 20 2023 Udo Seidel <udoseidel@gmx.de> 6.26.0-1
+* Mon Jul 24 2023 Udo Seidel <udoseidel@gmx.de> 6.26.0-2
+- fixed wrong date format in SPEC file
+
+* Thu Jul 20 2023 Udo Seidel <udoseidel@gmx.de> 6.26.0-1
 - Diacritics (such as accent marks) are now supported in @ mentions, so you can remind Aristotélēs to answer your philosophy question in the "Ancient Greek Time Travellers" group chat.
 - Three cheers for triple-click text selection improvements. Thanks, @nrayburn-tech [github.com]!
 
-* Fri July 14 2023 Udo Seidel <udoseidel@gmx.de> 6.25.0-1
+* Fri Jul 14 2023 Udo Seidel <udoseidel@gmx.de> 6.25.0-1
 - Now that the calling and conversation headers are draggable, repositioning your Signal window won't be such a drag.
 
-* Thu July 06 2023 Udo Seidel <udoseidel@gmx.de> 6.24.0-1
+* Thu Jul 06 2023 Udo Seidel <udoseidel@gmx.de> 6.24.0-1
 - Now you can search your @ mentions too. "Thanks for adding this feature," you might say. "Don't mention it," we'll reply.
 
-* Thu June 29 2023 Udo Seidel <udoseidel@gmx.de> 6.23.0-1
+* Thu Jun 29 2023 Udo Seidel <udoseidel@gmx.de> 6.23.0-1
 - In addition to a small assortment of bug fixes, this release also incorporates developer documentation updates (thanks, @d108!) and some design improvements to the message forwarding interface (thanks, @hackerbirds!).
 
-* Thu June 22 2023 Udo Seidel <udoseidel@gmx.de> 6.22.0-1
+* Thu Jun 22 2023 Udo Seidel <udoseidel@gmx.de> 6.22.0-1
 - Format text in your messages by selecting any text in the message composition field. Make a bold statement that's actually bold, send M. Night Shyamalan a twist ending with a spoiler effect, emphasize a name by writing "Alex" in italics, put a line through a rejected dinner idea with strikethrough, or share code in monospace.
 - We added support for the latest emoji characters, so now you can express your excitement with "Shaking Face" (🫨) or react with a "Pea Pod" (🫛) when someone asks you how close you are to your friends.
 
 
-* Thu June 15 2023 Udo Seidel <udoseidel@gmx.de> 6.21.0-1
+* Thu Jun 15 2023 Udo Seidel <udoseidel@gmx.de> 6.21.0-1
 - Get a better look at yourself while a 1-on-1 call is ringing. Individual video calls now use the same full-screen view that previously only appeared at the beginning of a new group call. When it comes to being consistent, we try to be persistent (not resistant) and now the discrepancy is nonexistent because these things are no longer different.
 -  We'd also like to express our appreciation to @complexspaces for their help and feedback while working on this release.
 
-* Fri June 09 2023 Udo Seidel <udoseidel@gmx.de> 6.20.2-1
+* Fri Jun 09 2023 Udo Seidel <udoseidel@gmx.de> 6.20.2-1
 
-* Wed June 07 2023 Udo Seidel <udoseidel@gmx.de> 6.20.1-1
+* Wed Jun 07 2023 Udo Seidel <udoseidel@gmx.de> 6.20.1-1
 - If someone mentions you in a chat (like @ Your Name Goes Here), now you can quickly scroll to that mention and read all of the wonderful things that they said about you. You’re simply the best.
 
-* Thu June 01 2023 Udo Seidel <udoseidel@gmx.de> 6.20.0-1
+* Thu Jun 01 2023 Udo Seidel <udoseidel@gmx.de> 6.20.0-1
 - If someone mentions you in a chat (like @ Your Name Goes Here), now you can quickly scroll to that mention and read all of the wonderful things that they said about you. You’re simply the best.
 
 * Thu May 25 2023 Udo Seidel <udoseidel@gmx.de> 6.19.0-1
