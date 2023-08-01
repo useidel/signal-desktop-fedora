@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.27.0
+Version:	6.27.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Tue Aug 01 2023 Udo Seidel <udoseidel@gmx.de> 6.27.1-1
+- This update includes a few improvements for voice and video calls, and some minor documentation updates (thanks, @vijithassar).
+
 * Tue Aug 01 2023 Udo Seidel <udoseidel@gmx.de> 6.27.0-1
 - This update includes a few improvements for voice and video calls, and some minor documentation updates (thanks, @vijithassar).
 
