@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.27.1
+Version:	6.28.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,9 @@ done
  
 
 %changelog
+* Wed Aug 09 2023 Udo Seidel <udoseidel@gmx.de> 6.28.0-1
+- We modified the notification icons that appear for group updates, like when someone new joins a group. These icons help improve legibility, especially if you live within the darkness of the Dark Theme. The previous icons merely adopted the dark. The new icons were born in it, molded by it.
+
 * Tue Aug 01 2023 Udo Seidel <udoseidel@gmx.de> 6.27.1-1
 - This update includes a few improvements for voice and video calls, and some minor documentation updates (thanks, @vijithassar).
 
