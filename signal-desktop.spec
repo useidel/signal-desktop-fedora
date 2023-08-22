@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.28.0
+Version:	6.29.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -139,6 +139,10 @@ done
  
 
 %changelog
+* Tue Aug 22 2023 Udo Seidel <udoseidel@gmx.de> 6.29.0-1
+- The Chat Color customization screen is now displayed correctly across different languages and selected locales.
+- We improved notification support on Windows. If you don't click on a notification when it first arrives, the latest missed notification will appear in the Windows Notification Center. Clicking on that notification will now jump directly to that chat. We'd like to thank Julien Richard for their feedback.
+
 * Wed Aug 09 2023 Udo Seidel <udoseidel@gmx.de> 6.28.0-1
 - We modified the notification icons that appear for group updates, like when someone new joins a group. These icons help improve legibility, especially if you live within the darkness of the Dark Theme. The previous icons merely adopted the dark. The new icons were born in it, molded by it.
 
