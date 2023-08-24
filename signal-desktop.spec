@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	6.29.1
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -66,7 +66,11 @@ sed 's#"node": "#&>=#' -i package.json
 # https://github.com/electron-userland/electron-builder-binaries/issues/49#issuecomment-1100804486
 %ifarch aarch64
     # make sure that fpm binary is in PATH
-    PATH=$PATH:%{_builddir}/../../bin
+    # need to strip some componentes from BUILDDIR
+    FPMPATH=`dirname %{_builddir}`
+    FPMPATH=`dirname $FPMPATH`
+    FPMPATH=$FPMPATH/bin
+    PATH=$PATH:$FPMPATH
     export PATH
     gem install fpm
 %endif
@@ -82,7 +86,11 @@ echo $SOURCE_DATE_EPOCH
 %ifarch aarch64
     export USE_SYSTEM_FPM=true
     # make sure that fpm binary is in PATH
-    PATH=$PATH:%{_builddir}/../../bin
+    # need to strip some componentes from BUILDDIR
+    FPMPATH=`dirname %{_builddir}`
+    FPMPATH=`dirname $FPMPATH`
+    FPMPATH=$FPMPATH/bin
+    PATH=$PATH:$FPMPATH
     export PATH
 %endif
 
@@ -143,6 +151,9 @@ done
  
 
 %changelog
+* Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-3
+- cosmetic change related to previous fix and to cover misleading error message in prep phase
+
 * Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-2
 - fixed problem fpm not in PATH on AARCH64
 
