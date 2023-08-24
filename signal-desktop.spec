@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	6.29.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -57,8 +57,6 @@ node --version
 rm -rf Signal-Desktop-%{version}
 tar xfz %{S:0}
 
-pwd
-
 cd Signal-Desktop-%{version}
 
 # Allow higher Node versions
@@ -67,6 +65,9 @@ sed 's#"node": "#&>=#' -i package.json
 # new for AARCH64 builds
 # https://github.com/electron-userland/electron-builder-binaries/issues/49#issuecomment-1100804486
 %ifarch aarch64
+    # make sure that fpm binary is in PATH
+    PATH=$PATH:%{_builddir}/../../bin
+    export PATH
     gem install fpm
 %endif
 
@@ -80,6 +81,9 @@ echo $SOURCE_DATE_EPOCH
 # https://github.com/electron-userland/electron-builder-binaries/issues/49#issuecomment-1100804486
 %ifarch aarch64
     export USE_SYSTEM_FPM=true
+    # make sure that fpm binary is in PATH
+    PATH=$PATH:%{_builddir}/../../bin
+    export PATH
 %endif
 
 cd %{_builddir}/Signal-Desktop-%{version} 
@@ -139,6 +143,9 @@ done
  
 
 %changelog
+* Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-2
+- fixed problem fpm not in PATH on AARCH64
+
 * Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-1
 - The Chat Color customization screen is now displayed correctly across different languages and selected locales.
 - We improved notification support on Windows. If you don't click on a notification when it first arrives, the latest missed notification will appear in the Windows Notification Center. Clicking on that notification will now jump directly to that chat. We'd like to thank Julien Richard for their feedback.
