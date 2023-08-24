@@ -6,6 +6,8 @@ The source of signal-desktop are here: [Signal-Desktop](https://github.com/signa
 
 SPEC file inspired by [luminoso](https://copr.fedorainfracloud.org/coprs/luminoso/Signal-Desktop)
 
+And if you want to build the RPMs on-premise you should visit [BarbossHack's Signal-Desktop-Fedora](https://github.com/BarbossHack/Signal-Desktop-Fedora)
+
 It basically follows the instructions from [How to compile Signal-Desktop for Fedora](https://github.com/michelamarie/fedora-signal/wiki/How-to-compile-Signal-Desktop-for-Fedora) but skips the installation of nvm (node Version Manager) and some follow-up steps because installs the needed npm version an external repo (see below). Also, it does not replace "deb" by "rpm" in the package.json file since this is not needed either.
 
 ---
