@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	6.29.1
-Release:	3%{?dist}
+Version:	6.30.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -151,6 +151,9 @@ done
  
 
 %changelog
+* Wed Sep 06 2023 Udo Seidel <udoseidel@gmx.de> 6.30.0-1
+- Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread.
+
 * Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-3
 - cosmetic change related to previous fix and to cover misleading error message in prep phase
 
