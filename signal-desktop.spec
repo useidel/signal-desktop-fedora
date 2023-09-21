@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.30.2
+Version:	6.31.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -151,6 +151,9 @@ done
  
 
 %changelog
+* Thu Sep 21 2023 Udo Seidel <udoseidel@gmx.de> 6.31.0-1
+- This update fixes a handful of bugs, including one that caused the main Signal window to go blank if you viewed a debug log in full-screen mode on macOS. Seeing a completely Light or completely Dark window is arguably the purest possible expression of the Light Theme and Dark Theme, but we ultimately decided that the app is easier to use when you can see the interface too.
+
 * Wed Sep 13 2023 Udo Seidel <udoseidel@gmx.de> 6.30.2-1
 - Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread.
 
