@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	6.32.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -75,6 +75,12 @@ sed 's#"node": "#&>=#' -i package.json
     gem install fpm
 %endif
 
+#
+YARNCPATH=`dirname %{_builddir}`
+YARNCPATH=`dirname $YARNCPATH`
+mkdir -p $YARNCPATH/.config/yarn/global/
+cp .yarnclean $YARNCPATH/.config/yarn/global/
+yarn --c
 yarn install --frozen-lockfileyarn
 
 %build
@@ -151,6 +157,9 @@ done
  
 
 %changelog
+* Mon Oct 02 2023 Udo Seidel <udoseidel@gmx.de> 6.32.0-2
+- update SPEC file to work around the missing yarnclean file issue on copr
+
 * Fri Sep 29 2023 Udo Seidel <udoseidel@gmx.de> 6.32.0-1
 - If you say "media editor" five times fast, it starts to sound like "mediator" — but the new media editor is so much easier to use that you'll no longer feel like you need a mediator to settle a fight between you and the crop tool.
 - Sometimes the right reply can really help you get to the bottom of what people are saying, and now Signal will automatically scroll to what you just said whenever you send a message in a chat.
