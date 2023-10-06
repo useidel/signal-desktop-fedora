@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	6.32.0
-Release:	2%{?dist}
+Version:	6.33.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Fri Oct 06 2023 Udo Seidel <udoseidel@gmx.de> 6.33.0-1
+- Now you can edit a message with a right click after it has been sent! Fix a tpyo, include the missing ingredient in grandma's chocolate chip cookie recipe, or add the punchline to a joke if you hit the send button too quickly. The choice is yours. Messages will always show when they have been edited, and you can click on the "Edited" indicator to see the full edit history for any edited messages. Update the past in the present to prevent future confusion today!
+
 * Mon Oct 02 2023 Udo Seidel <udoseidel@gmx.de> 6.32.0-2
 - update SPEC file to work around the missing yarnclean file issue on copr
 
