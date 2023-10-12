@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.33.0
+Version:	6.34.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Thu Oct 12 2023 Udo Seidel <udoseidel@gmx.de> 6.34.0-1
+- Typing indicators in group chats will now display multiple profile pictures if more than one person is typing. James Cameron convinced us that we didn't need to stop after one avatar.
+- Now you can right-click on any sent message or press the up arrow on your keyboard to edit what you just said! Fix a tpyo, include the missing ingredient in grandma's chocolate chip cookie recipe, or add the punchline to a joke if you hit the send button too quickly. The choice is yours. Messages will always show when they have been edited, and you can click on the "Edited" indicator to see the full edit history for any edited messages. Update the past in the present to prevent future confusion today!
+
 * Fri Oct 06 2023 Udo Seidel <udoseidel@gmx.de> 6.33.0-1
 - Now you can edit a message with a right click after it has been sent! Fix a tpyo, include the missing ingredient in grandma's chocolate chip cookie recipe, or add the punchline to a joke if you hit the send button too quickly. The choice is yours. Messages will always show when they have been edited, and you can click on the "Edited" indicator to see the full edit history for any edited messages. Update the past in the present to prevent future confusion today!
 
