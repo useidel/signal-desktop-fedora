@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.35.0
+Version:	6.36.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Wed Oct 25 2023 Udo Seidel <udoseidel@gmx.de> 6.36.0-1
+- We updated the user interface to better indicate when a group video call is reconnecting. Now you'll see blurred thumbnails instead of what used to look like an elaborate prank where everyone pretended to freeze at the same time.  
+- The system tray icon will no longer appear pixelated on Ubuntu Linux, unless you've managed to get Ubuntu Linux running on an old smart refrigerator with a low-res screen.
+
 * Fri Oct 20 2023 Udo Seidel <udoseidel@gmx.de> 6.35.0-1
 - We told ourselves that we would never do this, that we wouldn't be like the other apps with their lazy release notes, but this update really does include "bug fixes
 and UX improvements."
