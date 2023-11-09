@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.37.0
+Version:	6.38.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Thu Nov 09 2023 Udo Seidel <udoseidel@gmx.de> 6.38.0-1
+- This release includes an updated design for Signal voice and video calls. Now the calling user interface will still look fantastic even if your camera isn't on and you can't stare at your own beautiful reflection.
+
+    name in the contact list on the New Chat screen and select "Remove."
 * Thu Nov 02 2023 Udo Seidel <udoseidel@gmx.de> 6.37.0-1
 - We've added a new way to keep your Signal contacts nice and tidy. This Halloween season, remove the ghost of an old contact. Just click on the three dots next to their
     name in the contact list on the New Chat screen and select "Remove."
