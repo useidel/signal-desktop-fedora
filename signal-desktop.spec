@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.39.1
+Version:	6.40.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Thu Nov 30 2023 Udo Seidel <udoseidel@gmx.de> 6.40.0-1
+- Now you can change your selected language in Signal without changing your system settings (Signal Settings > Appearance > Language).
+- We fixed a brief delay that sometimes occurred while joining a call lobby on macOS devices, which should get rid of at least one excuse
+
 * Wed Nov 22 2023 Udo Seidel <udoseidel@gmx.de> 6.39.1-1
 - Now you can change your selected language in Signal without changing your system settings (Signal Settings > Appearance > Language).
 - We fixed a brief delay that sometimes occurred while joining a call lobby on macOS devices, which should get rid of at least one excuse
