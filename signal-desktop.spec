@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.40.0
+Version:	6.41.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Thu Nov 30 2023 Udo Seidel <udoseidel@gmx.de> 6.41.0-1
+- We fixed the transition animation for video tiles when someone joins or leaves a group call. When you see a friend's face slide into view, that's a social movement.
+-  Now you can click on a profile photo or group avatar in the chat header to quickly access chat settings or view any unseen stories from that chat. Thanks, @bhaskarraksahb [github.com]!
+
 * Thu Nov 30 2023 Udo Seidel <udoseidel@gmx.de> 6.40.0-1
 - Now you can change your selected language in Signal without changing your system settings (Signal Settings > Appearance > Language).
 - We fixed a brief delay that sometimes occurred while joining a call lobby on macOS devices, which should get rid of at least one excuse
