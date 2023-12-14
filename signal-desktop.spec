@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.41.0
+Version:	6.42.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Thu Dec 14 2023 Udo Seidel <udoseidel@gmx.de> 6.42.0-1
+- We fixed a bug that displayed quoted replies to videos as though they were quoted replies to photos, even though every video is really just a sequence of photos if you think about it.
+- Thanks to @qauff [github.com] and @wyvurn-h4x3r [github.com] for their help with this release.
+
 * Thu Nov 30 2023 Udo Seidel <udoseidel@gmx.de> 6.41.0-1
 - We fixed the transition animation for video tiles when someone joins or leaves a group call. When you see a friend's face slide into view, that's a social movement.
 -  Now you can click on a profile photo or group avatar in the chat header to quickly access chat settings or view any unseen stories from that chat. Thanks, @bhaskarraksahb [github.com]!
