@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.42.0
+Version:	6.42.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Sat Dec 23 2023 Udo Seidel <udoseidel@gmx.de> 6.42.1-1
+- We fixed a bug that displayed quoted replies to videos as though they were quoted replies to photos, even though every video is really just a sequence of photos if you think about it.
+- Thanks to @qauff and @wyvurn-h4x3r for their help with this release.
+
 * Thu Dec 14 2023 Udo Seidel <udoseidel@gmx.de> 6.42.0-1
 - We fixed a bug that displayed quoted replies to videos as though they were quoted replies to photos, even though every video is really just a sequence of photos if you think about it.
 - Thanks to @qauff [github.com] and @wyvurn-h4x3r [github.com] for their help with this release.
