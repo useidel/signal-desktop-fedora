@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.42.1
+Version:	6.43.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,12 @@ done
  
 
 %changelog
+* Thu Jan 04 2024 Udo Seidel <udoseidel@gmx.de> 6.43.0-1
+- Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat.
+- The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, @MahdiNazemi!
+- The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, @Shrinks99!
+- We would also like to thank @NetSysFire, @timjamello, and @u32i64 for their contributions to this release.
+
 * Sat Dec 23 2023 Udo Seidel <udoseidel@gmx.de> 6.42.1-1
 - We fixed a bug that displayed quoted replies to videos as though they were quoted replies to photos, even though every video is really just a sequence of photos if you think about it.
 - Thanks to @qauff and @wyvurn-h4x3r for their help with this release.
