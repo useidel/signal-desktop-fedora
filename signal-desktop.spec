@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.43.0
+Version:	6.43.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Fri Jan 05 2024 Udo Seidel <udoseidel@gmx.de> 6.43.1-1
+
+
 * Thu Jan 04 2024 Udo Seidel <udoseidel@gmx.de> 6.43.0-1
 - Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat.
 - The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, @MahdiNazemi!
