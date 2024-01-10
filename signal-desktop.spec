@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.43.2
+Version:	6.44.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,11 @@ done
  
 
 %changelog
+* Thu Jan 11 2024 Udo Seidel <udoseidel@gmx.de> 6.44.0-1
+- If resolving a few small bugs counts as a New Year’s resolution, then 2024 is off to a fantastic start.
+- Region-neutral font fallback logic improves how CJK characters are displayed across different locales.
+- Thanks to @0o001 [github.com], @hackerbirds [github.com], @rschiang [github.com], @vijithassar [github.com], and @yaslama [github.com] for their contributions to this release!
+
 * Tue Jan 09 2024 Udo Seidel <udoseidel@gmx.de> 6.43.2-1
 - see previous
 * Fri Jan 05 2024 Udo Seidel <udoseidel@gmx.de> 6.43.1-1
