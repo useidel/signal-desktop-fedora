@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.44.1
+Version:	6.45.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,12 @@ done
  
 
 %changelog
+* Weg Jan 24 2024 Udo Seidel <udoseidel@gmx.de> 6.45.0-1
+- Now you can optionally turn emoticons into emoji. If you want to “🙂” whenever you type “:-)”, you can enable this feature in the “Chats” section of your Signal Desktop settings.  
+- A new keyboard shortcut (Ctrl+s/Cmd+s) helps you quickly save pictures and videos from the media viewer.
+- It’s too bad that we already made a New Year's Resolution joke in the release notes for the last update, because we just increased the maximum resolution for screen sharing during Signal video calls. Our new resolution is to avoid any resolution puns until 2025.
+- Thanks to @dasois [github.com] and @pelya [github.com] for their contributions to this release!  
+
 * Thu Jan 18 2024 Udo Seidel <udoseidel@gmx.de> 6.44.1-1
 - see previous
 
