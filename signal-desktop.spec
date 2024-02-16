@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.47.0
+Version:	6.47.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Thu Feb 15 2024 Udo Seidel <udoseidel@gmx.de> 6.47.1-1
+- see version 6.47.0-1
+
 * Thu Feb 08 2024 Udo Seidel <udoseidel@gmx.de> 6.47.0-1
 - If you spend a lot of time trying to pick out the perfect emoji reaction for every situation, you'll be to know that we fixed a bug with typing indicators that sometimes caused the emoji selection box to disappear while you were in the middle of pondering your choices.
 - Signal will now match your selected title bar color on Microsoft Windows. When all of your windows in Windows look the same, that's a common theme.
