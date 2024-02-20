@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.47.1
+Version:	6.48.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Tue Feb 20 2024 Udo Seidel <udoseidel@gmx.de> 6.48.0-1
+- Video and audio playback will now pause whenever the Signal window is closed and minimized in the system tray. If you’re looking for silence, X marks the spot.  
+- By popular demand, emoticons like “:-)” now automatically become emoji like “🙂” — but if this makes you “:-(“ you can disable this feature in the “Chats” section of your Signal Desktop settings
+
 * Thu Feb 15 2024 Udo Seidel <udoseidel@gmx.de> 6.47.1-1
 - see version 6.47.0-1
 
