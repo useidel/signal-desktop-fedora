@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	6.48.1
+Version:	7.0.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,11 @@ done
  
 
 %changelog
+* Thu Feb 29 2024 Udo Seidel <udoseidel@gmx.de> 7.0.0-1
+- Your phone number will no longer be visible to anyone on the latest version of Signal unless they have it saved in their phone’s contacts. You can change this in Settings.
+- You can now set and share an optional username to let people chat with you without giving them your phone number.
+- A new privacy setting lets you control who can find you by your phone number on Signal.
+
 * Thu Feb 22 2024 Udo Seidel <udoseidel@gmx.de> 6.48.1-1
 - see below
 
