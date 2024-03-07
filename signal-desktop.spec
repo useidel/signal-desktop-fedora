@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.1.0
+Version:	7.1.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Thu Mar 07 2024 Udo Seidel <udoseidel@gmx.de> 7.1.1-1
+- see below
+
 * Thu Mar 07 2024 Udo Seidel <udoseidel@gmx.de> 7.1.0-1
 - This update enables support for all of the new emoji characters in Emoji version 15.1. People keep asking us what our favorite new emoji is, but answering that question is a “lime” we won't cross.
 
