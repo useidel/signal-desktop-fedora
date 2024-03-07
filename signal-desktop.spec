@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.0.0
+Version:	7.1.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Thu Mar 07 2024 Udo Seidel <udoseidel@gmx.de> 7.1.0-1
+- This update enables support for all of the new emoji characters in Emoji version 15.1. People keep asking us what our favorite new emoji is, but answering that question is a “lime” we won't cross.
+
 * Thu Feb 29 2024 Udo Seidel <udoseidel@gmx.de> 7.0.0-1
 - Your phone number will no longer be visible to anyone on the latest version of Signal unless they have it saved in their phone’s contacts. You can change this in Settings.
 - You can now set and share an optional username to let people chat with you without giving them your phone number.
