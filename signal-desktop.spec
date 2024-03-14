@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.1.1
+Version:	7.2.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Thu Mar 14 2024 Udo Seidel <udoseidel@gmx.de> 7.2.0-1
+- Thanks to the performance improvements in this release, opening large group chats is faster than ever. If you're in a group with several hundred people that likes to debate the existence of parallel universes, you now live in a timeline where it takes a lot less time to show the timeline of people talking about timelines.
+
 * Thu Mar 07 2024 Udo Seidel <udoseidel@gmx.de> 7.1.1-1
 - see below
 
