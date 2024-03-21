@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.2.1
+Version:	7.3.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Thu Mar 21 2024 Udo Seidel <udoseidel@gmx.de> 7.3.0-1
+- Now you can clear missed calls on your phone and the badge on the calls tab in Signal Desktop will be updated too.
+- We also redesigned the badge count indicator on Windows. Now the color in the taskbar matches the color in the system tray. Fashion is all about coordination, and a little pop of red is a perfect look for spring.
+
 * Tue Mar 19 2024 Udo Seidel <udoseidel@gmx.de> 7.2.1-1
 - see below
 
