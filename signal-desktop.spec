@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.3.1
+Version:	7.4.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Fri Mar 29 2024 Udo Seidel <udoseidel@gmx.de> 7.4.0-1
+- This update clears out a few bugs just in time for spring cleaning, including more consistent conversation sort logic and improved behavior if the app encounters DNS lookup timeouts due to poor network connectivity.
+
 * Fri Mar 22 2024 Udo Seidel <udoseidel@gmx.de> 7.3.1-1
 - see below
 
