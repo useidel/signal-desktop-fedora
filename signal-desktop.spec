@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.5.0
+Version:	7.5.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Wed Apr 18 2024 Udo Seidel <udoseidel@gmx.de> 7.5.1-1
+- see below
+
 * Tue Apr 16 2024 Udo Seidel <udoseidel@gmx.de> 7.5.0-1
 - We added support for custom nicknames and notes for anyone you're chatting with on Signal, even if they aren't in your system contacts. Whether you're adding the missing letters in a lazy friend's profile name, or a reminder about where you met, notes and nicknames provide a convenient and secure way to jot down additional details about your Signal Connections — and they're end-to-end encrypted and protected by your Signal PIN so they can be securely restored if you lose your phone too.
 - Now you can minimize Signal to your system tray on Linux. If your taskbar is the right shade of gray, it’s like your messages are waiting for you on a silver platter.
