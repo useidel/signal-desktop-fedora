@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.7.0
+Version:	7.8.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Wed May 08 2024 Udo Seidel <udoseidel@gmx.de> 7.8.0-1
+- Now you can react with any emoji during a Signal call. Smile even if your camera is off, share a heart if you love what you're hearing, or vote for sushi instead of pizza without saying a word. And you'll even see an animation of everyone's emojional outburst if enough people in the call react with the same emoji all at once.
+
 * Wed May 01 2024 Udo Seidel <udoseidel@gmx.de> 7.7.0-1
 - Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual.
 
