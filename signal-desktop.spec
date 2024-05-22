@@ -1,13 +1,13 @@
 Name:		signal-desktop
 Version:	7.10.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 
-BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs
+BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs ruby-devel
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
 %endif
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Wed May 22 2024 Udo Seidel <udoseidel@gmx.de> 7.10.0-2
+- Added ruby-devel to build requirements
+
 * Wed May 22 2024 Udo Seidel <udoseidel@gmx.de> 7.10.0-1
 - Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
 
