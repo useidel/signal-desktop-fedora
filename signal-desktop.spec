@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	7.10.0
-Release:	2%{?dist}
+Version:	7.11.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Thu May 30 2024 Udo Seidel <udoseidel@gmx.de> 7.11.0-1
+- We fixed a rendering bug that caused the contacts icon to smash itself right next to the contact's name while viewing the list of participants in a group call. You're probably really close to your contacts, but sometimes you (and the Signal Desktop user interface) both need a little space.
+
 * Wed May 22 2024 Udo Seidel <udoseidel@gmx.de> 7.10.0-2
 - Added ruby-devel to build requirements
 
