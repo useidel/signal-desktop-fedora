@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.11.1
+Version:	7.12.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,11 @@ done
  
 
 %changelog
+* Wed Jun 12 2024 Udo Seidel <udoseidel@gmx.de> 7.12.0-1
+- Raise your hand if you've been looking for another way to communicate during group calls. The new Raise Hand feature is a simple way to get someone's attention, ask a question, or unanimously vote for a group proposal when your friend asks "all those in favor?"
+- We modified the keyboard shortcut for sending a voice note to Ctrl/Cmd+Shift+Y so that it no longer conflicts with the "Paste and Match Style" shortcut on Windows and Linux.
+- We broke up with a bug in the crop tool, so now it's easier and more intuitive to cut your ex (or anything else) out of the picture.
+
 * Tue Jun 04 2024 Udo Seidel <udoseidel@gmx.de> 7.11.1-1
 - see below
 
@@ -181,7 +186,7 @@ done
 * Fri Apr 26 2024 Udo Seidel <udoseidel@gmx.de> 7.6.0-1
 - Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
 
-* Wed Apr 18 2024 Udo Seidel <udoseidel@gmx.de> 7.5.1-1
+* Thu Apr 18 2024 Udo Seidel <udoseidel@gmx.de> 7.5.1-1
 - see below
 
 * Tue Apr 16 2024 Udo Seidel <udoseidel@gmx.de> 7.5.0-1
