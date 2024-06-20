@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.12.0
+Version:	7.13.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,10 @@ done
  
 
 %changelog
+* Thu Jun 20 2024 Udo Seidel <udoseidel@gmx.de> 7.13.0-1
+- We fixed a bug that displayed images with the wrong aspect ratio if you resized the Signal Desktop window while viewing someone's profile picture. The people you love should only look squeezed if you are giving them a hug.
+- This update also improves the display of quoted replies in RTL languages.
+
 * Wed Jun 12 2024 Udo Seidel <udoseidel@gmx.de> 7.12.0-1
 - Raise your hand if you've been looking for another way to communicate during group calls. The new Raise Hand feature is a simple way to get someone's attention, ask a question, or unanimously vote for a group proposal when your friend asks "all those in favor?"
 - We modified the keyboard shortcut for sending a voice note to Ctrl/Cmd+Shift+Y so that it no longer conflicts with the "Paste and Match Style" shortcut on Windows and Linux.
