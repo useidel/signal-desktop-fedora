@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.13.0
+Version:	7.14.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Thu Jun 27 2024 Udo Seidel <udoseidel@gmx.de> 7.14.0-1
+- If you're tired of losing your voice, we fixed a bug where switching to another chat or application while recording a voice message could cause that message to disappear. In-progress voice messages are now saved as drafts so you can review and send them when you return to the chat.
+
 * Thu Jun 20 2024 Udo Seidel <udoseidel@gmx.de> 7.13.0-1
 - We fixed a bug that displayed images with the wrong aspect ratio if you resized the Signal Desktop window while viewing someone's profile picture. The people you love should only look squeezed if you are giving them a hug.
 - This update also improves the display of quoted replies in RTL languages.
