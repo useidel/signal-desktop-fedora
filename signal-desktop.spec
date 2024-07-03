@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.14.0
+Version:	7.15.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,11 @@ done
  
 
 %changelog
+* Wed Jul 03 2024 Udo Seidel <udoseidel@gmx.de> 7.15.0-1
+- Now you can forward contact cards that were sent from a mobile device. Share the take-out number for your favorite restaurant without taking out your phone.
+- New support for high-resolution "jumbomoji" adds larger-than-life detail to large emoji, especially on big screens with small pixels.
+- We also updated the Sticker Creator to support the latest Emoji, so today's stickers are no longer stuck with yesterday's Unicode standard.
+
 * Thu Jun 27 2024 Udo Seidel <udoseidel@gmx.de> 7.14.0-1
 - If you're tired of losing your voice, we fixed a bug where switching to another chat or application while recording a voice message could cause that message to disappear. In-progress voice messages are now saved as drafts so you can review and send them when you return to the chat.
 
