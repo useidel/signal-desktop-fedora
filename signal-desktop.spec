@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.15.0
+Version:	7.16.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Wed Jul 17 2024 Udo Seidel <udoseidel@gmx.de> 7.16.0-1
+- We fixed a bug that prevented the button to minimize a call from appearing while that call was reconnecting. Now you don't need to feel disconnected from previous chats even if the internet is feeling disconnected.
+
 * Wed Jul 03 2024 Udo Seidel <udoseidel@gmx.de> 7.15.0-1
 - Now you can forward contact cards that were sent from a mobile device. Share the take-out number for your favorite restaurant without taking out your phone.
 - New support for high-resolution "jumbomoji" adds larger-than-life detail to large emoji, especially on big screens with small pixels.
