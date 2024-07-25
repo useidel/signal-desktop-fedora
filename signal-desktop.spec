@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.16.0
+Version:	7.17.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Thu Jul 25 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-1
+- We wanted things to be slicker and quicker for sticker clickers, so we fixed a bug that sometimes prevented Signal from launching the sticker viewer if you tried to open a sticker pack link while the app was closed. 
+
 * Wed Jul 17 2024 Udo Seidel <udoseidel@gmx.de> 7.16.0-1
 - We fixed a bug that prevented the button to minimize a call from appearing while that call was reconnecting. Now you don't need to feel disconnected from previous chats even if the internet is feeling disconnected.
 
