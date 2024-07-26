@@ -7,7 +7,7 @@ URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 
-BuildRequires: binutils git python2 gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >=20.15.0 ca-certificates git-lfs ruby-devel
+BuildRequires: binutils git python2 gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
 %endif
