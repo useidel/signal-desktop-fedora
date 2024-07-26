@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	7.17.0
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -69,8 +69,10 @@ sed 's#"node": "#&>=#' -i package.json
     # need to strip some componentes from BUILDDIR
     FPMPATH=`dirname %{_builddir}`
     FPMPATH=`dirname $FPMPATH`
-    FPMPATH=$FPMPATH/bin
-    PATH=$PATH:$FPMPATH
+    PATH=$PATH:$FPMPATH/bin
+# handle corner case where we need /builddir/bin on top of /buildir/build/bin
+    FPMPATH=`dirname $FPMPATH`
+    PATH=$PATH:$FPMPATH/bin
     export PATH
     gem install fpm
 %endif
@@ -157,6 +159,9 @@ done
  
 
 %changelog
+* Sat Jul 27 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-3
+- added logic to handle corner case for fpm on AARCH64
+
 * Fri Jul 26 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-2
 - nodejs >=20.15.0 is required (not shipped by fedora -> repo https://rpm.nodesource.com/ needed)
 
