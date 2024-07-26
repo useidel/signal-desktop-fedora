@@ -1,13 +1,13 @@
 Name:		signal-desktop
 Version:	7.17.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 
-BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs, ca-certificates, git-lfs ruby-devel
+BuildRequires: binutils, git, python2, gcc, gcc-c++, openssl-devel, bsdtar, jq, zlib, xz, nodejs >=20.15.0, ca-certificates, git-lfs ruby-devel
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
 %endif
@@ -157,6 +157,9 @@ done
  
 
 %changelog
+* Fri Jul 26 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-2
+- nodejs >=20.15.0 is required (not shipped by fedora -> repo https://rpm.nodesource.com/ needed)
+
 * Thu Jul 25 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-1
 - We wanted things to be slicker and quicker for sticker clickers, so we fixed a bug that sometimes prevented Signal from launching the sticker viewer if you tried to open a sticker pack link while the app was closed. 
 
