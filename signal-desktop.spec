@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	7.17.0
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -69,10 +69,7 @@ sed 's#"node": "#&>=#' -i package.json
     # need to strip some componentes from BUILDDIR
     FPMPATH=`dirname %{_builddir}`
     FPMPATH=`dirname $FPMPATH`
-    PATH=$PATH:$FPMPATH/bin
-# handle corner case where we need /builddir/bin on top of /buildir/build/bin
-    FPMPATH=`dirname $FPMPATH`
-    PATH=$PATH:$FPMPATH/bin
+    PATH=~/bin:$PATH:$FPMPATH/bin
     export PATH
     gem install fpm
 %endif
@@ -98,10 +95,9 @@ echo $SOURCE_DATE_EPOCH
     FPMPATH=`dirname %{_builddir}`
     FPMPATH=`dirname $FPMPATH`
     FPMPATH=$FPMPATH/bin
-    PATH=$PATH:$FPMPATH
+    PATH=~/bin:$PATH:$FPMPATH
     export PATH
 %endif
-
 cd %{_builddir}/Signal-Desktop-%{version} 
 
 yarn generate
@@ -159,6 +155,9 @@ done
  
 
 %changelog
+* Wed Jul 31 2024 Dennis Gilmore <dennis@ausil.us> - 7.17.0-4
+- add ~/bin into PATH for aarch64 builds
+
 * Sat Jul 27 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-3
 - added logic to handle corner case for fpm on AARCH64
 
