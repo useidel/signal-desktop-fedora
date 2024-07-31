@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	7.18.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -72,7 +72,7 @@ sed 's#"node": "#&>=#' -i package.json
     PATH=$PATH:$FPMPATH/bin
 # handle corner case where we need /builddir/bin on top of /buildir/build/bin
     FPMPATH=`dirname $FPMPATH`
-    PATH=$PATH:$FPMPATH/bin
+    PATH=~/bin:$PATH:$FPMPATH/bin
     export PATH
     gem install fpm
 %endif
@@ -98,7 +98,7 @@ echo $SOURCE_DATE_EPOCH
     FPMPATH=`dirname %{_builddir}`
     FPMPATH=`dirname $FPMPATH`
     FPMPATH=$FPMPATH/bin
-    PATH=$PATH:$FPMPATH
+    PATH=~/bin:$PATH:$FPMPATH
     export PATH
 %endif
 
@@ -159,6 +159,9 @@ done
  
 
 %changelog
+* Thu Aug 01 2024 Dennis Gilmore <dennis@ausil.us> 7.18.0-2
+- add ~/bin into PATH for aarch64 builds
+
 * Thu Aug 01 2024 Udo Seidel <udoseidel@gmx.de> 7.18.0-1
 - A quick goodbye is sometimes easier than a slow farewell, so we sped up the process of deleting large message threads.
 
