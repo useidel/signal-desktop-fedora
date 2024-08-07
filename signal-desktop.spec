@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	7.18.0
-Release:	2%{?dist}
+Version:	7.19.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -159,6 +159,10 @@ done
  
 
 %changelog
+* Wed Aug 07 2024 Udo Seidel <udoseidel@gmx.de> 7.19.0-1
+- If another call is calling your name, we added a shortcut to leave the current call and join a new one. You'll be prompted to confirm your departure, but it's up to you whether or not you say goodbye first.
+- This update also fixes a startup crash on Linux for users whose locale is set to POSIX.
+
 * Thu Aug 01 2024 Dennis Gilmore <dennis@ausil.us> 7.18.0-2
 - add ~/bin into PATH for aarch64 builds
 
