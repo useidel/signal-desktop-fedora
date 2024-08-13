@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.19.0
+Version:	7.19.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -159,6 +159,11 @@ done
  
 
 %changelog
+* Tue Aug 13 2024 Udo Seidel <udoseidel@gmx.de> 7.19.1-1
+- Stories with long captions are displayed on a subtle gradient background that improves contrast and makes the text easier to read. Now that people can see what you're saying, feel free to write a couple paragraphs about why something really made you laugh instead of just saying "lol."
+- This release also improves the performance of link preview generation and fixes a bug that caused the Settings window to briefly flash a lovely shade of ultramarine whenever it was closed (instead of just closing right away).
+- This update fixes an issue affecting some users, a crash with the error "The expression evaluated to a falsy value."
+
 * Wed Aug 07 2024 Udo Seidel <udoseidel@gmx.de> 7.19.0-1
 - If another call is calling your name, we added a shortcut to leave the current call and join a new one. You'll be prompted to confirm your departure, but it's up to you whether or not you say goodbye first.
 - This update also fixes a startup crash on Linux for users whose locale is set to POSIX.
