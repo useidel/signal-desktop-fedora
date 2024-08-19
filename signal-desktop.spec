@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.20.0
+Version:	7.20.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -159,7 +159,10 @@ done
  
 
 %changelog
-* Tue Aug 15 2024 Udo Seidel <udoseidel@gmx.de> 7.20.0-1
+* Mon Aug 19 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-1
+- see below
+
+* Thu Aug 15 2024 Udo Seidel <udoseidel@gmx.de> 7.20.0-1
 - Stories with long captions are displayed on a subtle gradient background that improves contrast and makes the text easier to read. Now that people can see what you're saying, feel free to write a couple paragraphs about why something really made you laugh instead of just saying "lol."
 - This release also improves the performance of link preview generation and fixes a bug that caused the Settings window to briefly flash a lovely shade of ultramarine whenever it was closed (instead of just closing right away).
 
