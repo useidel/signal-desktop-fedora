@@ -1,18 +1,18 @@
 Name:		signal-desktop
 Version:	7.20.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 
-BuildRequires: binutils git python2 gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel
+BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel
 %if 0%{?fedora} > 28
-BuildRequires: python-unversioned-command
+BuildRequires: python-unversioned-command python2
 %endif
 %if 0%{?fedora} > 29
-BuildRequires: libxcrypt-compat
+BuildRequires: libxcrypt-compat 
 %endif
 %if 0%{?fedora} > 31
 BuildRequires: libxcrypt-compat vips-devel
@@ -28,7 +28,7 @@ BuildRequires: yarn
 %endif
 
 %if 0%{?fedora} > 35
-BuildRequires: npm 
+BuildRequires: npm python3
 %endif
 
 # new for AARCH64 builds
@@ -159,8 +159,12 @@ done
  
 
 %changelog
+* Mon Aug 19 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-2
+- fixing build reqs
+
 * Mon Aug 19 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-1
 - see below
+- fixed bogus dateof 7.20.0
 
 * Thu Aug 15 2024 Udo Seidel <udoseidel@gmx.de> 7.20.0-1
 - Stories with long captions are displayed on a subtle gradient background that improves contrast and makes the text easier to read. Now that people can see what you're saying, feel free to write a couple paragraphs about why something really made you laugh instead of just saying "lol."
