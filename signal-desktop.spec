@@ -1,35 +1,13 @@
 Name:		signal-desktop
 Version:	7.20.1
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 
-BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel
-%if 0%{?fedora} > 28
-BuildRequires: python-unversioned-command python2
-%endif
-%if 0%{?fedora} > 29
-BuildRequires: libxcrypt-compat 
-%endif
-%if 0%{?fedora} > 31
-BuildRequires: libxcrypt-compat vips-devel
-%endif
-%if 0%{?el8}
-BuildRequires: platform-python-devel python3
-%endif
-
-%if 0%{?fedora} > 31
-BuildRequires: yarnpkg
-%else
-BuildRequires: yarn 
-%endif
-
-%if 0%{?fedora} > 35
-BuildRequires: npm python3
-%endif
+BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel
 
 # new for AARCH64 builds
 %ifarch aarch64
@@ -159,6 +137,9 @@ done
  
 
 %changelog
+* Tue Aug 20 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-3
+- clean up SPEC file (old build reqs)
+
 * Mon Aug 19 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-2
 - fixing build reqs
 
