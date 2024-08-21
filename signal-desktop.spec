@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	7.20.1
-Release:	3%{?dist}
+Version:	7.21.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -137,6 +137,9 @@ done
  
 
 %changelog
+* Thu Aug 22 2024 Udo Seidel <udoseidel@gmx.de> 7.21.0-1
+- Everyone loves a good story, and we could tell you the tale of a bug that sometimes caused the progress bar to freeze right in the middle of watching a good story — but that bug's adventure already has a happy ending because we fixed it in this release.
+
 * Tue Aug 20 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-3
 - clean up SPEC file (old build reqs)
 
