@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.22.0
+Version:	7.22.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -137,6 +137,9 @@ done
  
 
 %changelog
+* Fri Aug 30 2024 Udo Seidel <udoseidel@gmx.de> 7.22.1-1
+- see previous entry
+
 * Thu Aug 29 2024 Udo Seidel <udoseidel@gmx.de> 7.22.0-1
 - Signal Desktop can now automatically resume interrupted attachment downloads from where they left off, so you won't need to wait as long to laugh even if you close your laptop lid before the meme your friend sent you has finished transferring.
 
