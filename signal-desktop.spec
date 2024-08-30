@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	7.22.2
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -36,6 +36,10 @@ rm -rf Signal-Desktop-%{version}
 tar xfz %{S:0}
 
 cd Signal-Desktop-%{version}
+
+# remove unneeded but pre-packaged patches
+rm -f patches/socks-proxy-agent*
+rm -f patches/*express*
 
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
@@ -137,6 +141,9 @@ done
  
 
 %changelog
+* Fri Aug 30 2024 Udo Seidel <udoseidel@gmx.de> 7.22.2-2
+- remove of unneeded but pre-packaged patch for nodes socks-proxy-agent and types-express 
+
 * Fri Aug 30 2024 Udo Seidel <udoseidel@gmx.de> 7.22.2-1
 - see previous entry
 
