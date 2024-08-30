@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.22.1
+Version:	7.22.2
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -137,6 +137,9 @@ done
  
 
 %changelog
+* Fri Aug 30 2024 Udo Seidel <udoseidel@gmx.de> 7.22.2-1
+- see previous entry
+
 * Fri Aug 30 2024 Udo Seidel <udoseidel@gmx.de> 7.22.1-1
 - see previous entry
 
