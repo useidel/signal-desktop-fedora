@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.23.0
+Version:	7.24.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Thue Sep 12 2024 Udo Seidel <udoseidel@gmx.de> 7.24.0-1
+- This update fixes a bug where viewing a missed call on one device wouldn't automatically clear the indicator for that missed call on your other devices, which was a missed opportunity for your missed call list to better coexist. 
+
 * Wed Sep 04 2024 Udo Seidel <udoseidel@gmx.de> 7.23.0-1
 - Chats now open faster than ever thanks to another round of performance improvements, so you can click on your cliques and see what they're saying real quick.
 - We also fixed a handful of bugs, including one that sometimes caused "Unknown contact started a video call" to appear in the chat list summary after you started the call. Even if you're still on a journey of self-discovery, you are never completely unknown to yourself.
