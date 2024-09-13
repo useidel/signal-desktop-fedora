@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.24.0
+Version:	7.24.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,7 +141,11 @@ done
  
 
 %changelog
-* Thue Sep 12 2024 Udo Seidel <udoseidel@gmx.de> 7.24.0-1
+* Fri Sep 13 2024 Udo Seidel <udoseidel@gmx.de> 7.24.1-1
+- see below
+- Bogus date from 7.24.0-1 corrected
+
+* Thu Sep 12 2024 Udo Seidel <udoseidel@gmx.de> 7.24.0-1
 - This update fixes a bug where viewing a missed call on one device wouldn't automatically clear the indicator for that missed call on your other devices, which was a missed opportunity for your missed call list to better coexist. 
 
 * Wed Sep 04 2024 Udo Seidel <udoseidel@gmx.de> 7.23.0-1
