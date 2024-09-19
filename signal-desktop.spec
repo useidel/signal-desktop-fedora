@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.24.1
+Version:	7.25.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Thu Sep 19 2024 Udo Seidel <udoseidel@gmx.de> 7.25.0-1
+- Take a trip down memory lane with the new and improved "All Media" view. Now when you click on a chat header and select "See all" in the shared media section, older photos and videos will automatically appear as you scroll instead of being limited to the most recent entries.
+
 * Fri Sep 13 2024 Udo Seidel <udoseidel@gmx.de> 7.24.1-1
 - see below
 - Bogus date from 7.24.0-1 corrected
