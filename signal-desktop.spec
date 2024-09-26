@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.25.0
+Version:	7.26.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Thu Sep 26 2024 Udo Seidel <udoseidel@gmx.de> 7.26.0-1
+- Sometimes leaving something behind is the best way to discover that you want to find it again, so we fixed a bug that made it difficult to search for groups that you're no longer a part of anymore but that still remain in your conversation list (and quite possibly in your heart).
+
 * Thu Sep 19 2024 Udo Seidel <udoseidel@gmx.de> 7.25.0-1
 - Take a trip down memory lane with the new and improved "All Media" view. Now when you click on a chat header and select "See all" in the shared media section, older photos and videos will automatically appear as you scroll instead of being limited to the most recent entries.
 
