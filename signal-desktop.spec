@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.26.0
+Version:	7.27.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Thu Oct 03 2024 Udo Seidel <udoseidel@gmx.de> 7.27.0-1
+- Now you can remove quoted replies from edited messages. It's perfect for those moments when you realize that your response was so good that it doesn't actually need to stand on another message's shoulders, or when you accidentally reply to the wrong message with "I love you too."
+
 * Thu Sep 26 2024 Udo Seidel <udoseidel@gmx.de> 7.26.0-1
 - Sometimes leaving something behind is the best way to discover that you want to find it again, so we fixed a bug that made it difficult to search for groups that you're no longer a part of anymore but that still remain in your conversation list (and quite possibly in your heart).
 
