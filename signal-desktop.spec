@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.27.0
+Version:	7.28.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,10 @@ done
  
 
 %changelog
+* Thu Oct 10 2024 Udo Seidel <udoseidel@gmx.de> 7.28.0-1
+-  We fixed a bug that prevented stickers from working correctly in the media editor, and now the picker no longer gets stuck when you're trying to stick a sticker on a picture.
+- This update also includes support for the new screen sharing interface in macOS Sequoia.
+
 * Thu Oct 03 2024 Udo Seidel <udoseidel@gmx.de> 7.27.0-1
 - Now you can remove quoted replies from edited messages. It's perfect for those moments when you realize that your response was so good that it doesn't actually need to stand on another message's shoulders, or when you accidentally reply to the wrong message with "I love you too."
 
