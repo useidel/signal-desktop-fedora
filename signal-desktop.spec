@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.28.0
+Version:	7.29.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Wed Oct 16 2024 Udo Seidel <udoseidel@gmx.de> 7.29.0-1
+- This update improves startup speed by around 5%, so feel free to slow down a little bit in other areas of your life.  This update improves startup speed by around 5%, so feel free to slow down a little bit in other areas of your life.
+
 * Thu Oct 10 2024 Udo Seidel <udoseidel@gmx.de> 7.28.0-1
 -  We fixed a bug that prevented stickers from working correctly in the media editor, and now the picker no longer gets stuck when you're trying to stick a sticker on a picture.
 - This update also includes support for the new screen sharing interface in macOS Sequoia.
