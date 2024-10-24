@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.29.0
+Version:	7.30.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,12 @@ done
  
 
 %changelog
+* Thu Oct 24 2024 Udo Seidel <udoseidel@gmx.de> 7.30.0-1
+- Introducing Call Links: The missing link for calendar invites and impromptu gatherings.
+  +  Now you can quickly create an easy link that anyone on Signal can use to join a group call without having to join a Signal group chat first.
+  +  Call links are reusable and ideal for recurring phone dates with your best friends or weekly check-ins with your coworkers.
+  +  You can manage your call links, control approval settings, and copy links from the calls tab for quick sharing.
+
 * Wed Oct 16 2024 Udo Seidel <udoseidel@gmx.de> 7.29.0-1
 - This update improves startup speed by around 5%, so feel free to slow down a little bit in other areas of your life.  This update improves startup speed by around 5%, so feel free to slow down a little bit in other areas of your life.
 
