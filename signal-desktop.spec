@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.30.0
+Version:	7.31.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Thu Oct 31 2024 Udo Seidel <udoseidel@gmx.de> 7.31.0-1
+- Now you can quickly download every photo in an album when you receive a message with multiple attachments. But if you were a gallery curator with impeccable taste in another life, you can still save them individually too. Thanks, @major-mayer [github.com]!
+
 * Thu Oct 24 2024 Udo Seidel <udoseidel@gmx.de> 7.30.0-1
 - Introducing Call Links: The missing link for calendar invites and impromptu gatherings.
   +  Now you can quickly create an easy link that anyone on Signal can use to join a group call without having to join a Signal group chat first.
