@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.32.0
+Version:	7.33.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Wed Nov 13 2024 Udo Seidel <udoseidel@gmx.de> 7.33.0-1
+- This update fixes a bug where the correct context menu wasn't appearing after right-clicking on an emoji while selecting text. Thanks, @khuddite [github.com]!
+
 * Thu Nov 07 2024 Udo Seidel <udoseidel@gmx.de> 7.32.0-1
 - Thanks to some small optimizations, this update slightly reduces the size of the app by approximately 4 megabytes. That's enough room for you to send the equivalent of about 4 books’ worth of text messages (or 2-3 animated GIFs) without taking up any extra space.
 - If Wayland is your compositing window manager (and not just the name of a blacksmith you vaguely remember from Beowulf) you'll be happy to hear that we also fixed a bug with the screen sharing button on Linux.
