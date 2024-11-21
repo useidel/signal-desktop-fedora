@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.33.0
+Version:	7.34.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,10 @@ done
  
 
 %changelog
+* Wed Nov 21 2024 Udo Seidel <udoseidel@gmx.de> 7.34.0-1
+- This update introduces support for new processors on Windows like the Snapdragon X Elite, so you don't need to twist your ARM into emulating x86 anymore.  
+- We also fixed a bug that broke the dark theme in Signal when your operating system settings were configured to use a light theme. Signal Desktop can now properly handle your thematically split personality.
+
 * Wed Nov 13 2024 Udo Seidel <udoseidel@gmx.de> 7.33.0-1
 - This update fixes a bug where the correct context menu wasn't appearing after right-clicking on an emoji while selecting text. Thanks, @khuddite [github.com]!
 
