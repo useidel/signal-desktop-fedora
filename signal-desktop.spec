@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.34.0
+Version:	7.35.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Thu Dec 05 2024 Udo Seidel <udoseidel@gmx.de> 7.35.0-1
+- The new filter icon next to the search box makes it easy to quickly find unread chats, but feel free to take your time deciding whether or not to leave them on read after seeing what they had to say.
+
 * Wed Nov 21 2024 Udo Seidel <udoseidel@gmx.de> 7.34.0-1
 - This update introduces support for new processors on Windows like the Snapdragon X Elite, so you don't need to twist your ARM into emulating x86 anymore.  
 - We also fixed a bug that broke the dark theme in Signal when your operating system settings were configured to use a light theme. Signal Desktop can now properly handle your thematically split personality.
