@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.35.0
+Version:	7.35.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -141,6 +141,9 @@ done
  
 
 %changelog
+* Thu Dec 05 2024 Udo Seidel <udoseidel@gmx.de> 7.35.1-1
+- The new filter icon next to the search box makes it easy to quickly find unread chats, but feel free to take your time deciding whether or not to leave them on read after seeing what they had to say.
+
 * Thu Dec 05 2024 Udo Seidel <udoseidel@gmx.de> 7.35.0-1
 - The new filter icon next to the search box makes it easy to quickly find unread chats, but feel free to take your time deciding whether or not to leave them on read after seeing what they had to say.
 
