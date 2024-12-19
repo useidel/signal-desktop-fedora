@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	7.36.0
-Release:	2%{?dist}
+Version:	7.36.1
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -146,11 +146,14 @@ done
  
 
 %changelog
+* Thu Dec 19 2024 Udo Seidel <udoseidel@gmx.de> 7.36.1-1
+- see previous entry
+
 * Thu Dec 12 2024 Udo Seidel <udoseidel@gmx.de> 7.36.0-1
 - This update fixes a bug on macOS Sonoma that prevented screen sharing from working correctly if permission to share the screen had previously been denied — so you no longer need to share your screen with an error message.
 - Filter by Unread now highlights the selected chat, and the list of unread chats will automatically update as new messages arrive or when you catch up in one chat and click on another.
 
-* Tue Dec 11 2024 Udo Seidel <udoseidel@gmx.de> 7.35.2-1
+* Tue Dec 11 2024 Udo Seidel <udoseidel@gmx.de> 7.35.1-2
 - workaround for backbone patch with hunks
 
 * Thu Dec 05 2024 Udo Seidel <udoseidel@gmx.de> 7.35.1-1
