@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.36.1
+Version:	7.37.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -146,6 +146,9 @@ done
  
 
 %changelog
+* Wed Jan 08 2025 Udo Seidel <udoseidel@gmx.de> 7.37.0-1
+- Now you can easily see the progress of attachment downloads. You can also stop and restart in-progress downloads too. So if a transfer is slowed because you're on the road (in airplane mode?) or the mediocre hotel WiFi is about to implode, you can wait to reload when more available bandwidth is bestowed.
+
 * Thu Dec 19 2024 Udo Seidel <udoseidel@gmx.de> 7.36.1-1
 - see previous entry
 
