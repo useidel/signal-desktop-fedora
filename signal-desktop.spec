@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.38.0
+Version:	7.39.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -146,6 +146,9 @@ done
  
 
 %changelog
+* Sat Jan 25 2025 Udo Seidel <udoseidel@gmx.de> 7.39.0-1
+- Now you can adjust the size of the chat list sidebar on touchscreen devices. So when you try to drag it won't be such a drag, and the smudges on your screen are simply evidence of the power emanating from your fingertips.
+
 * Mon Jan 20 2025 Udo Seidel <udoseidel@gmx.de> 7.38.0-1
 - We fixed a bug with @ mentions that sometimes incorrectly included your own account in the autocomplete suggestion list. As a narcissistic workaround, you can still use third-person narration to talk about yourself in your group chats if you ever miss this bug. 
 * Wed Jan 08 2025 Udo Seidel <udoseidel@gmx.de> 7.37.0-1
