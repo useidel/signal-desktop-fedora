@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.39.0
+Version:	7.40.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -146,6 +146,9 @@ done
  
 
 %changelog
+* Wed Jan 29 2025 Udo Seidel <udoseidel@gmx.de> 7.40.0-1
+- We fixed a rare bug that prevented some chats from opening correctly after they were selected, so now Signal Desktop doesn't also draw a blank while you're trying to remember what they said.
+
 * Sat Jan 25 2025 Udo Seidel <udoseidel@gmx.de> 7.39.0-1
 - Now you can adjust the size of the chat list sidebar on touchscreen devices. So when you try to drag it won't be such a drag, and the smudges on your screen are simply evidence of the power emanating from your fingertips.
 
