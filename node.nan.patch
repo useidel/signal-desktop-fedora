@@ -1,0 +1,13 @@
+diff --git a/node_modules/nan/nan.h b/node_modules/nan/nan.h
+index 1ac7f74..c2bf9d8 100644
+--- a/node_modules/nan/nan.h
++++ b/node_modules/nan/nan.h
+@@ -3042,7 +3042,7 @@ MakeMaybe(MaybeMaybe<T> v) {
+ 
+ //=== ScriptOrigin =============================================================
+ 
+-#include "nan_scriptorigin.h"  // NOLINT(build/include)
++// #include "nan_scriptorigin.h"  // NOLINT(build/include)
+ 
+ }  // end of namespace Nan
+ 
