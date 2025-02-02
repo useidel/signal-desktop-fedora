@@ -1,12 +1,13 @@
 Name:		signal-desktop
 Version:	7.40.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
-Source2:	node.nan.patch
+Source1:	backbone+1.6.0.patch
+Source2:	nan+2.22.0.patch
 
 BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel
 
@@ -42,15 +43,12 @@ cd Signal-Desktop-%{version}
 rm -f patches/socks-proxy-agent*
 rm -f patches/*express*
 rm -f patches/*backbone*
+cp %{S:1} patches/backbone+1.6.0.patch
 cp %{S:2} patches/nan+2.22.0.patch
 
 
 # Allow higher Node versions
 sed 's#"node": "#&>=#' -i package.json
-
-# Workaround for the backbone patch triggers hunks
-mv package.json package.json.ORIG
-cat package.json.ORIG | sed -e 's/--error-on-fail//g' > package.json
 
 
 # new for AARCH64 builds
@@ -150,6 +148,9 @@ done
  
 
 %changelog
+* Sun Feb 02 2025 Udo Seidel <udoseidel@gmx.de> 7.40.1-2
+- partial workaround for failing backbone patch
+
 * Sun Feb 02 2025 Udo Seidel <udoseidel@gmx.de> 7.40.1-1
 - We fixed a rare bug that prevented some chats from opening correctly after they were selected, so now Signal Desktop doesn't also draw a blank while you're trying to remember what they said. 
 
