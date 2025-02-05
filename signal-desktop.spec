@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	7.40.1
-Release:	2%{?dist}
+Version:	7.41.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -148,6 +148,9 @@ done
  
 
 %changelog
+* Wed Feb 05 2025 Udo Seidel <udoseidel@gmx.de> 7.41.0-1
+- We fixed a rare bug that prevented some chats from opening correctly after they were selected, so now Signal Desktop doesn't also draw a blank while you're trying to remember what they said.
+
 * Sun Feb 02 2025 Udo Seidel <udoseidel@gmx.de> 7.40.1-2
 - partial workaround for failing backbone patch
 
