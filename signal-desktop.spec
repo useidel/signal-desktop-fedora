@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.41.0
+Version:	7.42.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -148,6 +148,9 @@ done
  
 
 %changelog
+* Wed Feb 05 2025 Udo Seidel <udoseidel@gmx.de> 7.42.0-1
+- Now when you link your primary Signal device to a new Desktop, you can bring your chat history and your last 45 days of media with you. The transfer process is end-to-end encrypted, and completely optional. When it comes to making the choice about whether or not to leave the past behind, you're left to your own devices.
+
 * Wed Feb 05 2025 Udo Seidel <udoseidel@gmx.de> 7.41.0-1
 - We fixed a rare bug that prevented some chats from opening correctly after they were selected, so now Signal Desktop doesn't also draw a blank while you're trying to remember what they said.
 
