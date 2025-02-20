@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.42.0
+Version:	7.43.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -148,6 +148,9 @@ done
  
 
 %changelog
+* Wed Feb 19 2025 Udo Seidel <udoseidel@gmx.de> 7.43.0-1
+- Valentine's Day is all about celebrating a perfect match, so we updated the text label on a single button in the Desktop app to create a cute couple with the same button on your phone. This sounds like a very small change, and it is, but sometimes it's the little things that show how much you care.
+
 * Wed Feb 05 2025 Udo Seidel <udoseidel@gmx.de> 7.42.0-1
 - Now when you link your primary Signal device to a new Desktop, you can bring your chat history and your last 45 days of media with you. The transfer process is end-to-end encrypted, and completely optional. When it comes to making the choice about whether or not to leave the past behind, you're left to your own devices.
 
