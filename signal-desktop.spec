@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.43.0
+Version:	7.44.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -148,6 +148,9 @@ done
  
 
 %changelog
+* Thu Feb 27 2025 Udo Seidel <udoseidel@gmx.de> 7.44.0-1
+- We fixed a minor animation bug during group calls. We apologize in advance if the most exciting part of your day was switching to grid view during a meeting and trying to catch the moment where the video squares from people who joined late sometimes partially obscured the slide deck your boss was presenting.
+
 * Wed Feb 19 2025 Udo Seidel <udoseidel@gmx.de> 7.43.0-1
 - Valentine's Day is all about celebrating a perfect match, so we updated the text label on a single button in the Desktop app to create a cute couple with the same button on your phone. This sounds like a very small change, and it is, but sometimes it's the little things that show how much you care.
 
