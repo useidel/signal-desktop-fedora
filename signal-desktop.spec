@@ -1,13 +1,13 @@
 Name:		signal-desktop
 Version:	7.44.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
 
 Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 Source1:	backbone+1.6.0.patch
-Source2:	nan+2.22.0.patch
+Source2:	nan+2.22.2.patch
 
 BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel
 
@@ -148,6 +148,9 @@ done
  
 
 %changelog
+* Fri Feb 28 2025 Udo Seidel <udoseidel@gmx.de> 7.44.0-2
+- nan patch updated
+
 * Thu Feb 27 2025 Udo Seidel <udoseidel@gmx.de> 7.44.0-1
 - We fixed a minor animation bug during group calls. We apologize in advance if the most exciting part of your day was switching to grid view during a meeting and trying to catch the moment where the video squares from people who joined late sometimes partially obscured the slide deck your boss was presenting.
 
