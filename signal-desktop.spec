@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	7.45.0
-Release:	2%{?dist}
+Version:	7.45.1
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -148,6 +148,9 @@ done
  
 
 %changelog
+* Fri Mar 07 2025 Udo Seidel <udoseidel@gmx.de> 7.45.1-1
+- Stickers should feel sticky, not stuck, so now you can click on a sticker on a newly linked Signal Desktop and that sticker download will automatically get prioritized even when other attachments are downloading too.
+
 * Thu Mar 06 2025 Udo Seidel <udoseidel@gmx.de> 7.45.0-2
 - added pnpm to build dependencies
 
