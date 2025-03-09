@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	7.45.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -66,13 +66,7 @@ sed 's#"node": "#&>=#' -i package.json
     gem install fpm
 %endif
 
-#
-YARNCPATH=`dirname %{_builddir}`
-YARNCPATH=`dirname $YARNCPATH`
-mkdir -p $YARNCPATH/.config/yarn/global/
-cp .yarnclean $YARNCPATH/.config/yarn/global/
-yarn --c
-yarn install --frozen-lockfileyarn
+pnpm install
 
 %build
 # https://bugzilla.redhat.com/show_bug.cgi?id=1793722
@@ -93,8 +87,8 @@ echo $SOURCE_DATE_EPOCH
 
 cd %{_builddir}/Signal-Desktop-%{version} 
 
-yarn generate
-yarn build-release
+pnpm run generate
+pnpm run build
 
 %install
 
@@ -148,6 +142,9 @@ done
  
 
 %changelog
+* Sun Mar 09 2025 Udo Seidel <udoseidel@gmx.de> 7.45.1-2
+- replacing yarn with pnpm
+
 * Fri Mar 07 2025 Udo Seidel <udoseidel@gmx.de> 7.45.1-1
 - Stickers should feel sticky, not stuck, so now you can click on a sticker on a newly linked Signal Desktop and that sticker download will automatically get prioritized even when other attachments are downloading too.
 
