@@ -43,7 +43,7 @@ cd Signal-Desktop-%{version}
 rm -f patches/socks-proxy-agent*
 rm -f patches/*express*
 rm -f patches/*backbone*
-cp %{S:1} patches/backbone+1.6.0.patch
+cp %{S:1} patches/@types+backbone+1.4.22.patch
 cp %{S:2} patches/nan+2.22.2.patch
 
 
