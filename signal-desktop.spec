@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	7.45.1
-Release:	2%{?dist}
+Version:	7.46.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -142,6 +142,10 @@ done
  
 
 %changelog
+* Wed Mar 12 2025 Udo Seidel <udoseidel@gmx.de> 7.46.0-1
+- The new "Data usage" feature in Signal settings makes it easy to choose whether or not to automatically download photos, videos, audio files, or other documents. If Signal stops automatically downloading the latest tracks from your friend's boyfriend's band in the group chat, you can save your taste in music along with some free space on your hard drive.  
+- Now when you attempt to start a chat with someone's Signal username, it will work even if you accidentally type the “@” symbol first. Some h@bits @re h@rd to bre@k.
+
 * Sun Mar 09 2025 Udo Seidel <udoseidel@gmx.de> 7.45.1-2
 - replacing yarn with pnpm
 
