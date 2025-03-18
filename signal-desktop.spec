@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.46.0
+Version:	7.46.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -142,6 +142,10 @@ done
  
 
 %changelog
+* Tue Mar 18 2025 Udo Seidel <udoseidel@gmx.de> 7.46.1-1
+- The new "Data usage" feature in Signal settings makes it easy to choose whether or not to automatically download photos, videos, audio files, or other documents. If Signal stops automatically downloading the latest tracks from your friend's boyfriend's band in the group chat, you can save your taste in music along with some free space on your hard drive.
+-  Now when you attempt to start a chat with someone's Signal username, it will work even if you accidentally type the “@” symbol first. Some h@bits @re h@rd to bre@k.
+
 * Wed Mar 12 2025 Udo Seidel <udoseidel@gmx.de> 7.46.0-1
 - The new "Data usage" feature in Signal settings makes it easy to choose whether or not to automatically download photos, videos, audio files, or other documents. If Signal stops automatically downloading the latest tracks from your friend's boyfriend's band in the group chat, you can save your taste in music along with some free space on your hard drive.  
 - Now when you attempt to start a chat with someone's Signal username, it will work even if you accidentally type the “@” symbol first. Some h@bits @re h@rd to bre@k.
