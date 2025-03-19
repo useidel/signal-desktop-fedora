@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.46.1
+Version:	7.47.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -142,6 +142,9 @@ done
  
 
 %changelog
+* Wed Mar 19 2025 Udo Seidel <udoseidel@gmx.de> 7.47.0-1
+- Now you can expand your local video preview during a call to get a better look at yourself or reflect on who you are.
+
 * Tue Mar 18 2025 Udo Seidel <udoseidel@gmx.de> 7.46.1-1
 - The new "Data usage" feature in Signal settings makes it easy to choose whether or not to automatically download photos, videos, audio files, or other documents. If Signal stops automatically downloading the latest tracks from your friend's boyfriend's band in the group chat, you can save your taste in music along with some free space on your hard drive.
 -  Now when you attempt to start a chat with someone's Signal username, it will work even if you accidentally type the “@” symbol first. Some h@bits @re h@rd to bre@k.
