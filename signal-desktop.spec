@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.47.0
+Version:	7.48.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -142,6 +142,9 @@ done
  
 
 %changelog
+* Wed Mar 27 2025 Udo Seidel <udoseidel@gmx.de> 7.48.0-1
+-  We added a convenient shortcut to quickly lower your hand after you start speaking during a Signal group call. It's hands down our favorite feature in this release.
+
 * Wed Mar 19 2025 Udo Seidel <udoseidel@gmx.de> 7.47.0-1
 - Now you can expand your local video preview during a call to get a better look at yourself or reflect on who you are.
 
