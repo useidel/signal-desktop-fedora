@@ -41,9 +41,6 @@ cd Signal-Desktop-%{version}
 
 # remove unneeded but pre-packaged patches
 rm -f patches/socks-proxy-agent*
-##rm -f patches/*express*
-##rm -f patches/*backbone*
-##cp %{S:1} patches/@types+backbone+1.4.22.patch
 cp %{S:2} patches/nan+2.22.2.patch
 
 
@@ -66,6 +63,7 @@ sed 's#"node": "#&>=#' -i package.json
     gem install fpm
 %endif
 
+pnpm self-update
 pnpm install
 
 %build
@@ -142,7 +140,7 @@ done
  
 
 %changelog
-* Wed Mar 27 2025 Udo Seidel <udoseidel@gmx.de> 7.48.0-1
+* Wed Mar 26 2025 Udo Seidel <udoseidel@gmx.de> 7.48.0-1
 -  We added a convenient shortcut to quickly lower your hand after you start speaking during a Signal group call. It's hands down our favorite feature in this release.
 
 * Wed Mar 19 2025 Udo Seidel <udoseidel@gmx.de> 7.47.0-1
