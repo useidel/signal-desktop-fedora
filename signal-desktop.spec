@@ -63,7 +63,7 @@ sed 's#"node": "#&>=#' -i package.json
     gem install fpm
 %endif
 
-pnpm self-update
+pnpm add -g pnpm
 pnpm install
 
 %build
