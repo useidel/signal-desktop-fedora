@@ -9,7 +9,7 @@ Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 Source1:	backbone+1.6.0.patch
 Source2:	nan+2.22.2.patch
 
-BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz nodejs >= 20.15.0 ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel pnpm
+BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel
 
 # new for AARCH64 builds
 %ifarch aarch64
@@ -63,8 +63,13 @@ sed 's#"node": "#&>=#' -i package.json
     gem install fpm
 %endif
 
-pnpm add -g pnpm
-pnpm install
+#pnpm setup
+#export PNPM_HOME="/builddir/.local/share/pnpm"
+#source /builddir/.bashrc
+#pnpm add -g pnpm
+#npm install -g npm@11.2.0
+#npx node-gyp rebuild
+#####pnpm install
 
 %build
 # https://bugzilla.redhat.com/show_bug.cgi?id=1793722
@@ -85,8 +90,31 @@ echo $SOURCE_DATE_EPOCH
 
 cd %{_builddir}/Signal-Desktop-%{version} 
 
-pnpm run generate
+export NODE_VERSION=22.14
+export NVM_VERSION=0.40.0
+export NVM_DIR=$HOME/.nvm/
+mkdir $NVM_DIR
+curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias $NODE_VERSION \
+    && nvm use $NODE_VERSION
+export NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
+export PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# Install pnpm
+npm install -g pnpm@10.3.0
+
+# now build Signal-Desktop
+pnpm install --frozen-lockfile
+pnpm run clean-transpile
+cd sticker-creator
+pnpm install --frozen-lockfile
 pnpm run build
+cd ..
+pnpm run generate
+pnpm run prepare-beta-build
+pnpm run build-linux
 
 %install
 
@@ -142,6 +170,7 @@ done
 %changelog
 * Wed Mar 26 2025 Udo Seidel <udoseidel@gmx.de> 7.48.0-1
 -  We added a convenient shortcut to quickly lower your hand after you start speaking during a Signal group call. It's hands down our favorite feature in this release.
+- changed the build architecture: nodejs and related are now installed from source and not via rpm packages (it got too messy recently)
 
 * Wed Mar 19 2025 Udo Seidel <udoseidel@gmx.de> 7.47.0-1
 - Now you can expand your local video preview during a call to get a better look at yourself or reflect on who you are.
