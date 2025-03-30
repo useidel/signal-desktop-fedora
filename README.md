@@ -8,7 +8,7 @@ SPEC file inspired by [luminoso](https://copr.fedorainfracloud.org/coprs/luminos
 
 And if you want to build the RPMs on-premise you should visit [BarbossHack's Signal-Desktop-Fedora](https://github.com/BarbossHack/Signal-Desktop-Fedora)
 
-The content of the SPEC file basically follows the instructions from [Reproducible Buils](https://github.com/signalapp/Signal-Desktop/tree/main/reproducible-builds). For that it requires internet access to install nodejs, nvm and pnpm with the required version. 
+The content of the SPEC file basically follows the instructions from [Reproducible Builds](https://github.com/signalapp/Signal-Desktop/tree/main/reproducible-builds). For that it requires internet access to install nodejs, nvm and pnpm with the required version. 
 
 
 ---
