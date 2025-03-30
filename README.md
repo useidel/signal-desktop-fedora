@@ -1,6 +1,6 @@
 # signal-desktop-fedora
 
-Some experiments with the SPEC file to create an RPM for fedora - basically about the patching of the source.
+A SPEC file for Signal-Desktop to create an RPM for fedora. 
 
 The source of signal-desktop are here: [Signal-Desktop](https://github.com/signalapp/Signal-Desktop)
 
@@ -8,9 +8,7 @@ SPEC file inspired by [luminoso](https://copr.fedorainfracloud.org/coprs/luminos
 
 And if you want to build the RPMs on-premise you should visit [BarbossHack's Signal-Desktop-Fedora](https://github.com/BarbossHack/Signal-Desktop-Fedora)
 
-It basically follows the instructions from [How to compile Signal-Desktop for Fedora](https://github.com/michelamarie/fedora-signal/wiki/How-to-compile-Signal-Desktop-for-Fedora) but skips the installation of nvm (node Version Manager) and some follow-up steps because installs the needed npm version an external repo (see below). Also, it does not replace "deb" by "rpm" in the package.json file since this is not needed either.
-
-The current build requires internet access to install nodejs and related packages with the required version
+The content of the SPEC file basically follows the instructions from [Reproducible Buils](https://github.com/signalapp/Signal-Desktop/tree/main/reproducible-builds). For that it requires internet access to install nodejs, nvm and pnpm with the required version. 
 
 
 ---

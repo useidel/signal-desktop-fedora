@@ -33,7 +33,6 @@ export SOURCE_DATE_EPOCH="$(date +"%s")"
 # git-lfs hook needs to be installed for one of the dependencies
 git lfs install
 
-node --version
 rm -rf Signal-Desktop-%{version}
 tar xfz %{S:0}
 
@@ -41,6 +40,8 @@ cd Signal-Desktop-%{version}
 
 # remove unneeded but pre-packaged patches
 rm -f patches/socks-proxy-agent*
+
+# replace outdated patch
 cp %{S:2} patches/nan+2.22.2.patch
 
 
@@ -63,18 +64,9 @@ sed 's#"node": "#&>=#' -i package.json
     gem install fpm
 %endif
 
-#pnpm setup
-#export PNPM_HOME="/builddir/.local/share/pnpm"
-#source /builddir/.bashrc
-#pnpm add -g pnpm
-#npm install -g npm@11.2.0
-#npx node-gyp rebuild
-#####pnpm install
-
 %build
 # https://bugzilla.redhat.com/show_bug.cgi?id=1793722
 export SOURCE_DATE_EPOCH="$(date +"%s")"
-echo $SOURCE_DATE_EPOCH
 
 # https://github.com/electron-userland/electron-builder-binaries/issues/49#issuecomment-1100804486
 %ifarch aarch64
@@ -90,22 +82,38 @@ echo $SOURCE_DATE_EPOCH
 
 cd %{_builddir}/Signal-Desktop-%{version} 
 
-export NODE_VERSION=22.14
-export NVM_VERSION=0.40.0
-export NVM_DIR=$HOME/.nvm/
+# install nvm, nodejs and pnpm using the instructions from reproducible-builds/Dockerfile
+
+# which nodejs version do we need
+NODE_VERSION=`cat .nvmrc`
+# the NVM version -> latest available
+NVM_VERSION=0.40.2 
+# project uses differen nvm version -> 0.40.0
+NVM_DIR=$HOME/.nvm/
+# which pnpm version do we need
+PNPM_VERSION=`grep packageManager package.json | cut -f2 -d':' |tr -d ','| tr -d '"'|tr -d ' '`
+# project uses different pnpm version -> 10.3.0
+
+export NODE_VERSION NVM_VERSION NVM_DIR
+
 mkdir $NVM_DIR
+
+# download and install nvm and set node version to required value
 curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash \
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias $NODE_VERSION \
     && nvm use $NODE_VERSION
-export NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
-export PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
-# Install pnpm
-npm install -g pnpm@10.3.0
+NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
+PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
-# now build Signal-Desktop
+export NODE_PATH PATH
+
+# Install pnpm 
+npm install -g $PNPM_VERSION 
+
+# the following commands are taken from reproducible-builds/docker-entrypoint.sh
 pnpm install --frozen-lockfile
 pnpm run clean-transpile
 cd sticker-creator
@@ -113,8 +121,16 @@ pnpm install --frozen-lockfile
 pnpm run build
 cd ..
 pnpm run generate
-pnpm run prepare-beta-build
 pnpm run build-linux
+
+
+# that should work as well ... let's stick to commands from 
+# above which are provided by the project
+#
+###pnpm install 
+###pnpm run generate
+###pnpm run build-linux
+
 
 %install
 
@@ -170,7 +186,9 @@ done
 %changelog
 * Wed Mar 26 2025 Udo Seidel <udoseidel@gmx.de> 7.48.0-1
 -  We added a convenient shortcut to quickly lower your hand after you start speaking during a Signal group call. It's hands down our favorite feature in this release.
-- changed the build architecture: nodejs and related are now installed from source and not via rpm packages (it got too messy recently)
+- Udo: changed the build workflow: install nodejs, nvm and pnpm as non-root user via generic linux methods and not via rpm packages anymore (also reflected in the rpm-build dependencies
+- Udo: use the pnpm instructions from reproducible-builds/docker-entrypoint.sh
+- Udo: clean-up of SPEC file
 
 * Wed Mar 19 2025 Udo Seidel <udoseidel@gmx.de> 7.47.0-1
 - Now you can expand your local video preview during a call to get a better look at yourself or reflect on who you are.
@@ -184,19 +202,19 @@ done
 - Now when you attempt to start a chat with someone's Signal username, it will work even if you accidentally type the “@” symbol first. Some h@bits @re h@rd to bre@k.
 
 * Sun Mar 09 2025 Udo Seidel <udoseidel@gmx.de> 7.45.1-2
-- replacing yarn with pnpm
+- Udo: replacing yarn with pnpm
 
 * Fri Mar 07 2025 Udo Seidel <udoseidel@gmx.de> 7.45.1-1
 - Stickers should feel sticky, not stuck, so now you can click on a sticker on a newly linked Signal Desktop and that sticker download will automatically get prioritized even when other attachments are downloading too.
 
 * Thu Mar 06 2025 Udo Seidel <udoseidel@gmx.de> 7.45.0-2
-- added pnpm to build dependencies
+- Udo: added pnpm to build dependencies
 
 * Thu Mar 06 2025 Udo Seidel <udoseidel@gmx.de> 7.45.0-1
 - Stickers should feel sticky, not stuck, so now you can click on a sticker on a newly linked Signal Desktop and that sticker download will automatically get prioritized even when other attachments are downloading too.
 
 * Fri Feb 28 2025 Udo Seidel <udoseidel@gmx.de> 7.44.0-2
-- nan patch updated
+- Udo: nan patch updated
 
 * Thu Feb 27 2025 Udo Seidel <udoseidel@gmx.de> 7.44.0-1
 - We fixed a minor animation bug during group calls. We apologize in advance if the most exciting part of your day was switching to grid view during a meeting and trying to catch the moment where the video squares from people who joined late sometimes partially obscured the slide deck your boss was presenting.
@@ -211,13 +229,13 @@ done
 - We fixed a rare bug that prevented some chats from opening correctly after they were selected, so now Signal Desktop doesn't also draw a blank while you're trying to remember what they said.
 
 * Sun Feb 02 2025 Udo Seidel <udoseidel@gmx.de> 7.40.1-2
-- partial workaround for failing backbone patch
+- Udo: partial workaround for failing backbone patch
 
 * Sun Feb 02 2025 Udo Seidel <udoseidel@gmx.de> 7.40.1-1
 - We fixed a rare bug that prevented some chats from opening correctly after they were selected, so now Signal Desktop doesn't also draw a blank while you're trying to remember what they said. 
 
 * Sun Feb 02 2025 Udo Seidel <udoseidel@gmx.de> 7.40.0-2
-- Workaround for failing builds with electron 33.x
+- Udo: workaround for failing builds with electron 33.x
 
 * Wed Jan 29 2025 Udo Seidel <udoseidel@gmx.de> 7.40.0-1
 - We fixed a rare bug that prevented some chats from opening correctly after they were selected, so now Signal Desktop doesn't also draw a blank while you're trying to remember what they said.
@@ -239,7 +257,7 @@ done
 - Filter by Unread now highlights the selected chat, and the list of unread chats will automatically update as new messages arrive or when you catch up in one chat and click on another.
 
 * Wed Dec 11 2024 Udo Seidel <udoseidel@gmx.de> 7.35.1-2
-- workaround for backbone patch with hunks
+- Udo: workaround for backbone patch with hunks
 
 * Thu Dec 05 2024 Udo Seidel <udoseidel@gmx.de> 7.35.1-1
 - The new filter icon next to the search box makes it easy to quickly find unread chats, but feel free to take your time deciding whether or not to leave them on read after seeing what they had to say.
@@ -263,12 +281,12 @@ done
 
 * Thu Oct 24 2024 Udo Seidel <udoseidel@gmx.de> 7.30.0-1
 - Introducing Call Links: The missing link for calendar invites and impromptu gatherings.
-  +  Now you can quickly create an easy link that anyone on Signal can use to join a group call without having to join a Signal group chat first.
-  +  Call links are reusable and ideal for recurring phone dates with your best friends or weekly check-ins with your coworkers.
-  +  You can manage your call links, control approval settings, and copy links from the calls tab for quick sharing.
+- Now you can quickly create an easy link that anyone on Signal can use to join a group call without having to join a Signal group chat first.
+- Call links are reusable and ideal for recurring phone dates with your best friends or weekly check-ins with your coworkers.
+- You can manage your call links, control approval settings, and copy links from the calls tab for quick sharing.
 
 * Wed Oct 16 2024 Udo Seidel <udoseidel@gmx.de> 7.29.0-1
-- This update improves startup speed by around 5%, so feel free to slow down a little bit in other areas of your life.  This update improves startup speed by around 5%, so feel free to slow down a little bit in other areas of your life.
+- This update improves startup speed by around 5%, so feel free to slow down a little bit in other areas of your life.  
 
 * Thu Oct 10 2024 Udo Seidel <udoseidel@gmx.de> 7.28.0-1
 -  We fixed a bug that prevented stickers from working correctly in the media editor, and now the picker no longer gets stuck when you're trying to stick a sticker on a picture.
@@ -285,7 +303,7 @@ done
 
 * Fri Sep 13 2024 Udo Seidel <udoseidel@gmx.de> 7.24.1-1
 - see below
-- Bogus date from 7.24.0-1 corrected
+- Udo: bogus date from 7.24.0-1 corrected
 
 * Thu Sep 12 2024 Udo Seidel <udoseidel@gmx.de> 7.24.0-1
 - This update fixes a bug where viewing a missed call on one device wouldn't automatically clear the indicator for that missed call on your other devices, which was a missed opportunity for your missed call list to better coexist. 
@@ -295,7 +313,7 @@ done
 - We also fixed a handful of bugs, including one that sometimes caused "Unknown contact started a video call" to appear in the chat list summary after you started the call. Even if you're still on a journey of self-discovery, you are never completely unknown to yourself.
 
 * Fri Aug 30 2024 Udo Seidel <udoseidel@gmx.de> 7.22.2-2
-- remove of unneeded but pre-packaged patch for nodes socks-proxy-agent and types-express 
+- Udo: remove of unneeded but pre-packaged patch for nodes socks-proxy-agent and types-express 
 
 * Fri Aug 30 2024 Udo Seidel <udoseidel@gmx.de> 7.22.2-1
 - see previous entry
@@ -310,14 +328,14 @@ done
 - Everyone loves a good story, and we could tell you the tale of a bug that sometimes caused the progress bar to freeze right in the middle of watching a good story — but that bug's adventure already has a happy ending because we fixed it in this release.
 
 * Tue Aug 20 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-3
-- clean up SPEC file (old build reqs)
+- Udo: clean up SPEC file (old build reqs)
 
 * Mon Aug 19 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-2
-- fixing build reqs
+- Udo: fixing build reqs
 
 * Mon Aug 19 2024 Udo Seidel <udoseidel@gmx.de> 7.20.1-1
 - see below
-- fixed bogus dateof 7.20.0
+- Udo: fixed bogus date of 7.20.0
 
 * Thu Aug 15 2024 Udo Seidel <udoseidel@gmx.de> 7.20.0-1
 - Stories with long captions are displayed on a subtle gradient background that improves contrast and makes the text easier to read. Now that people can see what you're saying, feel free to write a couple paragraphs about why something really made you laugh instead of just saying "lol."
@@ -333,16 +351,16 @@ done
 - This update also fixes a startup crash on Linux for users whose locale is set to POSIX.
 
 * Thu Aug 01 2024 Dennis Gilmore <dennis@ausil.us> 7.18.0-2
-- add ~/bin into PATH for aarch64 builds
+- Udo: add ~/bin into PATH for aarch64 builds
 
 * Thu Aug 01 2024 Udo Seidel <udoseidel@gmx.de> 7.18.0-1
 - A quick goodbye is sometimes easier than a slow farewell, so we sped up the process of deleting large message threads.
 
 * Sat Jul 27 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-3
-- added logic to handle corner case for fpm on AARCH64
+- Udo: added logic to handle corner case for fpm on AARCH64
 
 * Fri Jul 26 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-2
-- nodejs >=20.15.0 is required (not shipped by fedora -> repo https://rpm.nodesource.com/ needed)
+- Udo: nodejs >=20.15.0 is required (not shipped by fedora -> repo https://rpm.nodesource.com/ needed)
 
 * Thu Jul 25 2024 Udo Seidel <udoseidel@gmx.de> 7.17.0-1
 - We wanted things to be slicker and quicker for sticker clickers, so we fixed a bug that sometimes prevented Signal from launching the sticker viewer if you tried to open a sticker pack link while the app was closed. 
@@ -374,7 +392,7 @@ done
 - We fixed a rendering bug that caused the contacts icon to smash itself right next to the contact's name while viewing the list of participants in a group call. You're probably really close to your contacts, but sometimes you (and the Signal Desktop user interface) both need a little space.
 
 * Wed May 22 2024 Udo Seidel <udoseidel@gmx.de> 7.10.0-2
-- Added ruby-devel to build requirements
+- Udo: Added ruby-devel to build requirements
 
 * Wed May 22 2024 Udo Seidel <udoseidel@gmx.de> 7.10.0-1
 - Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
@@ -522,7 +540,7 @@ and UX improvements."
 - Now you can edit a message with a right click after it has been sent! Fix a tpyo, include the missing ingredient in grandma's chocolate chip cookie recipe, or add the punchline to a joke if you hit the send button too quickly. The choice is yours. Messages will always show when they have been edited, and you can click on the "Edited" indicator to see the full edit history for any edited messages. Update the past in the present to prevent future confusion today!
 
 * Mon Oct 02 2023 Udo Seidel <udoseidel@gmx.de> 6.32.0-2
-- update SPEC file to work around the missing yarnclean file issue on copr
+- Udo: update SPEC file to work around the missing yarnclean file issue on copr
 
 * Fri Sep 29 2023 Udo Seidel <udoseidel@gmx.de> 6.32.0-1
 - If you say "media editor" five times fast, it starts to sound like "mediator" — but the new media editor is so much easier to use that you'll no longer feel like you need a mediator to settle a fight between you and the crop tool.
@@ -542,10 +560,10 @@ and UX improvements."
 - Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread.
 
 * Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-3
-- cosmetic change related to previous fix and to cover misleading error message in prep phase
+- Udo: cosmetic change related to previous fix and to cover misleading error message in prep phase
 
 * Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-2
-- fixed problem fpm not in PATH on AARCH64
+- Udo: fixed problem fpm not in PATH on AARCH64
 
 * Thu Aug 24 2023 Udo Seidel <udoseidel@gmx.de> 6.29.1-1
 - The Chat Color customization screen is now displayed correctly across different languages and selected locales.
@@ -565,7 +583,7 @@ and UX improvements."
 - This update includes a few improvements for voice and video calls, and some minor documentation updates (thanks, @vijithassar).
 
 * Mon Jul 24 2023 Udo Seidel <udoseidel@gmx.de> 6.26.0-2
-- fixed wrong date format in SPEC file
+- Udo: fixed wrong date format in SPEC file
 
 * Thu Jul 20 2023 Udo Seidel <udoseidel@gmx.de> 6.26.0-1
 - Diacritics (such as accent marks) are now supported in @ mentions, so you can remind Aristotélēs to answer your philosophy question in the "Ancient Greek Time Travellers" group chat.
@@ -637,10 +655,10 @@ and UX improvements."
 - switched to use the fedora shipped npm and not the one from https://rpm.nodesource.com/pub_16.x/fc/$releasever/$basearch
 
 * Sun Apr 02 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-3
-- small clean-up
+- Udo: small clean-up
 
 * Sat Apr 01 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-2
-- enabled build for AARCH64 (https://github.com/signalapp/Signal-Desktop/issues/4530)
+- Udo: enabled build for AARCH64 (https://github.com/signalapp/Signal-Desktop/issues/4530)
 
 * Thu Mar 30 2023 Udo Seidel <udoseidel@gmx.de> 6.12.0-1
 - Now you can select multiple messages and forward or delete them all at once.
@@ -695,7 +713,7 @@ and UX improvements."
 
 * Thu Jan 12 2023 Udo Seidel <udoseidel@gmx.de> 6.2.0-1
 - Tweaks, bug fixes, and performance enhancements. Keep on texting, calling, and video chatting as usual
-- Removed patch covering not being able to read release date from git
+- Udo: removed patch covering not being able to read release date from git
 
 * Thu Dec 15 2022 Udo Seidel <udoseidel@gmx.de> 6.1.0-1
 - When you start a group call for small groups (up to 16 people), you can choose to send a ringing notification. Group members will hear a ring if they are on the iOS beta or using Desktop or Android.
@@ -819,65 +837,65 @@ and UX improvements."
 - Ever used Signal while on an unstable connection? You can worry no more - disappearing message timer changes and more will now be synced back once your Wi-Fi feels better again.
 
 * Wed Feb 16 2022 Udo Seidel <udoseidel@gmx.de> 5.32.0-1
-- and again trying to stay on top of the actual released version
+- Udo: and again trying to stay on top of the actual released version
 
 * Thu Feb 10 2022 Udo Seidel <udoseidel@gmx.de> 5.31.0-1
-- and trying to stay on top of the actual released version :-)
+- Udo: and trying to stay on top of the actual released version :-)
 
 * Thu Feb 10 2022 Udo Seidel <udoseidel@gmx.de> 5.30.0-1
-- catch-up with actual minor release
+- Udo: catch-up with actual minor release
 
 * Wed Jan 05 2022 Udo Seidel <udoseidel@gmx.de> 5.26.0-1
-- catch-up with actual minor release
+- Udo: catch-up with actual minor release
 
 * Mon Nov 01 2021 Udo Seidel <udoseidel@gmx.de> 5.22.0-1
-- boost to actual minor release
+- Udo: boost to actual minor release
 
 * Wed Oct 20 2021 Udo Seidel <udoseidel@gmx.de> 5.20.0-1
-- boost to actual minor release
+- Udo: boost to actual minor release
 
 * Sat Oct 09 2021 Udo Seidel <udoseidel@gmx.de> 5.19.0-1
-- boost to most recent minor release
+- Udo: boost to most recent minor release
 
 * Wed Sep 29 2021 Udo Seidel <udoseidel@gmx.de> 5.17.2-1
-- next minor release
+- Udo: next minor release
 
 * Mon Sep 13 2021 Udo Seidel <udoseidel@gmx.de> 5.17.1-1
-- next minor release
+- Udo: next minor release
 
 * Thu Sep 09 2021 Udo Seidel <udoseidel@gmx.de> 5.16.0-1
-- Guess what: jump to latest minor release
+- Udo Guess what: jump to latest minor release
 
 * Sat Aug 07 2021 Udo Seidel <udoseidel@gmx.de> 5.12.1-1
-- And Again jump to latest minor release
+- Udo: And Again jump to latest minor release
 
 * Thu Jul 29 2021 Udo Seidel <udoseidel@gmx.de> 5.11.0-1
-- Again jump to latest minor release
+- Udo: Again jump to latest minor release
 
 * Fri Jul 09 2021 Udo Seidel <udoseidel@gmx.de> 5.8.0-1
-- Again jump to latest minor release
+- Udo: Again jump to latest minor release
 
 * Sun Jun 06 2021 Udo Seidel <udoseidel@gmx.de> 5.4.0-1
-- Jump to latest minor release
-- remove of package.json patch
+- Udo: Jump to latest minor release
+- Udo: remove of package.json patch
 
 * Sun May 16 2021 Udo Seidel <udoseidel@gmx.de> 5.1.0-1
-- Update to new minor release
-- Remove openssl dynamic link patches
-- Remove bundled binaries for other platforms
+- Udo: Update to new minor release
+- Udo: Remove openssl dynamic link patches
+- Udo: Remove bundled binaries for other platforms
 
 * Sat May 01 2021 Udo Seidel <udoseidel@gmx.de> 5.0.0-1
-- Update to new major version
+- Udo: Update to new major version
 
 * Thu Feb 18 2021 Udo Seidel <udoseidel@gmx.de> 1.40.0-1
-- update to new release
+- Udo: update to new release
 
 * Tue Jan 26 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-3
-- patching outsourced from SPEC to patch files
+- Udo: patching outsourced from SPEC to patch files
 
 * Mon Jan 25 2021 Udo Seidel <udoseidel@gmx.de> 1.39.6-2
-- cleanup of spec file
-- covering renaming of yarn package on fedora
+- Udo: cleanup of spec file
+- Udo: covering renaming of yarn package on fedora
 
 * Fri Sep 25 2020 Guilherme Cardoso <gjc@ua.pt> 1.36.2-1
 - Patch to remove fsevents from build, since it make build failing
