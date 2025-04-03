@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.48.0
+Version:	7.49.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Apr 03 2025 Udo Seidel <udoseidel@gmx.de> 7.49.0-1
+- Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
+
 * Wed Mar 26 2025 Udo Seidel <udoseidel@gmx.de> 7.48.0-1
 -  We added a convenient shortcut to quickly lower your hand after you start speaking during a Signal group call. It's hands down our favorite feature in this release.
 - Udo: changed the build workflow: install nodejs, nvm and pnpm as non-root user via generic linux methods and not via rpm packages anymore (also reflected in the rpm-build dependencies
