@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.49.0
+Version:	7.50.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Apr 10 2025 Udo Seidel <udoseidel@gmx.de> 7.50.0-1
+- If you link a new Desktop on Signal Android and choose to transfer your message history, now you can also selectively transfer old attachments from your primary device too. Bring the past into the present by scrolling back in time and clicking on the download icon. As always, the transfer process is end-to-end encrypted and secure.
+
 * Thu Apr 03 2025 Udo Seidel <udoseidel@gmx.de> 7.49.0-1
 - Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
 
