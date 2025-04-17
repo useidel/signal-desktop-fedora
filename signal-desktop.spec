@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.50.0
+Version:	7.51.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,10 @@ done
  
 
 %changelog
+* Fri Apr 18 2025 Udo Seidel <udoseidel@gmx.de> 7.51.0-1
+- Fire, the wheel, and electricity were all great developments, but they were merely necessary steps along the path that created the conditions for animated GIF search to exist. Now you can experience the pinnacle of human technological advancement in Signal Desktop with a brand-new selection interface that makes it easy to quickly find an emoji, sticker, or animated GIF that's perfect for the moment.
+- We also resized the picture-in-picture window and added convenient new shortcuts to mute/unmute your microphone or turn the camera on/off while a call is minimized.
+
 * Thu Apr 10 2025 Udo Seidel <udoseidel@gmx.de> 7.50.0-1
 - If you link a new Desktop on Signal Android and choose to transfer your message history, now you can also selectively transfer old attachments from your primary device too. Bring the past into the present by scrolling back in time and clicking on the download icon. As always, the transfer process is end-to-end encrypted and secure.
 
