@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.51.0
+Version:	7.52.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Wed Apr 23 2025 Udo Seidel <udoseidel@gmx.de> 7.52.0-1
+- Additional small tweaks, bug fixes, and assorted plans for the future.
+
 * Fri Apr 18 2025 Udo Seidel <udoseidel@gmx.de> 7.51.0-1
 - Fire, the wheel, and electricity were all great developments, but they were merely necessary steps along the path that created the conditions for animated GIF search to exist. Now you can experience the pinnacle of human technological advancement in Signal Desktop with a brand-new selection interface that makes it easy to quickly find an emoji, sticker, or animated GIF that's perfect for the moment.
 - We also resized the picture-in-picture window and added convenient new shortcuts to mute/unmute your microphone or turn the camera on/off while a call is minimized.
