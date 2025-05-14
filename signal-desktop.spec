@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.53.0
+Version:	7.54.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Wed May 14 2025 Udo Seidel <udoseidel@gmx.de> 7.54.0-1
+- A smile is the same in any language, but now that the emoji shortcuts in Signal Desktop have been fully translated you can also :smile: or :sourire: or :微笑: in any supported language too.
+
 * Thu May 01 2025 Udo Seidel <udoseidel@gmx.de> 7.53.0-1
 - Additional small tweaks, bug fixes, and assorted plans for the future.
 
