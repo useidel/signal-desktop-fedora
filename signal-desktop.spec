@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.54.0
+Version:	7.55.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,10 @@ done
  
 
 %changelog
+* Thu May 22 2025 Udo Seidel <udoseidel@gmx.de> 7.55.0-1
+- Keyboard shortcuts for emoji and stickers are back! These shortcuts also save even more time because now you won't need to write in and tell us that they're broken anymore.
+- We also fixed a crash on Linux distributions that don't support GTK4 yet.
+
 * Wed May 14 2025 Udo Seidel <udoseidel@gmx.de> 7.54.0-1
 - A smile is the same in any language, but now that the emoji shortcuts in Signal Desktop have been fully translated you can also :smile: or :sourire: or :微笑: in any supported language too.
 
