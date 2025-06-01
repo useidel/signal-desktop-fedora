@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.55.0
+Version:	7.56.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Sun Jun 01 2025 Udo Seidel <udoseidel@gmx.de> 7.56.0-1
+- Sometimes a powerful story can really move you, so we fixed a bug that made it difficult to move the Signal window while viewing content in the Stories tab.
+
 * Thu May 22 2025 Udo Seidel <udoseidel@gmx.de> 7.55.0-1
 - Keyboard shortcuts for emoji and stickers are back! These shortcuts also save even more time because now you won't need to write in and tell us that they're broken anymore.
 - We also fixed a crash on Linux distributions that don't support GTK4 yet.
