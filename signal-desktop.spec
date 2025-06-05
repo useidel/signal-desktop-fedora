@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.56.0
+Version:	7.56.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Jun 05 2025 Udo Seidel <udoseidel@gmx.de> 7.56.1-1
+- see previous entry
+
 * Sun Jun 01 2025 Udo Seidel <udoseidel@gmx.de> 7.56.0-1
 - Sometimes a powerful story can really move you, so we fixed a bug that made it difficult to move the Signal window while viewing content in the Stories tab.
 
