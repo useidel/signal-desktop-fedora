@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.56.1
+Version:	7.57.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Wed Jun 11 2025 Udo Seidel <udoseidel@gmx.de> 7.57.0-1
+- Settings used to live in a pop-out window so we popped it back in. Now, when you adjust your Settings, you’ll do it from the main screen.
+
 * Thu Jun 05 2025 Udo Seidel <udoseidel@gmx.de> 7.56.1-1
 - see previous entry
 
