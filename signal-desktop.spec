@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.58.0
+Version:	7.59.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Jun 26 2025 Udo Seidel <udoseidel@gmx.de> 7.59.0-1
+- This update enables GPU acceleration on Linux for improved performance and smoother video playback on supported hardware.
+
 * Thu Jun 19 2025 Udo Seidel <udoseidel@gmx.de> 7.58.0-1
 - A new section in the message reaction selector automatically displays all of the emoji reactions that a message has received. Now you can quickly jump on the bandwagon and add a standard sparkling heart just like everyone else already did, or you can follow your own heart and go with the anatomical heart instead.
 
