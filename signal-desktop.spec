@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.59.0
+Version:	7.60.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Jul 03 2025 Udo Seidel <udoseidel@gmx.de> 7.60.0-1
+- This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
+
 * Thu Jun 26 2025 Udo Seidel <udoseidel@gmx.de> 7.59.0-1
 - This update enables GPU acceleration on Linux for improved performance and smoother video playback on supported hardware.
 
