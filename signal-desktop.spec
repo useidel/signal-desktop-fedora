@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.61.0
+Version:	7.62.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Jul 17 2025 Udo Seidel <udoseidel@gmx.de> 7.62.0-1
+- We fixed a rare bug that could prevent some contacts from synchronizing correctly.
+
 * Thu Jul 10 2025 Udo Seidel <udoseidel@gmx.de> 7.61.0-1
 - This update improves audio quality and reliability during voice and video calls, and introduces better automatic configuration of connected microphones and speakers. Thanks to @padenot [github.com], @kinetiknz [github.com], and @Pehrsons [github.com] at Mozilla for their help with this project.
 
