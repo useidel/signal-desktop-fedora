@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.63.0
+Version:	7.64.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Jul 31 2025 Udo Seidel <udoseidel@gmx.de> 7.64.0-1
+- We improved the message read/unread experience while multitasking, and fixed a bug that sometimes incorrectly opened the expanded image viewer if you hit the space bar while searching for the perfect emoji reaction. You can still zoom if you click on the image, or if you type quickly enough.
+
 * Wed Jul 23 2025 Udo Seidel <udoseidel@gmx.de> 7.63.0-1
 - This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
 
