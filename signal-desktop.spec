@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.65.0
+Version:	7.66.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Aug 14 2025 Udo Seidel <udoseidel@gmx.de> 7.66.0-1
+- This update fixes a few small bugs, including one where emoji reactions weren't being grouped together correctly in some cases.
+
 * Thu Aug 07 2025 Udo Seidel <udoseidel@gmx.de> 7.65.0-1
 - Finding the right emoji can feel like an inescapable struggle, but we fixed a bug that could cause an error to occur after pressing the escape key in the emoji search box.
 
