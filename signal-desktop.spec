@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.67.0
+Version:	7.68.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Aug 28 2025 Udo Seidel <udoseidel@gmx.de> 7.68.0-1
+- This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
+
 * Wed Aug 20 2025 Udo Seidel <udoseidel@gmx.de> 7.67.0-1
 -  We fixed a bug that prevented donation badges from appearing correctly for some users. Signal is a 501c3 nonprofit, and we appreciate your support!
 
