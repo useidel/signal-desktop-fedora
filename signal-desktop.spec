@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.69.0
+Version:	7.70.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Sep 11 2025 Udo Seidel <udoseidel@gmx.de> 7.70.0-1
+- We fixed a bug on Microsoft Windows that made the Signal Desktop title bar orange instead of blue. If you've grown to love the citrus-themed color scheme over the past few days and this bugfix makes you feel blue, you can adjust your system accent color in your Windows settings.
+
 * Thu Sep 04 2025 Udo Seidel <udoseidel@gmx.de> 7.69.0-1
 - Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
 
