@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.71.0
+Version:	7.72.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Sep 25 2025 Udo Seidel <udoseidel@gmx.de> 7.72.0-1
+- Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
+
 * Thu Sep 18 2025 Udo Seidel <udoseidel@gmx.de> 7.71.0-1
 - Hard at work fixing bugs and making other performance improvements to keep the app running smoothly for you.
 
