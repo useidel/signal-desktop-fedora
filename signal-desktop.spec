@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.72.1
+Version:	7.73.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Oct 02 2025 Udo Seidel <udoseidel@gmx.de> 7.73.0-1
+- This update introduces new performance optimizations to help improve battery life, so you'll have more charge available for emotionally charged conversations. 
+
 * Thu Sep 25 2025 Udo Seidel <udoseidel@gmx.de> 7.72.1-1
  See below
 
