@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.73.0
+Version:	7.74.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Oct 09 2025 Udo Seidel <udoseidel@gmx.de> 7.74.0-1
+- Just in time for autumn, the new "Leafless Tree" emoji (along with the other six new emoji in Unicode 16.0) are now supported in Signal Desktop.
+
 * Thu Oct 02 2025 Udo Seidel <udoseidel@gmx.de> 7.73.0-1
 - This update introduces new performance optimizations to help improve battery life, so you'll have more charge available for emotionally charged conversations. 
 
