@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.75.1
+Version:	7.76.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Oct 23 2025 Udo Seidel <udoseidel@gmx.de> 7.76.0-1
+- Set up custom notification profiles to control which people and groups you receive notifications from when that profile is enabled. Create a “Work” profile that keeps non-coworkers at bay (with an exception for your bae) and a “Downtime” profile that doesn't include your boss. You can switch between notification profiles whenever you want, or configure a schedule so it happens automatically.
+
 * Fri Oct 17 2025 Udo Seidel <udoseidel@gmx.de> 7.75.1-1
 - See below
 
