@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.76.0
+Version:	7.77.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,11 @@ done
  
 
 %changelog
+* Thu Oct 30 2025 Udo Seidel <udoseidel@gmx.de> 7.77.0-1
+- Chat folders let you organize your organizations, group your groups, and individualize your individuals into unique folders that are easy to customize and rearrange. Display unread messages from your favorite people, filter by chat type (1-on-1 and groups), or create separate folders like "Personal" and "Work" so you can quickly see the messages that are relevant to you. Enable chat folders in Settings > Chats to get started.
+-  This update also includes a bugfix for an issue that prevented link previews from being generated when the message also
+    included emoji characters. Thanks, @elias6 [github.com]!
+
 * Thu Oct 23 2025 Udo Seidel <udoseidel@gmx.de> 7.76.0-1
 - Set up custom notification profiles to control which people and groups you receive notifications from when that profile is enabled. Create a “Work” profile that keeps non-coworkers at bay (with an exception for your bae) and a “Downtime” profile that doesn't include your boss. You can switch between notification profiles whenever you want, or configure a schedule so it happens automatically.
 
