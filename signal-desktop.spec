@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.77.0
+Version:	7.77.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Oct 30 2025 Udo Seidel <udoseidel@gmx.de> 7.77.1-1
+- see below
+
 * Thu Oct 30 2025 Udo Seidel <udoseidel@gmx.de> 7.77.0-1
 - Chat folders let you organize your organizations, group your groups, and individualize your individuals into unique folders that are easy to customize and rearrange. Display unread messages from your favorite people, filter by chat type (1-on-1 and groups), or create separate folders like "Personal" and "Work" so you can quickly see the messages that are relevant to you. Enable chat folders in Settings > Chats to get started.
 -  This update also includes a bugfix for an issue that prevented link previews from being generated when the message also
