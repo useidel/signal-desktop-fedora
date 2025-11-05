@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.77.1
+Version:	7.78.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,10 @@ done
  
 
 %changelog
+* Wed Nov 05 2025 Udo Seidel <udoseidel@gmx.de> 7.78.0-1
+- This update improves accessibility for screen reader users by skipping repeated timestamp announcements when new messages arrive in a thread.
+- We also fixed a bug that could prevent notifications from appearing on Windows.
+
 * Thu Oct 30 2025 Udo Seidel <udoseidel@gmx.de> 7.77.1-1
 - see below
 
