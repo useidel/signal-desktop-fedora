@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.78.0
+Version:	7.79.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,10 @@ done
  
 
 %changelog
+* Thu Nov 13 2025 Udo Seidel <udoseidel@gmx.de> 7.79.0-1
+- We updated the appearance and stylistic consistency of scrollbars throughout the app. Usually if you scroll too fast you might miss something, but in this case scrolling is the only way to see it.
+- Copy/paste improvements make it easier to select-all and replace existing text without inheriting the old formatting. Thanks, @brianHarder [github.com]!
+
 * Wed Nov 05 2025 Udo Seidel <udoseidel@gmx.de> 7.78.0-1
 - This update improves accessibility for screen reader users by skipping repeated timestamp announcements when new messages arrive in a thread.
 - We also fixed a bug that could prevent notifications from appearing on Windows.
