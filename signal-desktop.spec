@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.80.0
+Version:	7.80.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Wed Nov 26 2025 Udo Seidel <udoseidel@gmx.de> 7.80.1-1
+- Signal polls are here! Are you and your friends on the same page, or are you poll-ar opposites? Polls are an easy way to see what your group chat really thinks. Create a poll with competing dinner options, vacation destinations, musical preferences for an upcoming road trip, or any other important choices. Everyone in the group can vote and see each other's responses, and you can decide whether or not to allow multiple votes.
+
 * Thu Nov 20 2025 Udo Seidel <udoseidel@gmx.de> 7.80.0-1
 - Signal polls are here! Are you and your friends on the same page, or are you poll-ar opposites?  Polls are an easy way to see what your group chat really thinks. Create a poll with competing dinner options, vacation destinations, musical preferences for an upcoming road trip, or any other important choices. Everyone in the group can vote and see each other's responses, and you can decide whether or not to allow multiple votes.
 
