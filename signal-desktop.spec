@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.81.0
+Version:	7.82.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Dec 11 2025 Udo Seidel <udoseidel@gmx.de> 7.82.0-1
+- This version contains a number of small tweaks and bug fixes to keep Signal running smoothly.
+
 * Thu Dec 04 2025 Udo Seidel <udoseidel@gmx.de> 7.81.0-1
 - The media gallery now includes two new tabs for audio messages and link previews. If a link falls in a group chat, does it make a sound? 
 
