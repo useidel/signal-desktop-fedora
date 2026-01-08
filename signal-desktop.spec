@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.83.0
+Version:	7.84.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Jan 08 2026 Udo Seidel <udoseidel@gmx.de> 7.84.0-1
+ -Signal polls on Desktop now include the same subtle animation effects that were already appearing on your phone. Watching your favorite choice pull away is just a poll away.
+
 * Thu Dec 18 2025 Udo Seidel <udoseidel@gmx.de> 7.83.0-1
 - Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
 
