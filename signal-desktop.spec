@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.86.0
+Version:	7.87.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Wed Jan 29 2026 Udo Seidel <udoseidel@gmx.de> 7.87.0-1
+- Help keep important information easily accessible with pinned messages. Your most frequently asked questions, dinner reservations, and vacation itineraries are already top of mind. Now they can be top of chat as well.
+
 * Wed Jan 21 2026 Udo Seidel <udoseidel@gmx.de> 7.86.0-1
 - We can't fix the awkward silence that follows, but we fixed a bug that sometimes caused the raised hand indicator to remain visible (with a count of zero) if someone raised and lowered their hand really quickly.
 
