@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.88.0
+Version:	7.89.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Feb 12 2026 Udo Seidel <udoseidel@gmx.de> 7.89.0-1
+- This update fixes a bug with text formatting while Caps Lock was enabled so it will be easier to make things bold (or italic) WHILE BEING BOLD. Thanks, @DGrothe-PhD!
+
 * Thu Feb 05 2026 Udo Seidel <udoseidel@gmx.de> 7.88.0-1
 - Help keep important information easily accessible with pinned messages. Your most frequently asked questions, dinner reservations, and vacation itineraries are already top of mind. Now they can be top of chat as well.
 
