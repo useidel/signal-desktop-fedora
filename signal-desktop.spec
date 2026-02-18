@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	7.89.0
+Version:	7.90.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Wed Feb 18 2026 Udo Seidel <udoseidel@gmx.de> 7.90.0-1
+- Make privacy stick with five new official sticker packs in the Signal Artist Series: "Chug the Mouse" by Amanda Cotan, "Cozy Season" by Miguel Ángel Camprubí, "Croco's Feelings" by Tiffany Beucher, "My Daily Life 2" by Plastic Thing, and "Rocky Talk" by Lexi Vay.
+
 * Thu Feb 12 2026 Udo Seidel <udoseidel@gmx.de> 7.89.0-1
 - This update fixes a bug with text formatting while Caps Lock was enabled so it will be easier to make things bold (or italic) WHILE BEING BOLD. Thanks, @DGrothe-PhD!
 
