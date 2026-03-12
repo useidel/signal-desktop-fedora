@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.1.0
+Version:	8.2.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Mar 12 2026 Udo Seidel <udoseidel@gmx.de> 8.2.0-1
+- Now you can send view-once media messages from Signal Desktop too. Individual photos and videos that are sent as view-once messages will be automatically removed from a conversation thread after they have been viewed.
+ 
 * Thu Mar 5 2026 Udo Seidel <udoseidel@gmx.de> 8.1.0-1
 - Signal secure backups are here! Now you can choose to enable automatic end-to-end encrypted backups so you'll never lose a message when you get a new phone or reinstall Signal. You can back up all of your messages and the last 45 days of media for free, or you can pay a small monthly fee to get 100 GB of storage to back up every attachment. Tap on backups in your Signal settings to get started. Thanks to everyone who helped test this feature during the beta period!
 
