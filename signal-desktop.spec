@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.2.0
+Version:	8.2.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Fri Mar 13 2026 Udo Seidel <udoseidel@gmx.de> 8.2.1-1
+- see below
+
 * Thu Mar 12 2026 Udo Seidel <udoseidel@gmx.de> 8.2.0-1
 - Now you can send view-once media messages from Signal Desktop too. Individual photos and videos that are sent as view-once messages will be automatically removed from a conversation thread after they have been viewed.
  
