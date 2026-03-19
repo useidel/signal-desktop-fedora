@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.2.1
+Version:	8.3.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Mar 19 2026 Udo Seidel <udoseidel@gmx.de> 8.3.0-1
+- Now you can optionally add a member label to describe yourself or your role in a group chat. Set your group member label to "Referee" or "Goalie" in your local rec league soccer chat to help kick things off when new teammates join, then choose a different label with your job title in the company chat. Member labels appear next to your profile name in that group, and group admins can control whether or not they are enabled for everyone.
+
 * Fri Mar 13 2026 Udo Seidel <udoseidel@gmx.de> 8.2.1-1
 - see below
 
