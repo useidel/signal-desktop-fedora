@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.6.0
+Version:	8.6.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Mon Apr 13 2026 Udo Seidel <udoseidel@gmx.de> 8.6.1-1
+- see below
+
 * Thu Apr 09 2026 Udo Seidel <udoseidel@gmx.de> 8.6.0-1
 - Now you won't need to scroll as far to catch up on the latest messages. If several new people join a busy group chat, or you receive multiple missed calls in a row, those repeated chat events can be automatically grouped together into a compact display. Sometimes less is more, but you can easily expand and collapse these lists at any time.
 
