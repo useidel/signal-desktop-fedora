@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.6.1
+Version:	8.7.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu Apr 16 2026 Udo Seidel <udoseidel@gmx.de> 8.7.0-1
+- Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
+
 * Mon Apr 13 2026 Udo Seidel <udoseidel@gmx.de> 8.6.1-1
 - see below
 
