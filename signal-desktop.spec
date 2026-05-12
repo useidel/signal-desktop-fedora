@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.9.1
+Version:	8.10.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Sat May 12 2026 Udo Seidel <udoseidel@gmx.de> 8.10.0-1
+- The freshly spun emoji in Unicode 17.0 have now pirouetted into place in Signal. Send a message reaction with the new Ballet Dancer emoji to perform your own digital version of a pas de chat.
+
 * Sat May 09 2026 Udo Seidel <udoseidel@gmx.de> 8.9.1-1
 - see below 
 
