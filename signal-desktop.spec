@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.10.0
+Version:	8.11.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -184,6 +184,11 @@ done
  
 
 %changelog
+* Thu May 20 2026 Udo Seidel <udoseidel@gmx.de> 8.11.0-1
+- We've introduced additional confirmations and educational messaging in the app to help protect Signal users from phishing and social engineering attacks. As a reminder, never reply to chats pretending to be Signal, and never send your verification code, PIN, or recovery key to anyone.
+- Raised hand indicators in group calls now display the current order of the queue, so you can easily see who got the upper hand first.
+- We also added a real-time visualization while recording voice messages, so surfers (and oceanographers) can stare at multiple moving waveforms whenever they share updates from the beach.
+
 * Sat May 12 2026 Udo Seidel <udoseidel@gmx.de> 8.10.0-1
 - The freshly spun emoji in Unicode 17.0 have now pirouetted into place in Signal. Send a message reaction with the new Ballet Dancer emoji to perform your own digital version of a pas de chat.
 
