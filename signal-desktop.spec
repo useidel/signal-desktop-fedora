@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	8.11.1
-Release:	1%{?dist}
+Version:	8.11.0
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -184,7 +184,7 @@ done
  
 
 %changelog
-* Tue May 26 2026 Udo Seidel <udoseidel@gmx.de> 8.11.1-1
+* Tue May 26 2026 Udo Seidel <udoseidel@gmx.de> 8.11.0-2
 - Updated SPEC file to reflect PR "Fix StartupWMClass casing so GNOME/Wayland groups the running window" - Thanks @bpiddubnyi
 
 * Thu May 20 2026 Udo Seidel <udoseidel@gmx.de> 8.11.0-1
