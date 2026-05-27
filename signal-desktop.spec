@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	8.11.0
-Release:	2%{?dist}
+Version:	8.12.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -184,6 +184,9 @@ done
  
 
 %changelog
+* Thu May 27 2026 Udo Seidel <udoseidel@gmx.de> 8.12.0-1
+- On the one hand, you can click on the raise hand icon during group calls. But on the other hand, now you can use a new keyboard shortcut too (Shift-H).
+
 * Tue May 26 2026 Udo Seidel <udoseidel@gmx.de> 8.11.0-2
 - Updated SPEC file to reflect PR "Fix StartupWMClass casing so GNOME/Wayland groups the running window" - Thanks @bpiddubnyi
 
