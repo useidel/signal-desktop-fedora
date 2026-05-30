@@ -121,15 +121,17 @@ pnpm install --frozen-lockfile
 pnpm run build
 cd ..
 pnpm run generate
+
+%ifarch aarch64
+BUILD_ARCH="arm64"
+sed -i 's/"target": "deb"/"target": "rpm"/g' package.json
+sed -i 's/deb/rpm/g' scripts/prepare_linux_build.mjs
+pnpm run prepare-linux-build rpm "$BUILD_ARCH"
+%else
+pnpm run prepare-linux-build
+%endif
+
 pnpm run build-linux
-
-
-# that should work as well ... let's stick to commands from 
-# above which are provided by the project
-#
-###pnpm install 
-###pnpm run generate
-###pnpm run build-linux
 
 
 %install
@@ -186,6 +188,7 @@ done
 %changelog
 * Wed May 27 2026 Udo Seidel <udoseidel@gmx.de> 8.12.0-1
 - added pulseaudio-libs to build requirements
+- added hack for aarch64 build
 - On the one hand, you can click on the raise hand icon during group calls. But on the other hand, now you can use a new keyboard shortcut too (Shift-H).
 
 * Tue May 26 2026 Udo Seidel <udoseidel@gmx.de> 8.11.0-2
