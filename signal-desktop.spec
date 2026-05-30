@@ -9,7 +9,7 @@ Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 Source1:	backbone+1.6.0.patch
 Source2:	nan+2.22.2.patch
 
-BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel
+BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel pulseaudio-libs
 
 # new for AARCH64 builds
 %ifarch aarch64
@@ -185,6 +185,7 @@ done
 
 %changelog
 * Wed May 27 2026 Udo Seidel <udoseidel@gmx.de> 8.12.0-1
+- added pulseaudio-libs to build requirements
 - On the one hand, you can click on the raise hand icon during group calls. But on the other hand, now you can use a new keyboard shortcut too (Shift-H).
 
 * Tue May 26 2026 Udo Seidel <udoseidel@gmx.de> 8.11.0-2
