@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.13.0
+Version:	8.14.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -186,7 +186,10 @@ done
  
 
 %changelog
-* Wed Jun 93 2026 Udo Seidel <udoseidel@gmx.de> 8.13.0-1
+* Wed Jun 10 2026 Udo Seidel <udoseidel@gmx.de> 8.14.0-1
+- Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
+
+* Wed Jun 03 2026 Udo Seidel <udoseidel@gmx.de> 8.13.0-1
 - The new raised-hand indicators are now also displayed in the list of raised hands during group calls. It's a second-hand place to figure out who you should hand it over to when you're done speaking.
 
 * Wed May 27 2026 Udo Seidel <udoseidel@gmx.de> 8.12.0-1
