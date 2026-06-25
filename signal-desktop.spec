@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.15.0
+Version:	8.16.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -186,6 +186,9 @@ done
  
 
 %changelog
+* Thu Jun 25 2026 Udo Seidel <udoseidel@gmx.de> 8.16.0-1
+- We fixed a bug in the sticker creator that displayed the interface in the wrong language. Even though stickers are pictures (and therefore worth a thousand words) it's still important to get the words right too.
+
 * Fri Jun 19 2026 Udo Seidel <udoseidel@gmx.de> 8.15.0-1
 - "This extra E is vexing me," said the cries and pleas of the people displeased that their favorite file extension was four letters instead of three. We're happy to appease (the change was a breeze) and now you will see that the default filename when saving a JPEG will end as it should in dot jpg.
 - If you want to embrace your inner goth, we also added support for the dark icon style in macOS.
