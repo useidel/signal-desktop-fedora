@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	8.17.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -126,12 +126,18 @@ pnpm run generate
 BUILD_ARCH="arm64"
 sed -i 's/"target": "deb"/"target": "rpm"/g' package.json
 sed -i 's/deb/rpm/g' scripts/prepare_linux_build.mjs
-pnpm run prepare-linux-build rpm "$BUILD_ARCH"
+pnpm run prepare-linux-build rpm "$BUILD_ARCH" << MYEOF
+n
+MYEOF
 %else
-pnpm run prepare-linux-build
+pnpm run prepare-linux-build << MYEOF
+n
+MYEOF
 %endif
 
-pnpm run build-linux
+pnpm run build-linux << MYEOF
+n
+MYEOF
 
 
 %install
@@ -186,6 +192,9 @@ done
  
 
 %changelog
+* Thu Jul 02 2026 Udo Seidel <udoseidel@gmx.de> 8.17.0-2
+- quick hack to overcome the 'Your "node_modules" directory is out of sync with the "pnpm-lock.yaml" file' issue
+
 * Thu Jul 02 2026 Udo Seidel <udoseidel@gmx.de> 8.17.0-1
 -  Group admins can now delete recently sent messages in a group chat. If someone accidentally posts a spoiler in your Book Club group and then walks away from their phone, a group admin can delete it to keep the plot twist intact. You can easily see when a message was deleted and who removed it, just like the existing "Delete for Everyone" feature.
 - We also increased the maximum number of pinned chats from 4 to 10, so you can show 6 more people how much you love what they have to say.
