@@ -122,23 +122,19 @@ pnpm run build
 cd ..
 pnpm run generate
 
+# quick hack to overcome the 'Your node_modules directory is out of sync with the pnpm-lock.yaml file' issue
+sed -i 's/verifyDepsBeforeRun: prompt/verifyDepsBeforeRun: warn/g' pnpm-workspace.yaml
+
 %ifarch aarch64
 BUILD_ARCH="arm64"
 sed -i 's/"target": "deb"/"target": "rpm"/g' package.json
 sed -i 's/deb/rpm/g' scripts/prepare_linux_build.mjs
-pnpm run prepare-linux-build rpm "$BUILD_ARCH" << MYEOF
-n
-MYEOF
+pnpm run prepare-linux-build rpm "$BUILD_ARCH" 
 %else
-pnpm run prepare-linux-build << MYEOF
-n
-MYEOF
+pnpm run prepare-linux-build 
 %endif
 
-pnpm run build-linux << MYEOF
-n
-MYEOF
-
+pnpm run build-linux 
 
 %install
 
