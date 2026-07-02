@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.16.0
+Version:	8.17.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -186,6 +186,10 @@ done
  
 
 %changelog
+* Thu Jul 02 2026 Udo Seidel <udoseidel@gmx.de> 8.17.0-1
+-  Group admins can now delete recently sent messages in a group chat. If someone accidentally posts a spoiler in your Book Club group and then walks away from their phone, a group admin can delete it to keep the plot twist intact. You can easily see when a message was deleted and who removed it, just like the existing "Delete for Everyone" feature.
+- We also increased the maximum number of pinned chats from 4 to 10, so you can show 6 more people how much you love what they have to say.
+
 * Thu Jun 25 2026 Udo Seidel <udoseidel@gmx.de> 8.16.0-1
 - We fixed a bug in the sticker creator that displayed the interface in the wrong language. Even though stickers are pictures (and therefore worth a thousand words) it's still important to get the words right too.
 
