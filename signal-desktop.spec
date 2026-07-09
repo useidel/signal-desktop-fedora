@@ -1,6 +1,6 @@
 Name:		signal-desktop
-Version:	8.17.0
-Release:	2%{?dist}
+Version:	8.18.0
+Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -188,6 +188,9 @@ done
  
 
 %changelog
+* Thu Jul 09 2026 Udo Seidel <udoseidel@gmx.de> 8.18.0-1
+- Polls can now be created in individual chats too. Present a curated list of choices to your indecisive friend, or recapture the magic of passing a note to your crush by creating a “Do you like me? Y/N/Maybe” poll.
+
 * Thu Jul 02 2026 Udo Seidel <udoseidel@gmx.de> 8.17.0-2
 - quick hack to overcome the 'Your "node_modules" directory is out of sync with the "pnpm-lock.yaml" file' issue
 
