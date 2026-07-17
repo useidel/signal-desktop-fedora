@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.18.0
+Version:	8.19.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -188,6 +188,9 @@ done
  
 
 %changelog
+* Thu Jul 16 2026 Udo Seidel <udoseidel@gmx.de> 8.19.0-1
+- Group admins can now bring chats to their natural conclusion with the new "End Group" option in group settings. Ending a group prevents group members from sending messages or starting calls, and also disables invites. Now you can make sure everyone stays on the right thread by ending last year's sewing meetup group before stitching a new one together.
+
 * Thu Jul 09 2026 Udo Seidel <udoseidel@gmx.de> 8.18.0-1
 - Polls can now be created in individual chats too. Present a curated list of choices to your indecisive friend, or recapture the magic of passing a note to your crush by creating a “Do you like me? Y/N/Maybe” poll.
 
