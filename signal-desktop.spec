@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.19.0
+Version:	8.20.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -188,6 +188,10 @@ done
  
 
 %changelog
+* Thu Jul 23 2026 Udo Seidel <udoseidel@gmx.de> 8.20.0-1
+- Introducing disappearing call events: Missed, outgoing, and received calls that occur after you install this update will now automatically disappear in any chat where disappearing messages are enabled.
+- Now you can reorder installed sticker packs so your new favorites don’t get stuck in the back of the line.
+
 * Thu Jul 16 2026 Udo Seidel <udoseidel@gmx.de> 8.19.0-1
 - Group admins can now bring chats to their natural conclusion with the new "End Group" option in group settings. Ending a group prevents group members from sending messages or starting calls, and also disables invites. Now you can make sure everyone stays on the right thread by ending last year's sewing meetup group before stitching a new one together.
 
