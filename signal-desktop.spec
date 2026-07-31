@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.20.0
+Version:	8.21.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -188,6 +188,9 @@ done
  
 
 %changelog
+* Thu Jul 30 2026 Udo Seidel <udoseidel@gmx.de> 8.21.0-1
+- Additional small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
+
 * Thu Jul 23 2026 Udo Seidel <udoseidel@gmx.de> 8.20.0-1
 - Introducing disappearing call events: Missed, outgoing, and received calls that occur after you install this update will now automatically disappear in any chat where disappearing messages are enabled.
 - Now you can reorder installed sticker packs so your new favorites don’t get stuck in the back of the line.
