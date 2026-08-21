@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.24.0
+Version:	8.24.1
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -188,6 +188,9 @@ done
  
 
 %changelog
+* Fri Aug 21 2026 Udo Seidel <udoseidel@gmx.de> 8.24.1-1
+- see below
+
 * Thu Aug 20 2026 Udo Seidel <udoseidel@gmx.de> 8.24.0-1
 - We made it easier to search for group members on the group settings page, so you can quickly figure out if your Mom already added your second cousin to the third-annual extended family reunion BBQ group.
 
