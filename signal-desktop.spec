@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.24.1
+Version:	8.25.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -188,6 +188,10 @@ done
  
 
 %changelog
+* Wed Aug 28 2026 Udo Seidel <udoseidel@gmx.de> 8.25.0-1
+- We added two new zoom levels in the appearance settings, so even with very little effort you can still give your messages
+    110% (or 90%).
+
 * Fri Aug 21 2026 Udo Seidel <udoseidel@gmx.de> 8.24.1-1
 - see below
 
