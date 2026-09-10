@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.26.0
+Version:	8.27.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -188,8 +188,12 @@ done
  
 
 %changelog
+* Thu Sep 10 2026 Udo Seidel <udoseidel@gmx.de> 8.27.0-1
+- his update introduces more granular settings to give you significantly more control over your Signal notifications. Now you can choose what appears on the app badge, adjust notification preferences for muted threads, and more! We also added a convenient button to restore the default notification settings if you ever make so many changes that you don't even know how to get ahold of yourself anymore.
+
 * Thu Sep 03 2026 Udo Seidel <udoseidel@gmx.de> 8.26.0-1
 - Finding yourself can be a lifelong process, but now you'll appear as "You" in the group member search to make it a little easier.
+
 * Wed Aug 28 2026 Udo Seidel <udoseidel@gmx.de> 8.25.0-1
 - We added two new zoom levels in the appearance settings, so even with very little effort you can still give your messages
     110% (or 90%).
