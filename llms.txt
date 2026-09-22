@@ -1,0 +1,26 @@
+# signal-desktop-fedora
+
+> Fedora RPM packaging and build automation for Signal Desktop.
+
+The repository contains a Fedora SPEC file and supporting scripts and GitHub Actions workflows for building Signal Desktop RPMs, with Copr used as an external build service.
+
+## Repository overview
+
+- [Source repository](https://github.com/useidel/signal-desktop-fedora): Canonical GitHub repository, including source files, issues, history, and repository metadata.
+- [README](https://raw.githubusercontent.com/useidel/signal-desktop-fedora/HEAD/README.md): Primary project documentation and usage notes.
+
+## Topics
+
+- Fedora/RPM packaging
+- Signal Desktop
+- GitHub Actions
+- Copr
+
+## Additional resources
+
+- [GitHub Actions](https://github.com/useidel/signal-desktop-fedora/actions)
+
+## Optional
+
+- [Repository activity](https://github.com/useidel/signal-desktop-fedora/commits): Commit history for implementation changes and maintenance context.
+- [Issues](https://github.com/useidel/signal-desktop-fedora/issues): Questions, bug reports, and project discussions when enabled.
