@@ -99,7 +99,7 @@ export NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
 export PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
 
 # Install pnpm
-npm install -g "$(curl -sfL "https://github.com/signalapp/Signal-Desktop/raw/refs/tags/v${SIGNAL_VERSION}/package.json" | jq -r .packageManager)"
+npm install -g "$(curl -sfL "https://github.com/signalapp/Signal-Desktop/raw/refs/tags/v%{version}/package.json" | jq -r .packageManager)"
 
 # the following commands are taken from reproducible-builds/docker-entrypoint.sh
 pnpm install --frozen-lockfile
