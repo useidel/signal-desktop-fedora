@@ -87,7 +87,7 @@ cd %{_builddir}/Signal-Desktop-%{version}
 # Install nvm
 export NVM_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v${SIGNAL_VERSION}/reproducible-builds/Dockerfile" | grep "ENV NVM_VERSION=" | cut -d= -f2)"
 export NODE_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v${SIGNAL_VERSION}/.nvmrc")"
-export NVM_DIR=/usr/local/nvm
+export NVM_DIR=$HOME/.nvm/
 mkdir "$NVM_DIR"
 curl -sfL -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash
 # shellcheck disable=SC1091
@@ -178,6 +178,7 @@ done
 %changelog
 * Thu Sep 24 2026 Udo Seidel <udoseidel@gmx.de> 8.28.0-1
 - Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
+- Updated pnpm version
 
 * Thu Sep 10 2026 Udo Seidel <udoseidel@gmx.de> 8.27.0-1
 - his update introduces more granular settings to give you significantly more control over your Signal notifications. Now you can choose what appears on the app badge, adjust notification preferences for muted threads, and more! We also added a convenient button to restore the default notification settings if you ever make so many changes that you don't even know how to get ahold of yourself anymore.
