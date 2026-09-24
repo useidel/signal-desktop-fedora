@@ -9,7 +9,7 @@ Source0:	https://github.com/signalapp/Signal-Desktop/archive/v%{version}.tar.gz
 Source1:	backbone+1.6.0.patch
 Source2:	nan+2.22.2.patch
 
-BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel pulseaudio-libs
+BuildRequires: binutils git gcc gcc-c++ openssl-devel bsdtar jq zlib xz ca-certificates git-lfs ruby-devel python-unversioned-command yarnpkg npm python3 libxcrypt-compat vips-devel pulseaudio-libs jq
 
 # new for AARCH64 builds
 %ifarch aarch64
@@ -84,34 +84,22 @@ cd %{_builddir}/Signal-Desktop-%{version}
 
 # install nvm, nodejs and pnpm using the instructions from reproducible-builds/Dockerfile
 
-# which nodejs version do we need
-NODE_VERSION=`cat .nvmrc`
-# the NVM version -> latest available
-NVM_VERSION=0.40.2 
-# project uses differen nvm version -> 0.40.0
-NVM_DIR=$HOME/.nvm/
-# which pnpm version do we need
-PNPM_VERSION=`grep packageManager package.json | cut -f2 -d':' |tr -d ','| tr -d '"'|tr -d ' '`
-# project uses different pnpm version -> 10.3.0
+# Install nvm
+export NVM_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v${SIGNAL_VERSION}/reproducible-builds/Dockerfile" | grep "ENV NVM_VERSION=" | cut -d= -f2)"
+export NODE_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v${SIGNAL_VERSION}/.nvmrc")"
+export NVM_DIR=/usr/local/nvm
+mkdir "$NVM_DIR"
+curl -sfL -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash
+# shellcheck disable=SC1091
+. $NVM_DIR/nvm.sh
+nvm install "$NODE_VERSION"
+nvm alias "$NODE_VERSION"
+nvm use "$NODE_VERSION"
+export NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
+export PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
 
-export NODE_VERSION NVM_VERSION NVM_DIR
-
-mkdir $NVM_DIR
-
-# download and install nvm and set node version to required value
-curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash \
-    && . $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm alias $NODE_VERSION \
-    && nvm use $NODE_VERSION
-
-NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
-PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-
-export NODE_PATH PATH
-
-# Install pnpm 
-npm install -g $PNPM_VERSION 
+# Install pnpm
+npm install -g "$(curl -sfL "https://github.com/signalapp/Signal-Desktop/raw/refs/tags/v${SIGNAL_VERSION}/package.json" | jq -r .packageManager)"
 
 # the following commands are taken from reproducible-builds/docker-entrypoint.sh
 pnpm install --frozen-lockfile
@@ -197,7 +185,7 @@ done
 * Thu Sep 03 2026 Udo Seidel <udoseidel@gmx.de> 8.26.0-1
 - Finding yourself can be a lifelong process, but now you'll appear as "You" in the group member search to make it a little easier.
 
-* Wed Aug 28 2026 Udo Seidel <udoseidel@gmx.de> 8.25.0-1
+* Fri Aug 28 2026 Udo Seidel <udoseidel@gmx.de> 8.25.0-1
 - We added two new zoom levels in the appearance settings, so even with very little effort you can still give your messages
     110% (or 90%).
 
