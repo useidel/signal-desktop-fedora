@@ -85,8 +85,8 @@ cd %{_builddir}/Signal-Desktop-%{version}
 # install nvm, nodejs and pnpm using the instructions from reproducible-builds/Dockerfile
 
 # Install nvm
-export NVM_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v${SIGNAL_VERSION}/reproducible-builds/Dockerfile" | grep "ENV NVM_VERSION=" | cut -d= -f2)"
-export NODE_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v${SIGNAL_VERSION}/.nvmrc")"
+export NVM_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v%{version}/reproducible-builds/Dockerfile" | grep "ENV NVM_VERSION=" | cut -d= -f2)"
+export NODE_VERSION="$(curl -sfL "https://raw.githubusercontent.com/signalapp/Signal-Desktop/refs/tags/v%{version}/.nvmrc")"
 export NVM_DIR=$HOME/.nvm/
 mkdir "$NVM_DIR"
 curl -sfL -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash
