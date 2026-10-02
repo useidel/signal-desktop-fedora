@@ -99,7 +99,9 @@ export NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
 export PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
 
 # Install pnpm
-npm install -g "$(curl -sfL "https://github.com/signalapp/Signal-Desktop/raw/refs/tags/v%{version}/package.json" | jq -r .packageManager)"
+# need to extract the pnpm version differently with version 8.29.0
+PNPM_VERSION=`curl -sfL "https://github.com/signalapp/Signal-Desktop/raw/refs/tags/v%{version}/package.json" | jq '.devEngines.packageManager.version' | tr -d '"'`
+npm install -g pnpm@${PNPM_VERSION}
 
 # the following commands are taken from reproducible-builds/docker-entrypoint.sh
 pnpm install --frozen-lockfile
@@ -178,6 +180,7 @@ done
 %changelog
 * Fri Oct 02 2026 Udo Seidel <udoseidel@gmx.de> 8.29.0-1
 - Additional small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
+- new method to extract the needed version of pnpm
 
 * Thu Sep 24 2026 Udo Seidel <udoseidel@gmx.de> 8.28.0-1
 - Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
