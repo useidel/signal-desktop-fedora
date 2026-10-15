@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.30.0
+Version:	8.31.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -178,6 +178,9 @@ done
  
 
 %changelog
+* Thu Oct 15 2026 Udo Seidel <udoseidel@gmx.de> 8.31.0-1
+- Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
+
 * Thu Oct 08 2026 Udo Seidel <udoseidel@gmx.de> 8.30.0-1
 - Thanks to a few performance improvements, your CPU will be slightly happier during video calls (even if you're not smiling).
 - We also added a convenient shortcut to open your system settings on Windows if you try to join a video call and Signal doesn't have permission to access the camera. Now it's easier to see what you need to do so that people can see you.
