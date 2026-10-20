@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.31.0
+Version:	8.32.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -178,6 +178,11 @@ done
  
 
 %changelog
+* Tue Oct 20 2026 Udo Seidel <udoseidel@gmx.de> 8.32.0-1
+- The unread filter is now also supported in message folders and the search interface, so you can easily see what you've been missing.
+-  Improved upload reliability under poor network conditions. Thanks, @3mmmbulus [github.com]!
+- The "(N)" shortcut correctly points to the thumbs down emoji. Thumbs up to @lnicola [github.com] for the bugfix.
+
 * Thu Oct 15 2026 Udo Seidel <udoseidel@gmx.de> 8.31.0-1
 - Handful of bug fixes to keep your app running smoothly. More exciting changes on the horizon!
 
