@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.34.0
+Version:	8.35.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -178,6 +178,9 @@ done
  
 
 %changelog
+* Wed Nov 11 2026 Udo Seidel <udoseidel@gmx.de> 8.35.0-1
+- Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
+
 * Fri Nov 06 2026 Udo Seidel <udoseidel@gmx.de> 8.34.0-1
 - Signal Desktop now supports contact sharing too, so you can maintain eye contact with your computer screen without having to make physical contact with your smartphone.
 - Improved handling and performance for connected audio devices.
