@@ -1,5 +1,5 @@
 Name:		signal-desktop
-Version:	8.35.0
+Version:	8.36.0
 Release:	1%{?dist}
 Summary:	Private messaging from your desktop
 License:	GPLv3
@@ -178,6 +178,9 @@ done
  
 
 %changelog
+* Thu Nov 19 2026 Udo Seidel <udoseidel@gmx.de> 8.36.0-1
+- Your top stickers now have a place to remain stuck. Add any sticker pack to your list of favorites so it's easy to stick with the ones you love.
+
 * Wed Nov 11 2026 Udo Seidel <udoseidel@gmx.de> 8.35.0-1
 - Small tweaks, bug fixes, and performance enhancements. Thanks for using Signal!
 
